@@ -1210,10 +1210,9 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     background-color: transparent;
     border-color: transparent; }
     
-    .primary-toolbar button:disabled label, headerbar button:disabled label, toolbar button:disabled label,
-    .primary-toolbar button:disabled image, headerbar button:disabled image, toolbar button:disabled image {
+    .primary-toolbar button:disabled label, headerbar button:disabled label, toolbar button:disabled label {
       color: @toolbar_dark_disabled_fg;
-      opacity: 0.4; }
+      opacity: 0.5; }
   
   .primary-toolbar button:disabled:active, headerbar button:disabled:active,
   .primary-toolbar button:disabled:checked, headerbar button:disabled:checked {
@@ -5091,13 +5090,26 @@ toolbar.primary-toolbar button image,
   -gtk-icon-shadow: none;
 }
 
+/* =========================================================================
+   ICÔNES INACTIVES DANS LES BARRES D'OUTILS SOMBRES (GEANY, THUNAR, NEMO)
+   ========================================================================= */
+toolbar *:disabled,
+.primary-toolbar *:disabled {
+  -gtk-icon-effect: highlight;
+}
+
+toolbar button:disabled image,
+toolbar toolbutton > button:disabled image,
+toolbar image:disabled,
+toolbar:disabled image,
+.primary-toolbar button:disabled image,
+.primary-toolbar toolbutton > button:disabled image,
+.primary-toolbar image:disabled,
 .thunar toolbar button:disabled image,
 .thunar toolbar toolbutton > button:disabled image,
-.thunar-window toolbar button:disabled image,
-toolbar.primary-toolbar button:disabled image,
-.primary-toolbar button:disabled image {
-  opacity: 0.35;
-  color: rgba(255, 255, 255, 0.35);
+.thunar-window toolbar button:disabled image {
+  -gtk-icon-effect: highlight;
+  opacity: 0.75;
 }
 
 
