@@ -72,7 +72,16 @@
 @define-color menu_bg_left            #22211e; /* Dégradé historique accentué (gauche) */
 @define-color menu_bg_mid             #363530; /* Dégradé intermédiaire (~55%) */
 @define-color menu_bg_right           #484741; /* Dégradé lumineux (droite) */
-@define-color menu_fg                 #ffffff; /* Texte menu déroulant */
+@define-color menu_fg                 #ffffff;
+@define-color menu_disabled_fg        alpha(#ffffff, 0.45);
+@define-color menubar_fg              #ffffff;
+@define-color menubar_disabled_fg     alpha(#ffffff, 0.45);
+
+@define-color toolbar_dark_bg         #222226;
+@define-color toolbar_dark_fg         #ffffff;
+@define-color toolbar_dark_border     #18181b;
+@define-color toolbar_dark_disabled_fg alpha(#ffffff, 0.38);
+@define-color toolbar_dark_hover_bg   #383733; /* Texte menu déroulant */
 @define-color menu_border             #1a1916; /* Bordure menu déroulant */
 @define-color menu_separator          #3c3b38; /* Séparateur de menu */
 @define-color menu_shadow             alpha(#000000, 0.55); /* Ombre portée menu */
@@ -900,9 +909,12 @@ toolbar, .inline-toolbar {
     margin-right: 0; }
 
 .primary-toolbar toolbar, .primary-toolbar .inline-toolbar,
-.primary-toolbar:not(.libreoffice-toolbar) {
-  color: alpha(@theme_fg_color, 0.87);
-  background-color: #222226;
+.primary-toolbar:not(.libreoffice-toolbar),
+toolbar.primary-toolbar,
+.primary-toolbar,
+toolbar {
+  color: @toolbar_dark_fg;
+  background-color: @toolbar_dark_bg;
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -1169,21 +1181,21 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
       color: #FC4138; }
 
 
-.primary-toolbar button, headerbar button {
-  color: alpha(@theme_fg_color, 0.87);
-  outline-color: alpha(@theme_fg_color, 0.17);
+.primary-toolbar button, headerbar button, toolbar button {
+  color: @toolbar_dark_fg;
+  outline-color: alpha(@toolbar_dark_fg, 0.17);
   outline-offset: -3px;
-  background-color: rgba(235, 235, 237, 0);
-  border-color: rgba(235, 235, 237, 0); }
+  background-color: transparent;
+  border-color: transparent; }
   
   .primary-toolbar button:backdrop, headerbar button:backdrop {
     opacity: 0.7; }
   
-  .primary-toolbar button:hover, headerbar button:hover {
-    color: alpha(@theme_fg_color, 0.87);
-    outline-color: alpha(@theme_fg_color, 0.17);
-    border-color: alpha(@theme_fg_color, 0.17);
-    background-color: rgba(254, 254, 254, 0.9); }
+  .primary-toolbar button:hover, headerbar button:hover, toolbar button:hover {
+    color: @toolbar_dark_fg;
+    outline-color: alpha(@toolbar_dark_fg, 0.17);
+    border-color: alpha(@toolbar_dark_fg, 0.17);
+    background-color: @toolbar_dark_hover_bg; }
   
   .primary-toolbar button:active, headerbar button:active,
   .primary-toolbar button:checked, headerbar button:checked {
@@ -1193,13 +1205,15 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     background-color: alpha(@theme_fg_color, 0.15);
     background-clip: border-box; }
   
-  .primary-toolbar button:disabled, headerbar button:disabled {
-    color: alpha(@theme_fg_color, 0.42);
-    background-color: rgba(235, 235, 237, 0);
-    border-color: rgba(235, 235, 237, 0); }
+  .primary-toolbar button:disabled, headerbar button:disabled, toolbar button:disabled {
+    color: @toolbar_dark_disabled_fg;
+    background-color: transparent;
+    border-color: transparent; }
     
-    .primary-toolbar button:disabled label, headerbar button:disabled label {
-      color: inherit; }
+    .primary-toolbar button:disabled label, headerbar button:disabled label, toolbar button:disabled label,
+    .primary-toolbar button:disabled image, headerbar button:disabled image, toolbar button:disabled image {
+      color: @toolbar_dark_disabled_fg;
+      opacity: 0.4; }
   
   .primary-toolbar button:disabled:active, headerbar button:disabled:active,
   .primary-toolbar button:disabled:checked, headerbar button:disabled:checked {
@@ -1653,11 +1667,11 @@ menubar, .menubar {
 }
     menubar > menuitem:disabled,
     .menubar > menuitem:disabled {
-      color: alpha(@theme_fg_color, 0.27);
+      color: @menubar_disabled_fg;
       border-color: transparent; }
     menubar > menuitem > label:disabled,
     .menubar > menuitem > label:disabled {
-      color: alpha(@theme_fg_color, 0.42); }
+      color: @menubar_disabled_fg; }
 
 menu, .menu {
   margin: 4px;
@@ -4625,61 +4639,6 @@ switch slider {
 scale highlight {
   background-color: @scale_highlight;
   border-radius: 2px;
-}
-
-
-/* =========================================================================
-   OPTIMISATION ONGLETS (GTK & NAVIGATEURS) - FUSION CONTINUE DE L'ONGLET ACTIF
-   ========================================================================= */
-notebook > header.top,
-notebook > header {
-  background-color: #f4f4f7;
-  padding: 0;
-  border-bottom: 1px solid #d0d0d6;
-  box-shadow: none;
-}
-
-notebook > header.top > tabs,
-notebook > header > tabs {
-  margin-bottom: -1px;
-  padding: 0 4px;
-}
-
-notebook > header > tabs > tab,
-tab {
-  padding: 6px 14px;
-  background-color: #ececf1;
-  color: #44444c;
-  border: 1px solid #d0d0d6;
-  border-bottom: 1px solid #d0d0d6;
-  border-radius: 2px 2px 0 0;
-  font-weight: 500;
-  margin-right: 2px;
-}
-
-notebook > header > tabs > tab:hover,
-tab:hover {
-  background-color: #f7f7fa;
-  color: #1a1a1d;
-}
-
-notebook > header > tabs > tab:checked,
-notebook > header > tabs > tab.active-page,
-tab:checked,
-tab:active {
-  background-color: #FFFFFF;
-  color: #1a1a1d;
-  border-color: #d0d0d6 #d0d0d6 #FFFFFF #d0d0d6;
-  border-bottom: 1px solid #FFFFFF;
-  border-top: 2px solid @selected_bg_color;
-  box-shadow: inset 0 1px 0 @selected_bg_color;
-  margin-bottom: -1px;
-}
-
-notebook > header > tabs > tab label,
-tab label {
-  color: inherit;
-  font-weight: inherit;
 }
 
 

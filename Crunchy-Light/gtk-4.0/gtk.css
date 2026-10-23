@@ -62,6 +62,13 @@
 @define-color menu_hover_right        #48dc6f;
 @define-color menu_hover_fg           #ffffff;
 
+/* Boutons & Contrôles */
+@define-color button_bg               #f0f0f4;
+@define-color button_hover_bg         #ffffff;
+@define-color switch_bg               #d8d8de;
+@define-color switch_active_bg        @accent_color;
+
+
 /* -----------------------------------------------------------------------------
    2. RÈGLES DE RENDU GTK4
    ----------------------------------------------------------------------------- */
@@ -166,7 +173,7 @@ entry:focus {
 }
 
 button {
-  background-color: #f0f0f4;
+  background-color: @button_bg;
   color: @window_fg_color;
   border: 1px solid @borders;
   border-radius: 2px;
@@ -174,7 +181,7 @@ button {
 }
 
 button:hover {
-  background-color: #ffffff;
+  background-color: @button_hover_bg;
 }
 
 button:active, button:checked {
@@ -183,7 +190,7 @@ button:active, button:checked {
 }
 
 switch {
-  background-color: #d8d8de;
+  background-color: @switch_bg;
   border-radius: 12px;
   border: 1px solid @borders;
 }
@@ -198,7 +205,7 @@ scale highlight {
 }
 
 /* ======================================================================
-   DÉGRADÉ HORIZONTAL VERT CRUNCHY SUR LES MENUS GTK4 (PROTOTYPE CLAIR)
+   DÉGRADÉ HORIZONTAL VERT CRUNCHY SUR LES MENUS GTK4
    ====================================================================== */
 menubar > item:hover,
 popover.menu modelbutton:hover,
@@ -206,7 +213,7 @@ popover modelbutton:selected,
 popover modelbutton:focus,
 dropdown listview row:selected,
 listview row:selected {
-    background-color: #35a854;
-    background-image: linear-gradient(to right, #206e33 0%, #35ad54 55%, #48dc6f 100%);
+    background-color: @accent_color;
+    background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
     color: #ffffff;
 }

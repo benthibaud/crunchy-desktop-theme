@@ -72,7 +72,16 @@
 @define-color menu_bg_left            #22211e; /* Dégradé historique accentué (gauche) */
 @define-color menu_bg_mid             #363530; /* Dégradé intermédiaire (~55%) */
 @define-color menu_bg_right           #484741; /* Dégradé lumineux (droite) */
-@define-color menu_fg                 #ffffff; /* Texte menu déroulant */
+@define-color menu_fg                 #ffffff;
+@define-color menu_disabled_fg        alpha(#ffffff, 0.45);
+@define-color menubar_fg              #ffffff;
+@define-color menubar_disabled_fg     alpha(#ffffff, 0.45);
+
+@define-color toolbar_dark_bg         #222226;
+@define-color toolbar_dark_fg         #ffffff;
+@define-color toolbar_dark_border     #18181b;
+@define-color toolbar_dark_disabled_fg alpha(#ffffff, 0.38);
+@define-color toolbar_dark_hover_bg   #383733; /* Texte menu déroulant */
 @define-color menu_border             #1a1916; /* Bordure menu déroulant */
 @define-color menu_separator          #3c3b38; /* Séparateur de menu */
 @define-color menu_shadow             alpha(#000000, 0.55); /* Ombre portée menu */
@@ -159,7 +168,7 @@
 
 .background {
   color: alpha(@theme_fg_color, 0.87);
-  background-color: rgba(46, 46, 51, 0.999); }
+  background-color: @theme_bg_color; }
 
 *:disabled {
   -gtk-icon-effect: dim; }
@@ -901,9 +910,12 @@ toolbar, .inline-toolbar {
     margin-right: 0; }
 
 .primary-toolbar toolbar, .primary-toolbar .inline-toolbar,
-.primary-toolbar:not(.libreoffice-toolbar) {
-  color: alpha(@theme_fg_color, 0.87);
-  background-color: #222226;
+.primary-toolbar:not(.libreoffice-toolbar),
+toolbar.primary-toolbar,
+.primary-toolbar,
+toolbar {
+  color: @toolbar_dark_fg;
+  background-color: @toolbar_dark_bg;
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -1641,11 +1653,11 @@ menubar, .menubar {
 }
     menubar > menuitem:disabled,
     .menubar > menuitem:disabled {
-      color: alpha(@theme_fg_color, 0.27);
+      color: @menubar_disabled_fg;
       border-color: transparent; }
     menubar > menuitem > label:disabled,
     .menubar > menuitem > label:disabled {
-      color: alpha(@theme_fg_color, 0.42); }
+      color: @menubar_disabled_fg; }
 
 menu, .menu {
   margin: 4px;
@@ -4612,61 +4624,6 @@ scale highlight {
 
 
 /* =========================================================================
-   OPTIMISATION ONGLETS (GTK & NAVIGATEURS) - FUSION CONTINUE DE L'ONGLET ACTIF
-   ========================================================================= */
-notebook > header.top,
-notebook > header {
-  background-color: #242320;
-  padding: 0;
-  border-bottom: 1px solid #18181b;
-  box-shadow: none;
-}
-
-notebook > header.top > tabs,
-notebook > header > tabs {
-  margin-bottom: -1px;
-  padding: 0 4px;
-}
-
-notebook > header > tabs > tab,
-tab {
-  padding: 6px 14px;
-  background-color: #2b2a26;
-  color: #a8a8b0;
-  border: 1px solid #18181b;
-  border-bottom: 1px solid #18181b;
-  border-radius: 2px 2px 0 0;
-  font-weight: 500;
-  margin-right: 2px;
-}
-
-notebook > header > tabs > tab:hover,
-tab:hover {
-  background-color: #383733;
-  color: #ffffff;
-}
-
-notebook > header > tabs > tab:checked,
-notebook > header > tabs > tab.active-page,
-tab:checked,
-tab:active {
-  background-color: #2E2E33; /* Même couleur que le contenu de la fenêtre (#2E2E33) */
-  color: #ffffff;
-  border-color: #18181b #18181b #2E2E33 #18181b;
-  border-bottom: 1px solid #2E2E33; /* Supprime le trait de séparation */
-  border-top: 2px solid @selected_bg_color;
-  box-shadow: inset 0 1px 0 @selected_bg_color;
-  margin-bottom: -1px;
-}
-
-notebook > header > tabs > tab label,
-tab label {
-  color: inherit;
-  font-weight: inherit;
-}
-
-
-/* =========================================================================
    BARRE DE TITRE MAXIMISÉE SOMBRE UNIFIÉE (LIBREOFFICE, GIMP, CINNAMON, GTK3)
    ========================================================================= */
 window.maximized headerbar,
@@ -5029,66 +4986,6 @@ placessidebar.sidebar list row:selected label,
 FMSidePane row:selected label {
   color: #ffffff;
   font-weight: bold;
-}
-
-/* =========================================================================
-   OPTIMISATION ONGLETS (GTK, BRAVE, CHROMIUM, FIREFOX) - CONTRASTE ACCENTUÉ
-   ========================================================================= */
-notebook > header.top,
-notebook > header,
-headerbar.titlebar,
-.titlebar {
-  background-color: #1c1c1f; /* Fond d'en-tête et tabstrip bien sombre pour détacher les onglets */
-}
-
-notebook > header.top,
-notebook > header {
-  padding: 0;
-  border-bottom: 1px solid #18181b;
-  box-shadow: none;
-}
-
-notebook > header.top > tabs,
-notebook > header > tabs {
-  margin-bottom: -1px;
-  padding: 0 4px;
-}
-
-notebook > header > tabs > tab,
-tab {
-  padding: 6px 14px;
-  background-color: #26262b; /* Onglet inactif sombre distinct */
-  color: #c0c0c6; /* Texte contrasté */
-  border: 1px solid #18181b;
-  border-bottom: 1px solid #18181b;
-  border-radius: 2px 2px 0 0;
-  font-weight: 500;
-  margin-right: 2px;
-}
-
-notebook > header > tabs > tab:hover,
-tab:hover {
-  background-color: #35353c;
-  color: #ffffff;
-}
-
-notebook > header > tabs > tab:checked,
-notebook > header > tabs > tab.active-page,
-tab:checked,
-tab:active {
-  background-color: #2E2E33; /* Même couleur que le contenu de la fenêtre */
-  color: #ffffff;
-  border-color: #383840 #383840 #2E2E33 #383840;
-  border-bottom: 1px solid #2E2E33;
-  border-top: 2px solid @selected_bg_color;
-  box-shadow: inset 0 1px 0 @selected_bg_color;
-  margin-bottom: -1px;
-}
-
-notebook > header > tabs > tab label,
-tab label {
-  color: inherit;
-  font-weight: inherit;
 }
 
 /* ======================================================================
