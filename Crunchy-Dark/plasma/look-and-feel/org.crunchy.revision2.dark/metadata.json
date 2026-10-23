@@ -1,0 +1,16 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Benoit THIBAUD"
+            }
+        ],
+        "Category": "Global Theme",
+        "Description": "Crunchy Theme Suite (Dark)",
+        "Id": "org.crunchy.revision2.dark",
+        "License": "GPL-3.0+",
+        "Name": "Revision2 Dark",
+        "Version": "2.0"
+    },
+    "X-KDE-PluginInfo-PackageName": "org.crunchy.revision2.dark"
+}

@@ -1,0 +1,11 @@
+[kdeglobals][General]
+ColorScheme=Revision2-Dark
+accentColor=53,168,84
+
+[kdeglobals][KDE]
+colorScheme=Revision2-Dark
+widgetStyle=Fusion
+
+[kwinrc][org.kde.kdecoration2]
+theme=Revision2-Square
+library=org.kde.kwin.aurorae

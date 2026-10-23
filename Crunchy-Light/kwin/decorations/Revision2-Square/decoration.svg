@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="title_grad_act" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4e4d48"/>
+      <stop offset="45%" stop-color="#3e3d39"/>
+      <stop offset="100%" stop-color="#242320"/>
+    </linearGradient>
+    <linearGradient id="title_grad_inact" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a3935"/>
+      <stop offset="100%" stop-color="#242320"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Actif : Top -->
+  <g id="decoration-top-active">
+    <rect x="20" y="0" width="80" height="28" fill="url(#title_grad_act)"/>
+    <line x1="20" y1="0" x2="100" y2="0" stroke="#5f5e58" stroke-width="1"/>
+    <line x1="20" y1="27.5" x2="100" y2="27.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-topleft-active">
+    <path d="M 20 28 L 0 28 L 0 0 Q 0 0 0 0 L 20 0 Z" fill="url(#title_grad_act)"/>
+    <path d="M 0 28 L 0 0 Q 0 0 0 0 L 20 0" fill="none" stroke="#5f5e58" stroke-width="1"/>
+    <line x1="0" y1="27.5" x2="20" y2="27.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-topright-active">
+    <path d="M 0 28 L 20 28 L 20 0 Q 20 0 20 0 L 0 0 Z" fill="url(#title_grad_act)"/>
+    <path d="M 0 0 L 20 0 Q 20 0 20 0 L 20 28" fill="none" stroke="#5f5e58" stroke-width="1"/>
+    <line x1="0" y1="27.5" x2="20" y2="27.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+
+  <!-- Actif : Bordures -->
+  <g id="decoration-left-active">
+    <rect x="0" y="28" width="2" height="60" fill="#242320"/>
+    <line x1="0" y1="28" x2="0" y2="88" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-right-active">
+    <rect x="18" y="28" width="2" height="60" fill="#242320"/>
+    <line x1="19.5" y1="28" x2="19.5" y2="88" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-bottom-active">
+    <rect x="20" y="88" width="80" height="2" fill="#242320"/>
+    <line x1="20" y1="89.5" x2="100" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-bottomleft-active">
+    <rect x="0" y="88" width="20" height="2" fill="#242320"/>
+    <line x1="0" y1="88" x2="0" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+    <line x1="0" y1="89.5" x2="20" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-bottomright-active">
+    <rect x="0" y="88" width="20" height="2" fill="#242320"/>
+    <line x1="19.5" y1="88" x2="19.5" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+    <line x1="0" y1="89.5" x2="20" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+
+  <!-- Inactif : Top & Bordures -->
+  <g id="decoration-top-inactive">
+    <rect x="20" y="0" width="80" height="28" fill="url(#title_grad_inact)"/>
+    <line x1="20" y1="0" x2="100" y2="0" stroke="#484742" stroke-width="1"/>
+    <line x1="20" y1="27.5" x2="100" y2="27.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-topleft-inactive">
+    <path d="M 20 28 L 0 28 L 0 0 Q 0 0 0 0 L 20 0 Z" fill="url(#title_grad_inact)"/>
+    <path d="M 0 28 L 0 0 Q 0 0 0 0 L 20 0" fill="none" stroke="#484742" stroke-width="1"/>
+    <line x1="0" y1="27.5" x2="20" y2="27.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-topright-inactive">
+    <path d="M 0 28 L 20 28 L 20 0 Q 20 0 20 0 L 0 0 Z" fill="url(#title_grad_inact)"/>
+    <path d="M 0 0 L 20 0 Q 20 0 20 0 L 20 28" fill="none" stroke="#484742" stroke-width="1"/>
+    <line x1="0" y1="27.5" x2="20" y2="27.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-left-inactive">
+    <rect x="0" y="28" width="2" height="60" fill="#242320"/>
+    <line x1="0" y1="28" x2="0" y2="88" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-right-inactive">
+    <rect x="18" y="28" width="2" height="60" fill="#242320"/>
+    <line x1="19.5" y1="28" x2="19.5" y2="88" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-bottom-inactive">
+    <rect x="20" y="88" width="80" height="2" fill="#242320"/>
+    <line x1="20" y1="89.5" x2="100" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-bottomleft-inactive">
+    <rect x="0" y="88" width="20" height="2" fill="#242320"/>
+    <line x1="0" y1="88" x2="0" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+    <line x1="0" y1="89.5" x2="20" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+  <g id="decoration-bottomright-inactive">
+    <rect x="0" y="88" width="20" height="2" fill="#242320"/>
+    <line x1="19.5" y1="88" x2="19.5" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+    <line x1="0" y1="89.5" x2="20" y2="89.5" stroke="#1d1c1a" stroke-width="1"/>
+  </g>
+</svg>

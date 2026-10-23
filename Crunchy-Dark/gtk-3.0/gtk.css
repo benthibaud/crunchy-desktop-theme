@@ -954,8 +954,25 @@ headerbar,
   headerbar .subtitle,
   .titlebar:not(headerbar) .subtitle {
     font-size: smaller;
+    color: alpha(#ffffff, 0.7);
     padding-left: 12px;
     padding-right: 12px; }
+  headerbar button:not(.titlebutton),
+  .titlebar:not(headerbar) button:not(.titlebutton) {
+    background-color: #38383e;
+    color: #ffffff;
+    border: 1px solid @wm_border;
+    border-radius: 2px;
+    padding: 4px 8px; }
+    headerbar button:not(.titlebutton):hover,
+    .titlebar:not(headerbar) button:not(.titlebutton):hover {
+      background-color: #484850;
+      color: #ffffff; }
+    headerbar button:not(.titlebutton) image,
+    .titlebar:not(headerbar) button:not(.titlebutton) image,
+    headerbar button:not(.titlebutton) label,
+    .titlebar:not(headerbar) button:not(.titlebutton) label {
+      color: #ffffff; }
   headerbar.selection-mode,
   .selection-mode.titlebar:not(headerbar) {
     color: #FFFFFF;
@@ -5073,6 +5090,25 @@ tab label {
   color: inherit;
   font-weight: inherit;
 }
+
+/* ======================================================================
+   DÉGRADÉ HORIZONTAL VERT CRUNCHY SUR LES MENUS
+   ====================================================================== */
+menubar > menuitem:hover,
+menu menuitem:hover,
+menu menuitem:selected,
+.menu menuitem:hover,
+.menu menuitem:selected,
+popover.menu modelbutton:hover,
+popover modelbutton:hover,
+popover button:hover,
+treeview.view:selected,
+treeview.view:selected:focus {
+    background-color: #35a854;
+    background-image: linear-gradient(to right, #206e33 0%, #35ad54 55%, #48dc6f 100%);
+    color: #ffffff;
+}
+
 /* =========================================================================
    OPTIMISATION ONGLETS & CADRE (BRAVE, CHROMIUM, FIREFOX, GTK) - CONTRASTE FORT
    ========================================================================= */
@@ -5147,3 +5183,79 @@ toolbar.primary-toolbar,
   background-color: #2a2a30;
   color: #ffffff;
 }
+
+/* =========================================================================
+   THUNAR & BARRES D'OUTILS D'EN-TÊTE SOMBRE (CRUNCHY-LIGHT)
+   ========================================================================= */
+.thunar toolbar,
+.thunar .inline-toolbar,
+.thunar-window toolbar,
+toolbar.primary-toolbar,
+.primary-toolbar {
+  background-color: #222226;
+  color: #ffffff;
+  border-bottom: 1px solid #18181b;
+}
+
+.thunar toolbar button,
+.thunar toolbar toolbutton > button,
+.thunar-window toolbar button,
+toolbar.primary-toolbar button,
+.primary-toolbar button {
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.thunar toolbar button:hover,
+.thunar toolbar toolbutton > button:hover,
+.thunar-window toolbar button:hover,
+toolbar.primary-toolbar button:hover,
+.primary-toolbar button:hover {
+  background-color: #383733;
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+.thunar toolbar button:active,
+.thunar toolbar button:checked,
+.thunar toolbar toolbutton > button:active,
+.thunar toolbar toolbutton > button:checked {
+  background-color: #1a1916;
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+.thunar toolbar button:disabled,
+.thunar toolbar toolbutton > button:disabled,
+.thunar-window toolbar button:disabled,
+toolbar.primary-toolbar button:disabled,
+.primary-toolbar button:disabled {
+  color: rgba(255, 255, 255, 0.35);
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.thunar toolbar button image,
+.thunar toolbar toolbutton > button image,
+.thunar-window toolbar button image,
+toolbar.primary-toolbar button image,
+.primary-toolbar button image,
+.thunar toolbar image,
+.thunar-window toolbar image {
+  color: #ffffff;
+  -gtk-icon-style: symbolic;
+  -gtk-icon-shadow: none;
+}
+
+.thunar toolbar button:disabled image,
+.thunar toolbar toolbutton > button:disabled image,
+.thunar-window toolbar button:disabled image,
+toolbar.primary-toolbar button:disabled image,
+.primary-toolbar button:disabled image {
+  opacity: 0.35;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+

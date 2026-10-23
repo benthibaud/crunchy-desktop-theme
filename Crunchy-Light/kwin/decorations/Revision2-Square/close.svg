@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20">
+  <defs>
+    
+        <linearGradient id="grad_aurorae_close_active_sq_active-center" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#67a867"/>
+          <stop offset="100%" stop-color="#478747"/>
+        </linearGradient>
+
+        <linearGradient id="grad_aurorae_close_prelight_sq_hover-center" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a7cda5"/>
+          <stop offset="100%" stop-color="#7caa78"/>
+        </linearGradient>
+
+        <linearGradient id="grad_aurorae_close_pressed_sq_pressed-center" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3e753b"/>
+          <stop offset="100%" stop-color="#2d572b"/>
+        </linearGradient>
+
+        <linearGradient id="grad_aurorae_close_inactive_sq_inactive-center" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#546653"/>
+          <stop offset="100%" stop-color="#3c4a3b"/>
+        </linearGradient>
+
+        <linearGradient id="grad_aurorae_close_inactive_sq_deactivated-center" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#546653"/>
+          <stop offset="100%" stop-color="#3c4a3b"/>
+        </linearGradient>
+  </defs>
+  
+        <g id="active-center">
+          <rect x="2.5" y="2.5" width="15" height="15" rx="5" ry="5" fill="url(#grad_aurorae_close_active_sq_active-center)" stroke="#22211e" stroke-width="0.8"/>
+          <path d="M 7.2 7.2 L 12.8 12.8 M 12.8 7.2 L 7.2 12.8" stroke="#000000" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+
+        <g id="hover-center">
+          <rect x="22.5" y="2.5" width="15" height="15" rx="5" ry="5" fill="url(#grad_aurorae_close_prelight_sq_hover-center)" stroke="#22211e" stroke-width="0.8"/>
+          <path d="M 27.2 7.2 L 32.8 12.8 M 32.8 7.2 L 27.2 12.8" stroke="#000000" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+
+        <g id="pressed-center">
+          <rect x="42.5" y="2.5" width="15" height="15" rx="5" ry="5" fill="url(#grad_aurorae_close_pressed_sq_pressed-center)" stroke="#141412" stroke-width="0.8"/>
+          <path d="M 47.2 7.2 L 52.8 12.8 M 52.8 7.2 L 47.2 12.8" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+
+        <g id="inactive-center">
+          <rect x="62.5" y="2.5" width="15" height="15" rx="5" ry="5" fill="url(#grad_aurorae_close_inactive_sq_inactive-center)" stroke="#201f1d" stroke-width="0.8"/>
+          <path d="M 67.2 7.2 L 72.8 12.8 M 72.8 7.2 L 67.2 12.8" stroke="#181715" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+
+        <g id="deactivated-center">
+          <rect x="82.5" y="2.5" width="15" height="15" rx="5" ry="5" fill="url(#grad_aurorae_close_inactive_sq_deactivated-center)" stroke="#201f1d" stroke-width="0.8"/>
+          <path d="M 87.2 7.2 L 92.8 12.8 M 92.8 7.2 L 87.2 12.8" stroke="#181715" stroke-width="1.6" stroke-linecap="round"/>
+        </g>
+</svg>

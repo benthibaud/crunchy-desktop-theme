@@ -1,0 +1,21 @@
+# Aurorae Theme - Revision2-Square
+[General]
+TitleAlignment=Center
+TitleBorder=2
+TitleEdgeTop=2
+TitleEdgeBottom=2
+TitleEdgeLeft=8
+TitleEdgeRight=8
+ButtonWidth=20
+ButtonHeight=20
+ButtonSpacing=3
+ButtonMarginTop=4
+PaddingTop=0
+PaddingBottom=0
+PaddingLeft=0
+PaddingRight=0
+Shadow=true
+ActiveShadowColor=0,0,0,120
+InactiveShadowColor=0,0,0,80
+ActiveShadowSize=12
+InactiveShadowSize=8
