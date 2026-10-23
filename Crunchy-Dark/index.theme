@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Crunchy-Dark
+Comment=Crunchy Organic Low-tech Dark Theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Crunchy-Dark
+MetacityTheme=Crunchy-Dark
+IconTheme=Papirus-Dark
+CursorTheme=default
+ButtonLayout=close,minimize,maximize:menu

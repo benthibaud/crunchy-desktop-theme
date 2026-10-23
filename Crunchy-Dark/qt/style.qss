@@ -1,0 +1,37 @@
+
+/* VLC Qt Stylesheet - Crunchy Dark */
+QMenuBar {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #242320, stop:0.55 #393833, stop:1 #4d4c46);
+    color: #ffffff;
+    border-bottom: 1px solid #18181b;
+}
+QMenuBar::item {
+    background: transparent;
+    color: #ffffff;
+    padding: 4px 8px;
+}
+QMenuBar::item:selected {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #206e33, stop:0.55 #35ad54, stop:1 #48dc6f);
+    color: #ffffff;
+}
+QMenu {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #22211e, stop:0.55 #363530, stop:1 #484741);
+    color: #ffffff;
+    border: 1px solid #18181b;
+    padding: 4px;
+}
+QMenu::item {
+    background: transparent;
+    color: #ffffff;
+    padding: 4px 24px 4px 20px;
+}
+QMenu::item:selected {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #206e33, stop:0.55 #35ad54, stop:1 #48dc6f);
+    color: #ffffff;
+    border-radius: 2px;
+}
+QMenu::separator {
+    height: 1px;
+    background: #3c3b38;
+    margin: 4px 0;
+}

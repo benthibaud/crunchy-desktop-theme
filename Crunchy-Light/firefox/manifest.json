@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Crunchy Light",
+  "version": "1.0",
+  "description": "Theme officiel Crunchy Light pour Firefox",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "crunchy-light@vignette.eco"
+    }
+  },
+  "theme": {
+    "colors": {
+      "frame": "#242320",
+      "frame_inactive": "#1e1d1a",
+      "tab_background_text": "#ffffff",
+      "tab_selected": "#ffffff",
+      "tab_text": "#202023",
+      "tab_line": "#35A854",
+      "tab_loading": "#35A854",
+      "toolbar": "#ffffff",
+      "toolbar_text": "#202023",
+      "toolbar_field": "#f2f2f5",
+      "toolbar_field_text": "#202023",
+      "toolbar_field_border": "#c8c8ce",
+      "toolbar_field_focus": "#ffffff",
+      "toolbar_top_separator": "#1e1d1a",
+      "toolbar_bottom_separator": "#d5d5db",
+      "popup": "#22211e",
+      "popup_text": "#ffffff",
+      "popup_highlight": "#35A854",
+      "popup_highlight_text": "#ffffff",
+      "sidebar": "#ffffff",
+      "sidebar_text": "#202023",
+      "sidebar_highlight": "#35A854",
+      "sidebar_highlight_text": "#ffffff",
+      "sidebar_border": "#d5d5db"
+    }
+  }
+}

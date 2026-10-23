@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Crunchy-Light
+Comment=Crunchy Organic Low-tech Light Theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Crunchy-Light
+MetacityTheme=Crunchy-Light
+IconTheme=Papirus
+CursorTheme=default
+ButtonLayout=close,minimize,maximize:menu

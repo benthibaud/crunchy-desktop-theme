@@ -1,0 +1,53 @@
+## Some additional file manager theming
+
+style "sidepane" {
+	base[NORMAL]        = mix (0.95, @bg_color, shade (0.99, @selected_bg_color))
+	bg[NORMAL]          = mix (0.50, @bg_color, shade (1.10, @selected_bg_color))
+	GtkPaned::handle-size       = 0
+	GtkWidget::focus-line-width = 1
+	
+	engine "murrine" {
+		contrast        = 0.3
+		gradient_shades = {1.05,1.0,0.98,0.95}
+	}
+}
+
+style "filemanager-notebook" = "notebook_button" {
+	xthickness = 1
+	ythickness = 1
+}
+
+## for nautilus
+widget_class "*NautilusSidePane.*"                          style "sidepane"
+widget_class "*Nautilus*Toolbar*"                           style "toolbar"
+widget_class "*Nautilus*Tool*GtkButton"                     style "toolbar"
+widget_class "*Nautilus*Tool*.*.*"                          style "toolbar"
+widget_class "*Nautilus*Tool*GtkToggleButton"               style "toolbar"
+widget_class "*Nautilus*Tool*.<GtkComboBox>.<GtkCellView>"  style "dark-combobox-text"
+
+## for Caja (Linux Mint)
+widget_class "*CajaSidePane.*"                              style "sidepane"
+widget_class "*Caja*Toolbar*"                               style "toolbar"
+widget_class "*Caja*Tool*GtkButton"                         style "toolbar"
+widget_class "*Caja*Tool*.*.*"                              style "toolbar"
+widget_class "*Caja*Tool*GtkToggleButton"                   style "toolbar"
+widget_class "*Caja*Tool*.<GtkComboBox>.<GtkCellView>"      style "dark-combobox-text"
+
+## for thunar
+widget_class "*ThunarShortcutsView*"        style "sidepane"
+widget_class "*ThunarTreeView*"             style "sidepane"
+widget_class "*ThunarLocationEntry*"        style "entry"
+widget_class "*ThunarStatusbar*"            style "default"
+widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView*"                    style "sidepane"
+widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.<GtkTreeView>.<GtkButton>"   style "default"
+
+## for PcManFm / SpaceFM / zzzFM (antiX)
+widget_class "*FmMainWin*GtkToolbar*" style "toolbar"
+widget_class "*FmSidePane*"           style "sidepane"
+widget_class "*FmPlacesView*"         style "sidepane"
+widget "*FmMainWin*FmTabPage"         style "filemanager-notebook"
+widget "*FmMainWin*GtkHPaned"         style "sidepane"
+widget "*FmMainWin*GtkNotebook"       style "filemanager-notebook"
+
+widget_class "*<GtkToolbar>*<GtkEntry>*" style "default"
+widget_class "*<GtkMenu>*<GtkEntry>*"    style "default"

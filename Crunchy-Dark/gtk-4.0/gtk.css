@@ -1,0 +1,198 @@
+/* =============================================================================
+   REVISION2-DARK - GTK4 & LIBADWAITA COMPATIBILITY STYLESHEET
+   =============================================================================
+   Variables centralisées et sélecteurs GTK4
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   1. VARIABLES OFFICIELLES GTK4 / LIBADWAITA & SYSTÈME
+   ----------------------------------------------------------------------------- */
+@define-color accent_color            #35A854;
+@define-color accent_bg_color         #35A854;
+@define-color accent_fg_color         #ffffff;
+
+@define-color window_bg_color         #2e2e33;
+@define-color window_fg_color         #ffffff;
+@define-color view_bg_color           #242321;
+@define-color view_fg_color           #dadada;
+@define-color headerbar_bg_color      #222226;
+@define-color headerbar_fg_color      #ffffff;
+@define-color headerbar_border_color  #18181b;
+@define-color card_bg_color           #2e2e33;
+@define-color card_fg_color           #dadada;
+@define-color popover_bg_color        #2b2a26;
+@define-color popover_fg_color        #ffffff;
+
+@define-color theme_base_color        #242321;
+@define-color base_color              #242321;
+@define-color theme_bg_color          #2e2e33;
+@define-color bg_color                #2e2e33;
+@define-color theme_fg_color          #ffffff;
+@define-color fg_color                #ffffff;
+@define-color theme_text_color        #dadada;
+@define-color text_color              #dadada;
+
+@define-color theme_selected_bg_color #35A854;
+@define-color selected_bg_color       #35A854;
+@define-color theme_selected_fg_color #ffffff;
+@define-color selected_fg_color       #ffffff;
+@define-color theme_unfocused_selected_bg_color #2a7a40;
+@define-color theme_unfocused_selected_fg_color #ffffff;
+
+@define-color borders                 #202023;
+@define-color unfocused_borders       #202023;
+@define-color link_color              #35A854;
+@define-color link_visited_color      alpha(@link_color, 0.75);
+
+@define-color warning_color           #F27835;
+@define-color error_color             #FC4138;
+@define-color success_color           #73D216;
+
+/* Menus & Dégradés */
+@define-color menubar_bg_left         #242320;
+@define-color menubar_bg_mid          #393833;
+@define-color menubar_bg_right        #4d4c46;
+@define-color menubar_fg              #ffffff;
+@define-color menu_bg_left            #22211e;
+@define-color menu_bg_mid             #363530;
+@define-color menu_bg_right           #484741;
+@define-color menu_fg                 #ffffff;
+@define-color menu_hover_left         #206e33;
+@define-color menu_hover_mid          #35ad54;
+@define-color menu_hover_right        #48dc6f;
+@define-color menu_hover_fg           #ffffff;
+
+/* -----------------------------------------------------------------------------
+   2. RÈGLES DE RENDU GTK4
+   ----------------------------------------------------------------------------- */
+window {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+}
+
+headerbar {
+  background-color: @headerbar_bg_color;
+  color: @headerbar_fg_color;
+  border-bottom: 1px solid @headerbar_border_color;
+  min-height: 46px;
+  padding: 0 6px;
+}
+
+headerbar windowcontrols button {
+  min-width: 20px;
+  min-height: 20px;
+  padding: 4px 5px;
+  margin: 2px;
+  border: none;
+  background-color: transparent;
+}
+
+headerbar windowcontrols button.close {
+  background-image: url("assets/close-active.svg");
+  background-size: 17px 17px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+headerbar windowcontrols button.close:hover {
+  background-image: url("assets/close-hover.svg");
+}
+
+headerbar windowcontrols button.maximize {
+  background-image: url("assets/maximize-active.svg");
+  background-size: 17px 17px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+headerbar windowcontrols button.minimize {
+  background-image: url("assets/hide-active.svg");
+  background-size: 17px 17px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+listview, columnview, treeview, .view {
+  background-color: @view_bg_color;
+  color: @view_fg_color;
+}
+
+listview > row:selected,
+columnview > row:selected,
+.view:selected,
+row:selected {
+  background-color: @selected_bg_color;
+  color: @selected_fg_color;
+}
+
+popover, popover.background, menu {
+  background-image: linear-gradient(to right, @menu_bg_left 0%, @menu_bg_mid 55%, @menu_bg_right 100%);
+  background-color: @menu_bg_left;
+  color: @menu_fg;
+  border: 1px solid #1a1916;
+  border-radius: 2px;
+  box-shadow: 0 4px 14px alpha(#000000, 0.55);
+}
+
+popover modelbutton:hover,
+popover modelbutton:selected,
+popover.menu modelbutton:hover,
+popover.menu modelbutton:selected,
+popover menuitem:hover,
+popover menuitem:selected,
+menu menuitem:hover,
+menu menuitem:selected,
+menuitem:hover,
+menuitem:selected,
+modelbutton:hover,
+modelbutton:selected,
+dropdown popover listview row:selected,
+dropdown popover listview row:hover {
+  background-color: @menu_hover_left;
+  background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
+  color: @menu_hover_fg;
+}
+
+entry {
+  background-color: @theme_base_color;
+  color: @theme_text_color;
+  border: 1px solid @borders;
+  border-radius: 3px;
+  padding: 5px 8px;
+}
+
+entry:focus {
+  border-color: @accent_color;
+}
+
+button {
+  background-color: #38383e;
+  color: @window_fg_color;
+  border: 1px solid @borders;
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  background-color: #484850;
+}
+
+button:active, button:checked {
+  background-color: @selected_bg_color;
+  color: @selected_fg_color;
+}
+
+switch {
+  background-color: #33322E;
+  border-radius: 12px;
+  border: 1px solid @borders;
+}
+
+switch:checked {
+  background-color: @accent_color;
+}
+
+scale highlight {
+  background-color: @accent_color;
+  border-radius: 2px;
+}

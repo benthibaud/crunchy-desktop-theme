@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Crunchy Dark",
+  "version": "1.0",
+  "description": "Theme officiel Crunchy Dark pour Firefox",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "crunchy-dark@vignette.eco"
+    }
+  },
+  "theme": {
+    "colors": {
+      "frame": "#161619",
+      "frame_inactive": "#121214",
+      "tab_background_text": "#c0c0c6",
+      "tab_selected": "#2e2e33",
+      "tab_text": "#ffffff",
+      "tab_line": "#35A854",
+      "tab_loading": "#35A854",
+      "toolbar": "#2e2e33",
+      "toolbar_text": "#ffffff",
+      "toolbar_field": "#222226",
+      "toolbar_field_text": "#ffffff",
+      "toolbar_field_border": "#18181b",
+      "toolbar_field_focus": "#28282e",
+      "toolbar_top_separator": "#101012",
+      "toolbar_bottom_separator": "#18181b",
+      "popup": "#22211e",
+      "popup_text": "#ffffff",
+      "popup_highlight": "#35A854",
+      "popup_highlight_text": "#ffffff",
+      "sidebar": "#242321",
+      "sidebar_text": "#dadada",
+      "sidebar_highlight": "#35A854",
+      "sidebar_highlight_text": "#ffffff",
+      "sidebar_border": "#18181b"
+    }
+  }
+}

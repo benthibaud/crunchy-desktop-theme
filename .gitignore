@@ -1,0 +1,7 @@
+# Fichiers temporaires et sauvegardes
+*.log
+*.tmp
+*~
+*.swp
+.DS_Store
+Thumbs.db
