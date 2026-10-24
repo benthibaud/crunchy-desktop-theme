@@ -73,9 +73,9 @@
 @define-color menu_bg_mid             #363530; /* Dégradé intermédiaire (~55%) */
 @define-color menu_bg_right           #484741; /* Dégradé lumineux (droite) */
 @define-color menu_fg                 #ffffff;
-@define-color menu_disabled_fg        alpha(#ffffff, 0.45);
+@define-color menu_disabled_fg        alpha(#ffffff, 0.55);
 @define-color menubar_fg              #ffffff;
-@define-color menubar_disabled_fg     alpha(#ffffff, 0.45);
+@define-color menubar_disabled_fg     alpha(#ffffff, 0.55);
 
 @define-color toolbar_dark_bg         #222226;
 @define-color toolbar_dark_fg         #ffffff;
@@ -1894,120 +1894,27 @@ notebook {
         padding-bottom: 0; }
   notebook > stack:not(:only-child) {
     background-color: #2E2E33; }
-  notebook > header {
-    padding: 2px;
-    background-color: #2e2e33;
-    /* button in headers */ }
-    notebook > header.top {
-      box-shadow: inset 0 -1px #202023; }
-    notebook > header.bottom {
-      box-shadow: inset 0 1px #202023; }
-    notebook > header.right {
-      box-shadow: inset 1px 0 #202023; }
-    notebook > header.left {
-      box-shadow: inset -1px 0 #202023; }
-    notebook > header.top {
-      padding-bottom: 0; }
-      notebook > header.top > tabs > tab {
-        padding: 2px 10px;
-        min-width: 20px;
-        min-height: 20px;
-        outline-offset: -4px;
-        border: 1px solid transparent;
-        border-bottom: none;
-        border-radius: 1px 1px 0 0; }
-        notebook > header.top > tabs > tab + tab {
-          margin-left: -1px; }
-    notebook > header.bottom {
-      padding-top: 0; }
-      notebook > header.bottom > tabs > tab {
-        padding: 2px 10px;
-        min-width: 20px;
-        min-height: 20px;
-        outline-offset: -4px;
-        border: 1px solid transparent;
-        border-top: none;
-        border-radius: 0 0 1px 1px; }
-        notebook > header.bottom > tabs > tab + tab {
-          margin-left: -1px; }
-    notebook > header.right {
-      padding-left: 0; }
-      notebook > header.right > tabs > tab {
-        padding: 2px 10px;
-        min-width: 20px;
-        min-height: 20px;
-        outline-offset: -4px;
-        border: 1px solid transparent;
-        border-left: none;
-        border-radius: 0 1px 1px 0; }
-        notebook > header.right > tabs > tab + tab {
-          margin-top: -1px; }
-    notebook > header.left {
-      padding-right: 0; }
-      notebook > header.left > tabs > tab {
-        padding: 2px 10px;
-        min-width: 20px;
-        min-height: 20px;
-        outline-offset: -4px;
-        border: 1px solid transparent;
-        border-right: none;
-        border-radius: 1px 0 0 1px; }
-        notebook > header.left > tabs > tab + tab {
-          margin-top: -1px; }
-    notebook > header.top > tabs > arrow.up, notebook > header.bottom > tabs > arrow.up {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
-      notebook > header.top > tabs > arrow.up:last-child, notebook > header.bottom > tabs > arrow.up:last-child {
-        margin-left: 2px; }
-    notebook > header.top > tabs > arrow.down, notebook > header.bottom > tabs > arrow.down {
-      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
-      notebook > header.top > tabs > arrow.down:first-child, notebook > header.bottom > tabs > arrow.down:first-child {
-        margin-right: 2px; }
-    notebook > header.left > tabs > arrow.up, notebook > header.right > tabs > arrow.up {
-      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
-      notebook > header.left > tabs > arrow.up:last-child, notebook > header.right > tabs > arrow.up:last-child {
-        margin-top: 2px; }
-    notebook > header.left > tabs > arrow.down, notebook > header.right > tabs > arrow.down {
-      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
-      notebook > header.left > tabs > arrow.down:first-child, notebook > header.right > tabs > arrow.down:first-child {
-        margin-bottom: 2px; }
-    notebook > header > tabs > arrow {
-      color: alpha(@theme_fg_color, 0.42); }
-      notebook > header > tabs > arrow:hover {
-        color: alpha(@theme_fg_color, 0.645); }
-      notebook > header > tabs > arrow:active {
-        color: alpha(@theme_fg_color, 0.87); }
-      notebook > header > tabs > arrow:disabled {
-        color: alpha(@theme_fg_color, 0.12); }
-    notebook > header.top > tabs > tab:hover:not(:checked) {
-      box-shadow: inset 0 -1px #202023; }
-    notebook > header.bottom > tabs > tab:hover:not(:checked) {
-      box-shadow: inset 0 1px #202023; }
-    notebook > header.left > tabs > tab:hover:not(:checked) {
-      box-shadow: inset -1px 0 #202023; }
-    notebook > header.right > tabs > tab:hover:not(:checked) {
-      box-shadow: inset 1px 0 #202023; }
-    notebook > header > tabs > tab {
-      color: alpha(@theme_fg_color, 0.42);
-      background-color: rgba(46, 46, 51, 0); }
-      notebook > header > tabs > tab:hover:not(:checked) {
-        color: alpha(@theme_fg_color, 0.645);
-        background-color: rgba(46, 46, 51, 0.5);
-        border-color: #202023; }
-      notebook > header > tabs > tab:checked {
-        color: alpha(@theme_fg_color, 0.87);
-        background-color: #2E2E33;
-        border-color: #202023; }
-      notebook > header > tabs > tab button.flat {
-        min-height: 22px;
-        min-width: 16px;
-        padding: 0;
-        color: rgba(169, 169, 171, 0.9155); }
-        notebook > header > tabs > tab button.flat:hover {
-          color: #ff4d4d; }
-        notebook > header > tabs > tab button.flat:active, notebook > header > tabs > tab button.flat:active:hover {
-          color: @selected_bg_color; }
-    notebook > header button.flat {
-      padding: 2px; }
+notebook > header > tabs > arrow {
+  color: alpha(@theme_fg_color, 0.55); }
+  notebook > header > tabs > arrow:hover {
+    color: alpha(@theme_fg_color, 0.85); }
+  notebook > header > tabs > arrow:active {
+    color: @selected_bg_color; }
+  notebook > header > tabs > arrow:disabled {
+    color: alpha(@theme_fg_color, 0.2); }
+
+notebook > header > tabs > tab button.flat {
+  min-height: 22px;
+  min-width: 16px;
+  padding: 0;
+  color: alpha(@theme_fg_color, 0.7); }
+  notebook > header > tabs > tab button.flat:hover {
+    color: #ff4d4d; }
+  notebook > header > tabs > tab button.flat:active,
+  notebook > header > tabs > tab button.flat:active:hover {
+    color: @selected_bg_color; }
+notebook > header button.flat {
+  padding: 2px; }
 
 scrollbar {
   background-color: #2c2c30;
@@ -4963,6 +4870,37 @@ tab label {
   font-weight: inherit;
 }
 
+/* =========================================================================
+   CADRE DE FENÊTRE & ONGLETS DANS LES EN-TÊTES (BRAVE, CHROMIUM, FIREFOX CSD)
+   ========================================================================= */
+headerbar tab,
+headerbar tab label,
+headerbar notebook > header > tabs > tab,
+headerbar notebook > header > tabs > tab label,
+.titlebar tab,
+.titlebar tab label,
+.titlebar notebook > header > tabs > tab,
+.titlebar notebook > header > tabs > tab label,
+window.background.titlebar tab,
+window.background.titlebar tab label {
+  color: #d0d0d8;
+}
 
+headerbar tab:hover,
+headerbar tab:hover label,
+.titlebar tab:hover,
+.titlebar tab:hover label {
+  color: #ffffff;
+}
 
-
+headerbar tab:checked,
+headerbar tab:checked label,
+headerbar tab.active-page,
+headerbar tab.active-page label,
+.titlebar tab:checked,
+.titlebar tab:checked label,
+.titlebar tab.active-page,
+.titlebar tab.active-page label {
+  color: #ffffff;
+  background-color: #38373f;
+}
