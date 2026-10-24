@@ -115,3 +115,22 @@ fg[INSENSITIVE] = shade (0.55, @fg_color_dark)
 2. **Pas d'Assets Inutilisés :**
    - Les dossiers `assets/` ne doivent contenir que des fichiers SVG/PNG activement référencés par les feuilles de style CSS.
    - GTK4 ne contient que les 6 SVG vectoriels de contrôles de fenêtre (`close`, `maximize`, `hide` et leurs états `:hover`).
+
+---
+
+## 5. Déploiement & Cycle de Vie (`install.sh` / `uninstall.sh`)
+
+### A. Détection Dynamique de l'Arborescence
+Les scripts `install.sh` et `uninstall.sh` déterminent automatiquement le répertoire racine (`ROOT_DIR`), qu'ils soient exécutés depuis la racine du dépôt ou depuis un sous-dossier (`Crunchy-Dark/`, `Crunchy-Light/`).
+
+### B. Intégration Non-Destructive de GIMP 2.10
+- GIMP 2.10 gère son interface graphique via GTK2, mais force par défaut un thème interne (`Dark`) codé en dur avec le moteur pixmap dans `/usr/share/gimp/2.0/themes/Dark/gtkrc`, ce qui ignore le thème du bureau.
+- **Délégation au Thème Système :** L'instruction `(theme "System")` dans `~/.config/GIMP/2.10/gimprc` et `themerc` délègue intégralement le rendu au thème GTK2 du système en cours. Dès lors, GIMP s'adapte automatiquement à tout thème actif, actuel ou futur.
+- **Préservation Absolue des Données Utilisateur :**
+  - Les raccourcis clavier personnalisés sont stockés séparément par GIMP dans `menurc`. Ce fichier n'est jamais altéré.
+  - Avant toute modification de `gimprc`, une sauvegarde préventive `gimprc.crunchy-backup` est générée.
+  - La modification est ciblée via expression régulière (`sed`) pour préserver toutes les options préexistantes de l'utilisateur.
+- **Restauration Intégrale (`uninstall.sh`) :**
+  - La désinstallation réintègre le fichier `gimprc.crunchy-backup` d'origine s'il existe, ou rétablit proprement la valeur `(theme "Dark")`.
+  - Aucune trace orpheline n'est conservée.
+
