@@ -919,7 +919,7 @@ toolbar {
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-image: linear-gradient(to bottom, #222226, #050506) 1 0 1 0; }
+  border-bottom: 1px solid @toolbar_dark_border; }
 
 .inline-toolbar {
   background-color: #27272b;
@@ -1175,44 +1175,88 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
       color: #FC4138; }
 
 
-.primary-toolbar button, headerbar button {
-  color: alpha(@theme_fg_color, 0.87);
-  outline-color: alpha(@theme_fg_color, 0.17);
+.primary-toolbar button,
+.primary-toolbar toolbutton > button,
+headerbar button,
+toolbar button,
+toolbar toolbutton > button {
+  color: @toolbar_dark_fg;
+  outline-color: alpha(@toolbar_dark_fg, 0.17);
   outline-offset: -3px;
-  background-color: rgba(34, 34, 38, 0);
-  border-color: rgba(34, 34, 38, 0); }
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 4px 6px;
+  margin: 1px 2px; }
   
-  .primary-toolbar button:backdrop, headerbar button:backdrop {
+  .primary-toolbar button:backdrop,
+  headerbar button:backdrop,
+  toolbar button:backdrop {
     opacity: 0.7; }
   
-  .primary-toolbar button:hover, headerbar button:hover {
-    color: alpha(@theme_fg_color, 0.87);
-    outline-color: alpha(@theme_fg_color, 0.17);
-    border-color: rgba(5, 5, 6, 0.4);
-    background-color: rgba(87, 87, 97, 0.4); }
+  .primary-toolbar button:hover,
+  .primary-toolbar toolbutton > button:hover,
+  headerbar button:hover,
+  toolbar button:hover,
+  toolbar toolbutton > button:hover {
+    color: @toolbar_dark_fg;
+    outline-color: alpha(@toolbar_dark_fg, 0.17);
+    border-color: @toolbar_dark_border;
+    background-color: @toolbar_dark_hover_bg; }
   
-  .primary-toolbar button:active, headerbar button:active,
-  .primary-toolbar button:checked, headerbar button:checked {
-    color: alpha(@theme_fg_color, 0.87);
-    outline-color: alpha(@theme_fg_color, 0.17);
-    border-color: rgba(5, 5, 6, 0.4);
-    background-color: rgba(0, 0, 0, 0.15);
-    background-clip: padding-box; }
+  .primary-toolbar button:active,
+  .primary-toolbar button:checked,
+  .primary-toolbar toolbutton > button:active,
+  .primary-toolbar toolbutton > button:checked,
+  headerbar button:active,
+  headerbar button:checked,
+  toolbar button:active,
+  toolbar button:checked,
+  toolbar toolbutton > button:active,
+  toolbar toolbutton > button:checked {
+    color: #ffffff;
+    background-color: #35A854;
+    border: 1px solid #206e33;
+    border-radius: 2px; }
   
-  .primary-toolbar button:disabled, headerbar button:disabled, toolbar button:disabled {
+  .primary-toolbar button:disabled,
+  .primary-toolbar toolbutton > button:disabled,
+  headerbar button:disabled,
+  toolbar button:disabled,
+  toolbar toolbutton > button:disabled {
     color: @toolbar_dark_disabled_fg;
     background-color: transparent;
     border-color: transparent; }
     
-    .primary-toolbar button:disabled label, headerbar button:disabled label, toolbar button:disabled label {
+    .primary-toolbar button:disabled label,
+    headerbar button:disabled label,
+    toolbar button:disabled label {
       color: @toolbar_dark_disabled_fg;
       opacity: 0.5; }
-  
-  .primary-toolbar button:disabled:active, headerbar button:disabled:active,
-  .primary-toolbar button:disabled:checked, headerbar button:disabled:checked {
-    color: alpha(@theme_fg_color, 0.67);
-    border-color: rgba(8, 8, 8, 0.85);
-    background-color: rgba(0, 0, 0, 0.1); }
+
+  .primary-toolbar button image,
+  .primary-toolbar toolbutton > button image,
+  headerbar button image,
+  toolbar button image,
+  toolbar toolbutton > button image {
+    color: @toolbar_dark_fg; }
+
+/* Icônes inactives dans les barres d'outils sombres */
+toolbar *:disabled,
+.primary-toolbar *:disabled {
+  -gtk-icon-effect: highlight;
+}
+
+toolbar button:disabled image,
+toolbar toolbutton > button:disabled image,
+toolbar image:disabled,
+toolbar:disabled image,
+.primary-toolbar button:disabled image,
+.primary-toolbar toolbutton > button:disabled image,
+.primary-toolbar image:disabled {
+  -gtk-icon-effect: highlight;
+  opacity: 0.75;
+}
 
 .primary-toolbar toolbar.selection-mode button,
 .selection-mode.primary-toolbar button, .primary-toolbar .selection-mode.inline-toolbar button, headerbar.selection-mode button {
@@ -4739,106 +4783,13 @@ headerbar stackswitcher > button:active:hover label {
 
 
 /* =========================================================================
-   STYLE NEMO (BARRE DE NAVIGATION, PATHBAR, BOUTONS DE VUES, RECHERCHE)
+   RECHERCHE & SAISIE D'EMPLACEMENT GESTIONNAIRES DE FICHIERS (NEMO)
    ========================================================================= */
-.nemo-window .primary-toolbar,
-.nemo-window toolbar.primary-toolbar,
-.nemo-window .toolbar {
-  background-color: #22211e;
-  color: #ffffff;
-  border-bottom: 1px solid #18181b;
-  padding: 4px 6px;
-}
-
-.nemo-window .primary-toolbar button,
-.nemo-window toolbar.primary-toolbar button,
-.nemo-window .toolbar button {
-  color: #ffffff;
-  background-color: #34332f;
-  border: 1px solid #18181b;
-  border-radius: 2px;
-  padding: 4px 8px;
-  margin: 1px 2px;
-}
-
-.nemo-window .primary-toolbar button:hover,
-.nemo-window toolbar.primary-toolbar button:hover,
-.nemo-window .toolbar button:hover {
-  background-color: #44433e;
-  color: #ffffff;
-}
-
-.nemo-window .primary-toolbar button:checked,
-.nemo-window .primary-toolbar button:active,
-.nemo-window toolbar.primary-toolbar button:checked,
-.nemo-window toolbar.primary-toolbar button:active {
-  background-color: #35A854;
-  color: #ffffff;
-  border: 1px solid #206e33;
-}
-
-.nemo-window .primary-toolbar button:disabled,
-.nemo-window toolbar.primary-toolbar button:disabled {
-  color: rgba(255, 255, 255, 0.35);
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.nemo-window .primary-toolbar button label,
-.nemo-window toolbar.primary-toolbar button label,
-.nemo-window .toolbar button label,
-.nemo-window .primary-toolbar button image,
-.nemo-window toolbar.primary-toolbar button image,
-.nemo-window .toolbar button image {
-  color: #ffffff;
-}
-
-/* Nemo Path-Bar (Fil d Ariane / Chemin des dossiers) */
-.nemo-window .path-bar,
-.nemo-window .nemo-pathbar,
-.nemo-pathbar {
-  background-color: transparent;
-}
-
-.nemo-window .path-bar button,
-.nemo-window .nemo-pathbar button,
-.nemo-pathbar button {
-  background-color: #34332f;
-  color: #ffffff;
-  border: 1px solid #18181b;
-  border-radius: 2px;
-  padding: 3px 10px;
-  margin: 1px;
-}
-
-.nemo-window .path-bar button:hover,
-.nemo-window .nemo-pathbar button:hover,
-.nemo-pathbar button:hover {
-  background-color: #44433e;
-  color: #ffffff;
-}
-
-.nemo-window .path-bar button:checked,
-.nemo-window .nemo-pathbar button:checked,
-.nemo-pathbar button:checked {
-  background-color: #35A854;
-  color: #ffffff;
-  border: 1px solid #206e33;
-  font-weight: bold;
-}
-
-.nemo-window .path-bar button label,
-.nemo-window .nemo-pathbar button label,
-.nemo-pathbar button label {
-  color: #ffffff;
-}
-
-/* Nemo Search & Location Entry */
 .nemo-window .primary-toolbar entry,
 .nemo-window .toolbar entry {
   background-color: #1a1a18;
   color: #ffffff;
-  border: 1px solid #18181b;
+  border: 1px solid @toolbar_dark_border;
   border-radius: 2px;
   padding: 4px 8px;
 }
@@ -4852,77 +4803,6 @@ headerbar stackswitcher > button:active:hover label {
 /* =========================================================================
    GESTIONNAIRES DE FICHIERS UNIFIÉS (THUNAR, NEMO, CAJA, NAUTILUS, PCMANFM)
    ========================================================================= */
-
-/* 1. Barres d outils et de navigation */
-.thunar-window .primary-toolbar,
-.thunar-window toolbar.primary-toolbar,
-.nemo-window .primary-toolbar,
-.nemo-window toolbar.primary-toolbar,
-.caja-navigation-window .primary-toolbar,
-.caja-navigation-window toolbar.primary-toolbar,
-.nautilus-window headerbar,
-.nautilus-window .primary-toolbar,
-.pcmanfm-window toolbar,
-FMMainWin toolbar {
-  background-color: #22211e;
-  color: #ffffff;
-  border-bottom: 1px solid #18181b;
-}
-
-/* 2. Boutons de navigation et d outils */
-.thunar-window .primary-toolbar button,
-.nemo-window .primary-toolbar button,
-.caja-navigation-window .primary-toolbar button,
-.nautilus-window headerbar button,
-.pcmanfm-window toolbar button,
-FMMainWin toolbar button {
-  color: #ffffff;
-  background-color: #34332f;
-  border: 1px solid #18181b;
-  border-radius: 2px;
-  padding: 4px 8px;
-  margin: 1px 2px;
-}
-
-.thunar-window .primary-toolbar button:hover,
-.nemo-window .primary-toolbar button:hover,
-.caja-navigation-window .primary-toolbar button:hover,
-.nautilus-window headerbar button:hover,
-.pcmanfm-window toolbar button:hover,
-FMMainWin toolbar button:hover {
-  background-color: #44433e;
-  color: #ffffff;
-}
-
-.thunar-window .primary-toolbar button:checked,
-.thunar-window .primary-toolbar button:active,
-.nemo-window .primary-toolbar button:checked,
-.nemo-window .primary-toolbar button:active,
-.caja-navigation-window .primary-toolbar button:checked,
-.caja-navigation-window .primary-toolbar button:active,
-.nautilus-window headerbar button:checked,
-.nautilus-window headerbar button:active,
-.pcmanfm-window toolbar button:checked,
-.pcmanfm-window toolbar button:active {
-  background-color: #35A854;
-  color: #ffffff;
-  border: 1px solid #206e33;
-}
-
-.thunar-window .primary-toolbar button label,
-.nemo-window .primary-toolbar button label,
-.caja-navigation-window .primary-toolbar button label,
-.nautilus-window headerbar button label,
-.pcmanfm-window toolbar button label,
-FMMainWin toolbar button label,
-.thunar-window .primary-toolbar button image,
-.nemo-window .primary-toolbar button image,
-.caja-navigation-window .primary-toolbar button image,
-.nautilus-window headerbar button image,
-.pcmanfm-window toolbar button image,
-FMMainWin toolbar button image {
-  color: #ffffff;
-}
 
 /* 3. Fil d Ariane / Barres de chemin (Path-bars - boutons legerement eclaircis) */
 .thunar-window .path-bar button,
@@ -5083,100 +4963,6 @@ tab label {
   font-weight: inherit;
 }
 
-/* Barre d outils / Primary toolbar pour Brave & GTK */
-toolbar.primary-toolbar,
-.primary-toolbar,
-.thunar-window toolbar.primary-toolbar,
-.thunar-window .primary-toolbar {
-  background-color: #2a2a30;
-  color: #ffffff;
-}
 
-/* =========================================================================
-   THUNAR & BARRES D'OUTILS D'EN-TÊTE SOMBRE (CRUNCHY-LIGHT)
-   ========================================================================= */
-.thunar toolbar,
-.thunar .inline-toolbar,
-.thunar-window toolbar,
-toolbar.primary-toolbar,
-.primary-toolbar {
-  background-color: #222226;
-  color: #ffffff;
-  border-bottom: 1px solid #18181b;
-}
-
-.thunar toolbar button,
-.thunar toolbar toolbutton > button,
-.thunar-window toolbar button,
-toolbar.primary-toolbar button,
-.primary-toolbar button {
-  color: #ffffff;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 2px;
-}
-
-.thunar toolbar button:hover,
-.thunar toolbar toolbutton > button:hover,
-.thunar-window toolbar button:hover,
-toolbar.primary-toolbar button:hover,
-.primary-toolbar button:hover {
-  background-color: #383733;
-  color: #ffffff;
-  border-color: #18181b;
-}
-
-.thunar toolbar button:active,
-.thunar toolbar button:checked,
-.thunar toolbar toolbutton > button:active,
-.thunar toolbar toolbutton > button:checked {
-  background-color: #1a1916;
-  color: #ffffff;
-  border-color: #18181b;
-}
-
-.thunar toolbar button:disabled,
-.thunar toolbar toolbutton > button:disabled,
-.thunar-window toolbar button:disabled,
-toolbar.primary-toolbar button:disabled,
-.primary-toolbar button:disabled {
-  color: rgba(255, 255, 255, 0.35);
-  border-color: transparent;
-  background-color: transparent;
-}
-
-.thunar toolbar button image,
-.thunar toolbar toolbutton > button image,
-.thunar-window toolbar button image,
-toolbar.primary-toolbar button image,
-.primary-toolbar button image,
-.thunar toolbar image,
-.thunar-window toolbar image {
-  color: #ffffff;
-  -gtk-icon-style: symbolic;
-  -gtk-icon-shadow: none;
-}
-
-/* =========================================================================
-   ICÔNES INACTIVES DANS LES BARRES D'OUTILS SOMBRES (GEANY, THUNAR, NEMO)
-   ========================================================================= */
-toolbar *:disabled,
-.primary-toolbar *:disabled {
-  -gtk-icon-effect: highlight;
-}
-
-toolbar button:disabled image,
-toolbar toolbutton > button:disabled image,
-toolbar image:disabled,
-toolbar:disabled image,
-.primary-toolbar button:disabled image,
-.primary-toolbar toolbutton > button:disabled image,
-.primary-toolbar image:disabled,
-.thunar toolbar button:disabled image,
-.thunar toolbar toolbutton > button:disabled image,
-.thunar-window toolbar button:disabled image {
-  -gtk-icon-effect: highlight;
-  opacity: 0.75;
-}
 
 
