@@ -1048,12 +1048,33 @@ headerbar,
   .tiled headerbar:backdrop, .tiled headerbar, .tiled-top headerbar:backdrop, .tiled-top headerbar, .tiled-right headerbar:backdrop, .tiled-right headerbar, .tiled-bottom headerbar:backdrop, .tiled-bottom headerbar, .tiled-left headerbar:backdrop, .tiled-left headerbar, .maximized headerbar:backdrop, .maximized headerbar, .fullscreen headerbar:backdrop, .fullscreen headerbar, .tiled .titlebar:not(headerbar), .tiled-top .titlebar:not(headerbar), .tiled-right .titlebar:not(headerbar), .tiled-bottom .titlebar:not(headerbar), .tiled-left .titlebar:not(headerbar), .maximized .titlebar:not(headerbar), .fullscreen .titlebar:not(headerbar) {
     border-radius: 0; }
   headerbar.default-decoration,
-  .default-decoration.titlebar:not(headerbar) {
+  .default-decoration.titlebar:not(headerbar),
+  window.maximized headerbar,
+  window.maximized .titlebar,
+  .maximized headerbar,
+  .maximized .titlebar,
+  .maximized headerbar.default-decoration,
+  .maximized .default-decoration.titlebar:not(headerbar),
+  window.tiled headerbar,
+  window.tiled .titlebar {
     min-height: 28px;
-    padding: 2px 6px;
-    border-bottom-width: 0; }
-    .maximized headerbar.default-decoration, .maximized .default-decoration.titlebar:not(headerbar) {
-      background-color: #222226; }
+    background-color: #222226;
+    color: #ffffff;
+    border-bottom: 1px solid #18181b;
+    box-shadow: none;
+    margin: 0;
+    margin-bottom: 0;
+    padding: 2px 6px; }
+  window.maximized headerbar label,
+  window.maximized .titlebar label,
+  window.maximized headerbar .title,
+  window.maximized .titlebar .title,
+  .maximized headerbar label,
+  .maximized .titlebar label,
+  .maximized headerbar .title,
+  .maximized .titlebar .title {
+    color: #ffffff;
+    font-weight: bold; }
   .solid-csd headerbar:backdrop:dir(rtl), .solid-csd headerbar:backdrop:dir(ltr), .solid-csd headerbar:dir(rtl), .solid-csd headerbar:dir(ltr), .solid-csd .titlebar:dir(rtl):not(headerbar), .solid-csd .titlebar:dir(ltr):not(headerbar) {
     margin-left: -1px;
     margin-right: -1px;
@@ -4507,63 +4528,6 @@ scale highlight {
   border-radius: 2px;
 }
 
-
-/* =========================================================================
-   BARRE DE TITRE MAXIMISÉE SOMBRE UNIFIÉE (LIBREOFFICE, GIMP, CINNAMON, GTK3)
-   ========================================================================= */
-window.maximized headerbar,
-window.maximized .titlebar,
-.maximized headerbar,
-.maximized .titlebar,
-.maximized headerbar.default-decoration,
-.maximized .default-decoration.titlebar:not(headerbar),
-headerbar.default-decoration,
-.default-decoration.titlebar:not(headerbar),
-window.tiled headerbar,
-window.tiled .titlebar {
-  background-color: #222226;
-  color: #ffffff;
-  border-bottom: 1px solid #18181b;
-  box-shadow: none;
-}
-
-window.maximized headerbar label,
-window.maximized .titlebar label,
-window.maximized headerbar .title,
-window.maximized .titlebar .title,
-.maximized headerbar label,
-.maximized .titlebar label,
-.maximized headerbar .title,
-.maximized .titlebar .title {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-
-/* =========================================================================
-   JONCTION PARFAITE SANS INTERSTICE TITRE <-> MENUBAR (MAXIMIZED & NORMAL)
-   ========================================================================= */
-window.maximized headerbar,
-window.maximized .titlebar,
-.maximized headerbar,
-.maximized .titlebar,
-.maximized headerbar.default-decoration,
-.maximized .default-decoration.titlebar:not(headerbar),
-headerbar.default-decoration,
-.default-decoration.titlebar:not(headerbar) {
-  margin: 0;
-  margin-bottom: 0;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #18181b;
-}
-
-menubar, .menubar {
-  background-image: none;
-  background-color: #242320;
-  color: #ffffff;
-  border-bottom: 1px solid #18181b;
-  padding: 0;
-}
 
 
 /* =========================================================================
