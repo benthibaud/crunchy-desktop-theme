@@ -5,7 +5,7 @@
 # Maintenance humaine facile et centralisée conformément au cahier des charges.
 # =============================================================================
 
-gtk-color-scheme = "bg_color_dark:#242320\nfg_color_dark:#ffffff\nbg_color:#f0f0f2\nfg_color:#222222\nselected_bg_color:#35A854\nselected_fg_color:#ffffff\nbase_color:#ffffff\ntext_color:#222222\nlink_color:#35A854\nborders:#c8c8ce\nborders_light:#dedee2\ntooltip_bg_color:#242321\ntooltip_fg_color:#ffffff\nmenubar_bg_left:#242320\nmenubar_bg_mid:#242320\nmenubar_bg_right:#242320\nmenubar_fg:#ffffff\nmenu_bg_left:#22211e\nmenu_bg_mid:#242327\nmenu_bg_right:#28282c\nmenu_fg:#ffffff\nmenu_hover_left:#206e33\nmenu_hover_mid:#35ad54\nmenu_hover_right:#48dc6f"
+gtk-color-scheme = "bg_color_dark:#242320\nfg_color_dark:#ffffff\nbg_color:#f8f8f9\nfg_color:#2e2e33\nselected_bg_color:#35A854\nselected_fg_color:#ffffff\nbase_color:#ffffff\ntext_color:#303030\nlink_color:#35A854\nborders:#c8c8ce\nborders_light:#dedee2\ntooltip_bg_color:#242321\ntooltip_fg_color:#ffffff\nmenubar_bg_left:#242320\nmenubar_bg_mid:#242320\nmenubar_bg_right:#242320\nmenubar_fg:#ffffff\nmenu_bg_left:#22211e\nmenu_bg_mid:#242327\nmenu_bg_right:#28282c\nmenu_fg:#ffffff\nmenu_hover_left:#206e33\nmenu_hover_mid:#35ad54\nmenu_hover_right:#48dc6f"
 gtk-icon-sizes = "panel-menu=22,22:gtk-button=16,16"
 gtk-auto-mnemonics = 1
 

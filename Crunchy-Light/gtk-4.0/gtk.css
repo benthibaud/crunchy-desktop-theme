@@ -112,11 +112,19 @@ headerbar windowcontrols button.maximize {
   background-position: center;
 }
 
+headerbar windowcontrols button.maximize:hover {
+  background-image: url("assets/maximize-hover.svg");
+}
+
 headerbar windowcontrols button.minimize {
   background-image: url("assets/hide-active.svg");
   background-size: 17px 17px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+headerbar windowcontrols button.minimize:hover {
+  background-image: url("assets/hide-hover.svg");
 }
 
 listview, columnview, treeview, .view {
