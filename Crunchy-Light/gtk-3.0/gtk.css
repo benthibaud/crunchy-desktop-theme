@@ -1730,8 +1730,18 @@ menu, .menu {
     color: @menu_hover_fg;
   }
     menu menuitem:disabled,
-    .menu menuitem:disabled {
-      color: alpha(@theme_fg_color, 0.42); }
+    .menu menuitem:disabled,
+    menu menuitem:disabled label,
+    .menu menuitem:disabled label,
+    menu menuitem label:disabled,
+    .menu menuitem label:disabled,
+    menu label:disabled,
+    .menu label:disabled,
+    menu label.separator,
+    .menu label.separator,
+    menu .dim-label,
+    .menu .dim-label {
+      color: @menu_disabled_fg; }
     menu menuitem arrow,
     .menu menuitem arrow {
       min-height: 16px;
@@ -3828,7 +3838,7 @@ SynapseGuiViewVirgilio *:selected {
     color: #e1e1e1; }
   .gnome-panel-menu-bar menu > menuitem,
   .mate-panel-menu-bar menu > menuitem {
-    color: alpha(@theme_fg_color, 0.87); }
+    color: @menu_fg; }
   .gnome-panel-menu-bar button label, .gnome-panel-menu-bar button image,
   .gnome-panel-menu-bar #tasklist-button label,
   .gnome-panel-menu-bar #tasklist-button image,
