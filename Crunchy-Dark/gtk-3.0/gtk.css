@@ -1685,7 +1685,10 @@ menubar, .menubar {
 }
   menubar:backdrop,
   .menubar:backdrop {
-    color: alpha(@theme_fg_color, 0.57); }
+    color: #a7a7ab; }
+  menubar label.title,
+  menubar:backdrop label.title {
+    color: #c8c8cf; }
   menubar > menuitem,
   .menubar > menuitem {
     padding: 6px 8px;
@@ -4871,8 +4874,9 @@ tab label {
 }
 
 /* =========================================================================
-   CADRE DE FENÊTRE & ONGLETS DANS LES EN-TÊTES (BRAVE, CHROMIUM, FIREFOX CSD)
+   CADRE DE FENÊTRE & ONGLETS DANS LES EN-TÊTES (BRAVE, CHROMIUM, FIREFOX CSD/SSD)
    ========================================================================= */
+/* Onglets inactifs - Fenêtre active */
 headerbar tab,
 headerbar tab label,
 headerbar notebook > header > tabs > tab,
@@ -4882,25 +4886,89 @@ headerbar notebook > header > tabs > tab label,
 .titlebar notebook > header > tabs > tab,
 .titlebar notebook > header > tabs > tab label,
 window.background.titlebar tab,
-window.background.titlebar tab label {
+window.background.titlebar tab label,
+window.chromium tab,
+window.chromium tab label,
+.chromium tab,
+.chromium tab label {
   color: #d0d0d8;
 }
 
+/* Onglets inactifs - Fenêtre inactive en arrière-plan (:backdrop) */
+headerbar:backdrop tab,
+headerbar tab:backdrop,
+headerbar:backdrop tab:backdrop,
+headerbar:backdrop tab label,
+headerbar tab:backdrop label,
+headerbar:backdrop tab:backdrop label,
+.titlebar:backdrop tab,
+.titlebar tab:backdrop,
+.titlebar:backdrop tab:backdrop,
+.titlebar:backdrop tab label,
+.titlebar tab:backdrop label,
+.titlebar:backdrop tab:backdrop label,
+window.background.titlebar:backdrop tab,
+window.background.titlebar tab:backdrop,
+window.background.titlebar:backdrop tab:backdrop,
+window.background.titlebar:backdrop tab label,
+window.background.titlebar tab:backdrop label,
+window.background.titlebar:backdrop tab:backdrop label,
+window.chromium:backdrop tab,
+window.chromium tab:backdrop,
+window.chromium:backdrop tab:backdrop,
+window.chromium:backdrop tab label,
+window.chromium tab:backdrop label,
+window.chromium:backdrop tab:backdrop label,
+.chromium:backdrop tab,
+.chromium tab:backdrop,
+.chromium:backdrop tab:backdrop,
+.chromium:backdrop tab label,
+.chromium tab:backdrop label,
+.chromium:backdrop tab:backdrop label {
+  color: #b0b0b8;
+}
+
+/* Titres de fenêtres et en-têtes inactifs */
+headerbar:backdrop label.title,
+headerbar.header-bar.titlebar:backdrop label.title,
+.titlebar:backdrop label.title,
+window.background:backdrop headerbar:backdrop label.title {
+  color: #b0b0b8;
+}
+
+/* Survol des onglets */
 headerbar tab:hover,
 headerbar tab:hover label,
 .titlebar tab:hover,
-.titlebar tab:hover label {
+.titlebar tab:hover label,
+window.chromium tab:hover,
+window.chromium tab:hover label,
+.chromium tab:hover,
+.chromium tab:hover label {
   color: #ffffff;
 }
 
+/* Onglet sélectionné / actif dans le navigateur */
 headerbar tab:checked,
 headerbar tab:checked label,
 headerbar tab.active-page,
 headerbar tab.active-page label,
+headerbar tab:checked:backdrop,
+headerbar tab.active-page:backdrop,
 .titlebar tab:checked,
 .titlebar tab:checked label,
 .titlebar tab.active-page,
-.titlebar tab.active-page label {
+.titlebar tab.active-page label,
+.titlebar tab:checked:backdrop,
+.titlebar tab.active-page:backdrop,
+window.chromium tab:checked,
+window.chromium tab.active-page,
+window.chromium tab:checked:backdrop,
+window.chromium tab.active-page:backdrop,
+.chromium tab:checked,
+.chromium tab.active-page,
+.chromium tab:checked:backdrop,
+.chromium tab.active-page:backdrop {
   color: #ffffff;
   background-color: #38373f;
 }
