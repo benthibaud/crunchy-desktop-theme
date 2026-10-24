@@ -140,13 +140,12 @@ widget_class "*Panel*<GtkMenuBar>*" style "theme-main-menu-text"
 widget "*.clock-applet-button.*"    style "theme-panel-text"
 widget "*PanelApplet*"              style "theme-panel-text"
 
-# dark menus
-widget_class "*<GtkMenu>*"              		style "dark"
-widget_class "*<GtkMenuItem>*"          		style "wide"
-widget_class "*<GtkMenuItem>.*.<GtkEntry>"		style "panel-entry"
-widget_class "*<GtkMenuItem>.*.<GtkScale>" 		style "scale"
-widget_class "*<GtkMenuBar>*"           		style "menubar"
-widget "*.gtk-combobox-popup-menu.*"   			style "wide"
+# panel menus
+widget_class "*Panel*<GtkMenu>*"              		style "menu"
+widget_class "*Panel*<GtkMenuItem>*"          		style "menu_item"
+widget_class "*Panel*<GtkMenuItem>.*.<GtkEntry>"	style "panel-entry"
+widget_class "*Panel*<GtkMenuItem>.*.<GtkScale>" 	style "scale"
+widget_class "*Panel*<GtkMenuBar>*"           		style "menubar"
 
 # dark bg and black text for gdm's panel
 widget_class "*GdmGreeterPanel*"	style "panel-entry"

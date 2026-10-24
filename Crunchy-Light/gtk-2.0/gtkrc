@@ -895,3 +895,7 @@ widget_class "*GimpToolbox*" style "gimp_dark_theme"
 widget_class "*GimpMenuDock*" style "gimp_dark_theme"
 widget_class "*GimpDock*" style "gimp_dark_theme"
 widget_class "*GimpDialog*" style "gimp_dark_theme"
+widget_class "*Gimp*<GtkMenuBar>*" style "menubar"
+widget_class "*Gimp*<GtkMenu>*" style "menu"
+widget_class "*Gimp*<GtkMenuItem>*" style "menu_item"
+

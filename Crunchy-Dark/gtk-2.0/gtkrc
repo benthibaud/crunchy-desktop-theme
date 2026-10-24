@@ -699,6 +699,17 @@ widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 widget_class "*<GtkCombo>*" style "comboboxentry"
 
 widget_class "*<GtkMenuBar>*" style "menubar"
+widget_class "*<GtkMenu>*" style "menu"
+widget_class "*<GtkMenuItem>*" style "menu_item"
+widget_class "*<GtkSeparatorMenuItem>*" style "separator_menu_item"
+widget_class "*<GtkSeparatorToolItem>*" style "separator_tool_item"
+widget_class "*<GtkMenuBar>*<GtkMenuItem>*" style "menubar_item"
+
+widget_class "*.<GtkFrame>.<GtkLabel>" style "frame_title"
+
+widget_class "*<GtkProgress>" style "progressbar"
+widget_class "*<GtkMenuItem>.*.<GtkProgressBar>" style "progressbar_menu_item"
+widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale_menu_item"
 
 style "xfdesktop-icon-view" {
 }
@@ -820,3 +831,7 @@ widget_class "*GimpToolbox*" style "gimp_dark_theme"
 widget_class "*GimpMenuDock*" style "gimp_dark_theme"
 widget_class "*GimpDock*" style "gimp_dark_theme"
 widget_class "*GimpDialog*" style "gimp_dark_theme"
+widget_class "*Gimp*<GtkMenuBar>*" style "menubar"
+widget_class "*Gimp*<GtkMenu>*" style "menu"
+widget_class "*Gimp*<GtkMenuItem>*" style "menu_item"
+
