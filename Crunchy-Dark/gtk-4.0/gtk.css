@@ -143,6 +143,7 @@ popover, popover.background, menu {
 
 popover modelbutton:hover,
 popover modelbutton:selected,
+popover modelbutton:focus,
 popover.menu modelbutton:hover,
 popover.menu modelbutton:selected,
 popover menuitem:hover,
@@ -153,9 +154,12 @@ menuitem:hover,
 menuitem:selected,
 modelbutton:hover,
 modelbutton:selected,
+menubar > item:hover,
+dropdown listview row:selected,
 dropdown popover listview row:selected,
-dropdown popover listview row:hover {
-  background-color: @menu_hover_left;
+dropdown popover listview row:hover,
+listview row:selected {
+  background-color: @accent_color;
   background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
   color: @menu_hover_fg;
 }
@@ -204,16 +208,4 @@ scale highlight {
   border-radius: 2px;
 }
 
-/* ======================================================================
-   DÉGRADÉ HORIZONTAL VERT CRUNCHY SUR LES MENUS GTK4
-   ====================================================================== */
-menubar > item:hover,
-popover.menu modelbutton:hover,
-popover modelbutton:selected,
-popover modelbutton:focus,
-dropdown listview row:selected,
-listview row:selected {
-    background-color: @accent_color;
-    background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
-    color: #ffffff;
-}
+
