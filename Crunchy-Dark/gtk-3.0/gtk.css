@@ -1691,7 +1691,7 @@ menubar, .menubar {
     color: #c8c8cf; }
   menubar > menuitem,
   .menubar > menuitem {
-    padding: 6px 8px;
+    padding: 4px 8px;
     border: solid transparent;
     border-width: 0; }
     menubar > menuitem:hover, .menubar > menuitem:hover {
@@ -1726,7 +1726,9 @@ menu, .menu {
   .menu separator,
   .csd .menu separator,
   menu .separator,
-  .menu .separator {
+  .menu .separator,
+  menuitem.separator,
+  menu separator.horizontal {
     min-height: 1px;
     margin: 4px 6px;
     padding: 0;
@@ -1740,9 +1742,8 @@ menu, .menu {
   popover menuitem,
   popover modelbutton,
   modelbutton {
-    min-height: 16px;
-    min-width: 40px;
-    padding: 5px;
+    min-height: 20px;
+    padding: 4px 12px;
     color: @menu_fg; }
   menuitem:hover,
   menuitem:selected,
@@ -1758,6 +1759,7 @@ menu, .menu {
   popover modelbutton:selected,
   popover.menu modelbutton:hover,
   popover.menu modelbutton:selected,
+  popover button:hover,
   modelbutton:hover,
   modelbutton:selected {
     background-color: @menu_hover_left;
@@ -4339,6 +4341,7 @@ list row:selected:focus,
 iconview:selected,
 iconview:selected:focus {
   background-color: @view_selected_bg;
+  background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
   color: @view_selected_fg;
 }
 
@@ -4358,89 +4361,6 @@ row:selected label,
 list row:selected label {
   color: @view_selected_fg;
 }
-
-
-/* =========================================================================
-   CONTEXTE : MENUS ET BARRES DE MENUS (DÉGRADÉ GAUCHE -> DROITE)
-   ========================================================================= */
-
-
-
-menubar, .menubar {
-  background-image: none;
-  background-color: #242320;
-  color: #ffffff;
-  border-bottom: 1px solid #18181b;
-  padding: 0;
-}
-
-menubar > menuitem, .menubar > menuitem {
-  color: @menubar_fg;
-  padding: 4px 8px;
-}
-
-menubar > menuitem:hover, .menubar > menuitem:hover {
-  background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
-  background-color: @menu_hover_left;
-  color: @menu_hover_fg;
-}
-
-menu, .menu {
-  margin: 4px;
-  padding: 4px 0;
-  border-radius: 2px;
-  background-image: linear-gradient(to right, @menu_bg_left 0%, @menu_bg_mid 55%, @menu_bg_right 100%);
-  background-color: @menu_bg_left;
-  color: @menu_fg;
-  border: 1px solid @menu_border;
-  box-shadow: 0 4px 14px @menu_shadow;
-}
-
-menu menuitem,
-.menu menuitem,
-menuitem,
-.menuitem,
-popover menuitem,
-popover modelbutton,
-modelbutton {
-  min-height: 20px;
-  padding: 4px 12px;
-  color: @menu_fg;
-}
-
-menu menuitem:hover,
-menu menuitem:selected,
-.menu menuitem:hover,
-.menu menuitem:selected,
-menuitem:hover,
-menuitem:selected,
-.menuitem:hover,
-.menuitem:selected,
-popover menuitem:hover,
-popover menuitem:selected,
-popover modelbutton:hover,
-popover modelbutton:selected,
-popover.menu modelbutton:hover,
-popover.menu modelbutton:selected,
-modelbutton:hover,
-modelbutton:selected {
-  background-color: @menu_hover_left;
-  background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
-  color: @menu_hover_fg;
-}
-
-menu separator,
-.menu separator,
-menuitem.separator,
-menu separator.horizontal {
-  min-height: 1px;
-  margin: 4px 6px;
-  padding: 0;
-  border: none;
-  background-color: @menu_separator;
-  color: @menu_separator;
-}
-
 
 /* =========================================================================
    CONTEXTE : INFOBULLES (TOOLTIPS), OSD ET POPOVERS (DARK)
@@ -4787,24 +4707,6 @@ placessidebar.sidebar list row:selected label,
 FMSidePane row:selected label {
   color: #ffffff;
   font-weight: bold;
-}
-
-/* ======================================================================
-   DÉGRADÉ HORIZONTAL VERT CRUNCHY SUR LES MENUS
-   ====================================================================== */
-menubar > menuitem:hover,
-menu menuitem:hover,
-menu menuitem:selected,
-.menu menuitem:hover,
-.menu menuitem:selected,
-popover.menu modelbutton:hover,
-popover modelbutton:hover,
-popover button:hover,
-treeview.view:selected,
-treeview.view:selected:focus {
-    background-color: #35a854;
-    background-image: linear-gradient(to right, #206e33 0%, #35ad54 55%, #48dc6f 100%);
-    color: #ffffff;
 }
 
 /* =========================================================================
