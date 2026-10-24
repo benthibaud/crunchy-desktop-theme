@@ -778,37 +778,37 @@ include "apps/terminal.rc"
 
 
 # =========================================================================
-# GIMP PRO DARK STYLE (PRÉSERVÉ MÊME EN THÈME CLAIR)
+# GIMP PRO DARK STYLE (ALIGNÉ SUR LA PALETTE OFFICIELLE SOMBRE)
 # =========================================================================
 style "gimp_dark_theme" {
-    bg[NORMAL]        = "#383733"
-    bg[PRELIGHT]      = "#3e3d39"
-    bg[SELECTED]      = "#35A854"
-    bg[INSENSITIVE]   = "#2c2b28"
-    bg[ACTIVE]        = "#242320"
+    bg[NORMAL]        = @bg_color_dark
+    bg[PRELIGHT]      = shade (1.12, @bg_color_dark)
+    bg[SELECTED]      = @selected_bg_color
+    bg[INSENSITIVE]   = shade (0.85, @bg_color_dark)
+    bg[ACTIVE]        = shade (0.90, @bg_color_dark)
 
-    fg[NORMAL]        = "#ffffff"
-    fg[PRELIGHT]      = "#ffffff"
-    fg[SELECTED]      = "#ffffff"
-    fg[INSENSITIVE]   = "#777777"
-    fg[ACTIVE]        = "#ffffff"
+    fg[NORMAL]        = @fg_color_dark
+    fg[PRELIGHT]      = @fg_color_dark
+    fg[SELECTED]      = @selected_fg_color
+    fg[INSENSITIVE]   = shade (0.55, @fg_color_dark)
+    fg[ACTIVE]        = @fg_color_dark
 
-    text[NORMAL]      = "#ffffff"
-    text[PRELIGHT]    = "#ffffff"
-    text[SELECTED]    = "#ffffff"
-    text[INSENSITIVE] = "#777777"
-    text[ACTIVE]      = "#ffffff"
+    text[NORMAL]      = @fg_color_dark
+    text[PRELIGHT]    = @fg_color_dark
+    text[SELECTED]    = @selected_fg_color
+    text[INSENSITIVE] = shade (0.55, @fg_color_dark)
+    text[ACTIVE]      = @fg_color_dark
 
-    base[NORMAL]      = "#242321"
-    base[PRELIGHT]    = "#3e3d39"
-    base[SELECTED]    = "#35A854"
-    base[INSENSITIVE] = "#2c2b28"
-    base[ACTIVE]      = "#242320"
+    base[NORMAL]      = @base_color
+    base[PRELIGHT]    = shade (1.05, @base_color)
+    base[SELECTED]    = @selected_bg_color
+    base[INSENSITIVE] = shade (0.85, @base_color)
+    base[ACTIVE]      = @base_color
 
     engine "murrine" {
-        gradient_shades = {1.0, 1.0, 1.0, 1.0}
-        contrast        = 0.6
-        focus_color     = "#35A854"
+        gradient_shades   = {1.0, 1.0, 1.0, 1.0}
+        contrast          = 1.0
+        focus_color       = @selected_bg_color
         lightborder_shade = 1.0
     }
 }
