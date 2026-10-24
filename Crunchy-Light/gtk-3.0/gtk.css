@@ -4615,16 +4615,10 @@ headerbar stackswitcher > button:active:hover label {
    GESTIONNAIRES DE FICHIERS UNIFIÉS (THUNAR, NEMO, CAJA, NAUTILUS, PCMANFM)
    ========================================================================= */
 
-/* 3. Fil d Ariane / Barres de chemin (Path-bars - boutons legerement eclaircis) */
-.thunar-window .path-bar button,
-.thunar .path-bar button,
-.nemo-window .path-bar button,
-.nemo-window .nemo-pathbar button,
-.nemo-pathbar button,
-.caja-navigation-window .path-bar button,
-.nautilus-window .path-bar button,
-.path-bar button {
-  background-color: #42413c; /* Eclairci pour une distinction nette et lisible */
+/* 3. Fil d Ariane / Barres de chemin (Path-bars - boutons légèrement éclaircis) */
+.path-bar button,
+.nemo-pathbar button {
+  background-color: #42413c;
   color: #ffffff;
   border: 1px solid #18181b;
   border-radius: 2px;
@@ -4632,59 +4626,40 @@ headerbar stackswitcher > button:active:hover label {
   margin: 1px 2px;
 }
 
-.thunar-window .path-bar button:hover,
-.thunar .path-bar button:hover,
-.nemo-window .path-bar button:hover,
-.nemo-window .nemo-pathbar button:hover,
-.caja-navigation-window .path-bar button:hover,
-.nautilus-window .path-bar button:hover,
-.path-bar button:hover {
+.path-bar button:hover,
+.nemo-pathbar button:hover {
   background-color: #52514a;
   color: #ffffff;
   border-color: #202023;
 }
 
-.thunar-window .path-bar button:checked,
-.thunar-window .path-bar button:active,
-.thunar .path-bar button:checked,
-.thunar .path-bar button:active,
-.nemo-window .path-bar button:checked,
-.nemo-window .nemo-pathbar button:checked,
-.caja-navigation-window .path-bar button:checked,
-.nautilus-window .path-bar button:checked,
 .path-bar button:checked,
-.path-bar button:active {
+.path-bar button:active,
+.nemo-pathbar button:checked,
+.nemo-pathbar button:active {
   background-color: #35A854;
   color: #ffffff;
   border: 1px solid #206e33;
   font-weight: bold;
 }
 
-.thunar-window .path-bar button label,
-.thunar .path-bar button label,
-.nemo-window .path-bar button label,
-.caja-navigation-window .path-bar button label,
-.nautilus-window .path-bar button label,
-.path-bar button label {
+.path-bar button label,
+.nemo-pathbar button label {
   color: #ffffff;
 }
 
-/* 4. Barre laterale des raccourcis / Lieux (Places Sidebar) */
-.thunar-window .sidebar row:selected,
-.nemo-window .sidebar row:selected,
-.caja-navigation-window .caja-side-pane row:selected,
-.nautilus-window placessidebar row:selected,
-placessidebar.sidebar list row:selected,
+/* 4. Barre latérale des raccourcis / Lieux (Places Sidebar) */
+.sidebar row:selected,
+.caja-side-pane row:selected,
+placessidebar row:selected,
 FMSidePane row:selected {
   background-color: #35A854;
   color: #ffffff;
 }
 
-.thunar-window .sidebar row:selected label,
-.nemo-window .sidebar row:selected label,
-.caja-navigation-window .caja-side-pane row:selected label,
-.nautilus-window placessidebar row:selected label,
-placessidebar.sidebar list row:selected label,
+.sidebar row:selected label,
+.caja-side-pane row:selected label,
+placessidebar row:selected label,
 FMSidePane row:selected label {
   color: #ffffff;
   font-weight: bold;
