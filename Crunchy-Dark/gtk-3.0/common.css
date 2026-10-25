@@ -3568,13 +3568,20 @@ window.whiskermenu {
   box-shadow: 0 4px 16px @menu_shadow;
 }
 
+/* Neutralisation de la bordure claire du GtkFrame interne */
+#whiskermenu-window frame,
+#whiskermenu-window frame > border,
+#whiskermenu-window .frame {
+  border: none;
+}
+
 #whiskermenu-window label,
 window.whiskermenu label {
   color: @menu_fg;
 }
 
 #whiskermenu-window .title-area {
-  padding: 4px;
+  padding: 6px 8px;
 }
 
 #whiskermenu-window .title-area .profile-username {
@@ -3589,7 +3596,7 @@ window.whiskermenu label {
   border: 1px solid transparent;
   border-radius: 4px;
   color: @menu_fg;
-  padding: 4px 6px;
+  padding: 5px 7px;
   box-shadow: none;
 }
 
@@ -3612,23 +3619,27 @@ window.whiskermenu label {
   border: 1px solid @menu_border;
   border-radius: 4px;
   padding: 6px 10px;
+  margin: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #whiskermenu-window entry:focus {
   border-color: @accent_color;
   background-color: @menu_bg_left;
   color: @menu_fg;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px @accent_color;
 }
 
 #whiskermenu-window entry image {
   color: alpha(@menu_fg, 0.65);
 }
 
-/* Catégories : boutons radios sans puces (lignes de sélection rectangulaires discrètes) */
+/* Catégories : espacement naturel et respiration identiques à Mint-L */
 #whiskermenu-window .categories {
-  background-color: rgba(0, 0, 0, 0.20);
-  border-radius: 4px;
-  padding: 4px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 2px;
 }
 
 #whiskermenu-window .category-button,
@@ -3638,14 +3649,13 @@ window.whiskermenu label {
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 4px;
   color: alpha(@menu_fg, 0.85);
-  padding: 5px 8px;
+  padding: 6px 12px;
+  min-height: 24px;
+  margin: 1px 4px;
   box-shadow: none;
   -gtk-icon-source: none;
-  min-height: 0;
-  min-width: 0;
-  margin: 1px 0;
 }
 
 #whiskermenu-window .category-button:hover,
@@ -3666,7 +3676,7 @@ window.whiskermenu label {
   background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
   background-color: @selected_bg_color;
   border-color: transparent;
-  border-radius: 3px;
+  border-radius: 4px;
   color: #ffffff;
   -gtk-icon-source: none;
 }
@@ -3677,17 +3687,17 @@ window.whiskermenu label {
   color: inherit;
 }
 
-/* Lanceurs d'applications (TreeView & IconView) */
+/* Lanceurs d'applications : fond continu unifié sans cadre interne */
 #whiskermenu-window .launchers,
 #whiskermenu-window scrolledwindow {
-  background-color: @menu_bg_left;
-  border-radius: 4px;
-  border: 1px solid @menu_border;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 #whiskermenu-window treeview,
 #whiskermenu-window iconview {
-  background-color: @menu_bg_left;
+  background-color: transparent;
   color: @menu_fg;
   border: none;
 }
