@@ -161,4 +161,22 @@ Les scripts `install.sh` et `uninstall.sh` déterminent automatiquement le répe
 - **Standard Crunchy :** L'arborescence des sources du projet est strictement exempte de tout lien symbolique. Chaque composant est autonome dans son propre dossier physique.
 - **Stratégie Labwc :** Labwc recherche nativement le dossier `openbox-3/` en l'absence de dossier `labwc/`. Pour une compatibilité absolue avec les outils tiers exigeant un répertoire nommé `labwc`, le script `install.sh` réalise une copie physique directe (`openbox-3/` vers `labwc/`) au moment de l'installation sur la machine cible.
 
+---
+
+## 7. Environnements de Bureau Complexes (Cinnamon & GNOME Shell)
+
+### A. Panneau Sombre Unifié (Dark & Light)
+- Dans la tradition ergonomique Ambiance / Radiance, le panneau de bureau (`#panel`, `.panel-top`, `.panel-bottom`) reste **strictement sombre** (`#222226` avec bordure `#18181b`), que le thème soit en mode Dark ou Light.
+- **Rationnel ergonomique :** Garantit le contraste maximal et la lisibilité immédiate des icônes du systray, de l'horloge, des indicateurs de statut et des applets sans nécessiter d'icônes spécifiques claires/sombres.
+
+### B. Déclinaisons Crunchy-Dark vs Crunchy-Light
+- **Crunchy-Dark :**
+  - Popups, menus déroulants, menu d'applications Kickoff (`.menu`, `.popup-menu`) et dialogues en fond sombre dégradé horizontal `#22211e` $\rightarrow$ `#484741`, bordure `#18181b` et texte blanc `#ffffff`.
+  - Sélections et survols en dégradé vert horizontal Crunchy : `background-gradient-direction: horizontal;` (`#206e33` $\rightarrow$ `#48dc6f`).
+- **Crunchy-Light :**
+  - Popups, menus déroulants, menu Kickoff, dialogues modaux et notifications basculent en fond clair document `#ffffff` / `#f8f8f9` avec bordures claires fines `#dcdce2` et texte sombre `#2e2e33`.
+  - Champs de recherche (`#menu-search-entry`) sur fond blanc avec ombre interne subtile.
+  - Sélections actives conservant le vert Crunchy avec libellé contrasté en blanc.
+
+
 

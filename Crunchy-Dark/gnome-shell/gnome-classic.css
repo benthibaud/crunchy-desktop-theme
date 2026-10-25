@@ -4,9 +4,9 @@
 */
 
 #panel {
-    background-color: #66655F !important;    /*Panel color1*/
+    background-color: #242320 !important;    /*Panel color1*/
     background-gradient-direction: vertical;
-    background-gradient-end: #262523 !important;    /*Panel color2*/
+    background-gradient-end: #222226 !important;    /*Panel color2*/
     border-top-color: transparent !important; /* we don't support non-uniform border-colors and
                                use the top border color for any border, so we
                                need to set it even if all we want is a bottom
@@ -19,8 +19,8 @@
 }
 
 #panel:overview {
-    background-color: #66655F !important;    /*Panel color1*/
-    background-gradient-end: #262523 !important;    /*Panel color2*/
+    background-color: #242320 !important;    /*Panel color1*/
+    background-gradient-end: #222226 !important;    /*Panel color2*/
     border-top-color: transparent !important;    /*Transparent */
     border-bottom: 1px solid transparent !important;    /*Transparent */
 }
@@ -143,13 +143,13 @@
 }
 
 .popup-submenu-menu-item:open {
-	background-color: rgba(77, 75, 70, 0.8) !important;    /*Dark color1*/
+	background-color: rgba(56, 55, 51, 0.8) !important;    /*Dark color1*/
     color: #fff !important;    /*White */
 }
 
 .popup-sub-menu {
-      background-gradient-start: #292825 !important;    /*Dark color2*/
-      background-gradient-end: #4D4B46 !important;    /*Dark color1*/
+      background-gradient-start: #22211e !important;    /*Dark color2*/
+      background-gradient-end: #484741 !important;    /*Dark color1*/
       background-gradient-direction: vertical;
 }
 
@@ -219,7 +219,7 @@
 .slider {
     height: 1em;
     -slider-height: 0.3em;
-	-slider-background-color: #292825 !important;    /*Dark color2*/
+	-slider-background-color: #22211e !important;    /*Dark color2*/
 	-slider-border-color: transparent !important;    /*Transparent */
 	-slider-active-background-color: #70AE6C !important;    /*Selection color1*/
 	-slider-active-border-color: transparent !important;    /*Transparent */

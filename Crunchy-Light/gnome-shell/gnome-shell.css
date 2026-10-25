@@ -76,9 +76,9 @@ StScrollView StScrollBar {
 
 StScrollBar StBin#trough {
 	background-gradient-direction: vertical; 
-	background-gradient-start: rgba(77, 75, 70, 0.8);    /*Dark color1*/
-	background-gradient-end: rgba(77, 75, 70, 0.2);    /*Dark color1*/
-	border: 1px solid rgba(77, 75, 70, 0.9);    /*Dark color1*/
+	background-gradient-start: rgba(56, 55, 51, 0.8);    /*Dark color1*/
+	background-gradient-end: rgba(56, 55, 51, 0.2);    /*Dark color1*/
+	border: 1px solid rgba(56, 55, 51, 0.9);    /*Dark color1*/
 	border-radius: 8px;
 }
 
@@ -136,7 +136,7 @@ StScrollBar StButton#vhandle:active {
 .slider {
     height: 1em;
     -slider-height: 0.3em;
-	-slider-background-color: #292825;    /*Dark color2*/
+	-slider-background-color: #22211e;    /*Dark color2*/
 	-slider-border-color: transparent;    /*Transparent */
 	-slider-active-background-color: #35A854;    /*Selection color1*/
 	-slider-active-border-color: transparent;    /*Transparent */
@@ -162,9 +162,9 @@ StScrollBar StButton#vhandle:active {
 .popup-menu {
     min-width: 200px;
 	background-gradient-direction: horizontal;
-	background-gradient-start: #292825;    /*Dark color2*/
-	background-gradient-end: #4D4B46;    /*Dark color1*/
-	border: 1px solid rgba(77, 75, 70, 0.8);    /*Dark color1*/
+	background-gradient-start: #22211e;    /*Dark color2*/
+	background-gradient-end: #484741;    /*Dark color1*/
+	border: 1px solid rgba(56, 55, 51, 0.8);    /*Dark color1*/
 }
 
 .unicode-arrow {
@@ -172,7 +172,7 @@ StScrollBar StButton#vhandle:active {
 }
 
 .popup-submenu-menu-item:open {
-	background-color: rgba(77, 75, 70, 0.8);    /*Dark color1*/
+	background-color: rgba(56, 55, 51, 0.8);    /*Dark color1*/
 }
 
 .popup-sub-menu {
@@ -207,6 +207,11 @@ StScrollBar StButton#vhandle:active {
  */
 .popup-menu-content {
     padding: 1em 0em;
+    background-color: #ffffff;
+    border: 1px solid #dcdce2;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    color: #2e2e33;
 }
 
 .popup-menu-item {
@@ -223,9 +228,9 @@ StScrollBar StButton#vhandle:active {
 
 .popup-menu-item.selected,
 .popup-menu-item:active {
-	background-gradient-direction: vertical;
-	background-gradient-start: #35A854;    /*Selection color1*/
-	background-gradient-end: #206e33;    /*Selection color2*/
+	background-gradient-direction: horizontal;
+	background-gradient-start: #206e33;
+	background-gradient-end: #48dc6f;
     color: #fff;    /*White */
 }
 
@@ -238,7 +243,7 @@ StScrollBar StButton#vhandle:active {
 
 .popup-separator-menu-item {
     -gradient-height: 1px;
-	-gradient-start: #4D4B46;    /*Dark color1*/
+	-gradient-start: #484741;    /*Dark color1*/
 	-gradient-end: #888;    /*Grey 47% */
     -margin-horizontal: 15px;
     height: 0px;
@@ -344,7 +349,7 @@ StScrollBar StButton#vhandle:active {
 .modal-dialog-linked-button,
 .app-view-control {
     border-radius: 5px;
-	border: 1px solid rgba(41, 40, 37, 0.6);    /*Dark color2*/
+	border: 1px solid rgba(24, 24, 27, 0.6);    /*Dark color2*/
 	color: #eee;    /*Grey 7% */
 	font-weight: bold;
 	text-align: center;
@@ -450,8 +455,8 @@ StScrollBar StButton#vhandle:active {
 .login-dialog StEntry,
 .notification StEntry,
 .modal-dialog StEntry {
-    color: #4D4B46;    /*Dark color1*/
-    caret-color: #4D4B46;    /*Dark color1*/
+    color: #484741;    /*Dark color1*/
+    caret-color: #484741;    /*Dark color1*/
     font-size: 12pt;
     caret-size: 1px;
     selected-color: #fff;    /*White */
@@ -500,8 +505,8 @@ StScrollBar StButton#vhandle:active {
 }
 
 #searchEntry:focus {
-    color: #4D4B46;    /*Dark color1*/
-    caret-color: #4D4B46;    /*Dark color1*/
+    color: #484741;    /*Dark color1*/
+    caret-color: #484741;    /*Dark color1*/
     font-weight: bold;
     transition-duration: 0ms;
 }
@@ -532,8 +537,8 @@ StScrollBar StButton#vhandle:active {
 
 #panel {
 	background-gradient-direction: vertical;
-	background-gradient-start: #66655F;    /*Panel color1*/
-	background-gradient-end: #262523;    /*Panel color2*/
+	background-gradient-start: #242320;    /*Panel color1*/
+	background-gradient-end: #222226;    /*Panel color2*/
     font-weight: bold;
     height: 1.86em;
 }
@@ -639,9 +644,9 @@ StScrollBar StButton#vhandle:active {
 .panel-button:active,
 .panel-button:overview,
 .panel-button:focus {
-	background-gradient-direction: vertical;
-	background-gradient-start: #206e33;    /*Selection color2*/
-	background-gradient-end: #35A854;    /*Selection color1*/
+	background-gradient-direction: horizontal;
+	background-gradient-start: #206e33;
+	background-gradient-end: #48dc6f;
     color: #fff;    /*White */
 }
 
@@ -649,7 +654,7 @@ StScrollBar StButton#vhandle:active {
 .panel-status-button:checked,
 .panel-status-button:focus {
 	background-gradient-direction: vertical;
-	background-gradient-start: rgba(77, 75, 70, 0.8);    /*Dark color1*/
+	background-gradient-start: rgba(56, 55, 51, 0.8);    /*Dark color1*/
 	background-gradient-end: rgba(62, 97, 60, 0.7);    /*Selection color2*/
     color: #fff;    /*White */
     text-shadow: #000 0px 2px 2px;    /*Black */
@@ -842,8 +847,8 @@ StScrollBar StButton#vhandle:active {
 	color: #eee;    /*Grey 7% */
     font-size: 9pt;
     padding: 4px 0px;
-	background-color: rgba(77, 75, 70, 0.8);    /*Dark color1*/
-	border: 1px solid rgba(77, 75, 70, 0.7);    /*Dark color1*/
+	background-color: rgba(56, 55, 51, 0.8);    /*Dark color1*/
+	border: 1px solid rgba(56, 55, 51, 0.7);    /*Dark color1*/
     border-left: 0px;
     border-radius: 0px 9px 9px 0px;
 }
@@ -1061,9 +1066,9 @@ StScrollBar StButton#vhandle:active {
     text-shadow: #000 0px 2px 2px;    /*Black */
 	color: #ccc;    /*Grey 20% */
 	background-gradient-direction: vertical; 
-	background-gradient-start: rgba(77, 75, 70, 0.8);    /*Dark color1*/
-	background-gradient-end: rgba(77, 75, 70, 0.9);    /*Dark color1*/
-	border: 1px solid rgba(77, 75, 70, 0.7);    /*Dark color1*/
+	background-gradient-start: rgba(56, 55, 51, 0.8);    /*Dark color1*/
+	background-gradient-end: rgba(56, 55, 51, 0.9);    /*Dark color1*/
+	border: 1px solid rgba(56, 55, 51, 0.7);    /*Dark color1*/
 	border-radius: 5px;
 }
 
@@ -1227,7 +1232,7 @@ StScrollBar StButton#vhandle:active {
 }
 
 .lg-extension {
-    border: 1px solid #66655F;    /*Panel color1*/
+    border: 1px solid #242320;    /*Panel color1*/
     padding: 4px;
 }
 
@@ -1342,9 +1347,9 @@ StScrollBar StButton#vhandle:active {
 }
 
 .calendar-day-base:active {
-	background-gradient-direction: vertical; 
-	background-gradient-start: #35A854;    /*Selection color1*/
-	background-gradient-end: #206e33;    /*Selection color2*/
+	background-gradient-direction: horizontal;
+	background-gradient-start: #206e33;
+	background-gradient-end: #48dc6f;
     color: #fff;    /*White */
 }
 
@@ -1379,19 +1384,19 @@ StScrollBar StButton#vhandle:active {
 .calendar-work-day {
 	background-gradient-direction: vertical; 
 	background-gradient-start: rgba(136, 136, 136, 0.5);    /*Grey 47% */
-	background-gradient-end: rgba(77, 75, 70, 0.4);    /*Dark color1*/
+	background-gradient-end: rgba(56, 55, 51, 0.4);    /*Dark color1*/
 }
 
 .calendar-nonwork-day {
 	background-gradient-direction: vertical; 
 	background-gradient-start: rgba(136, 136, 136, 0.3);    /*Grey 47% */
-	background-gradient-end: rgba(77, 75, 70, 0.25);    /*Dark color1*/
+	background-gradient-end: rgba(56, 55, 51, 0.25);    /*Dark color1*/
 }
 
 .calendar-today {
-	background-gradient-direction: vertical; 
-	background-gradient-start: #35A854;    /*Selection color1*/
-	background-gradient-end: #206e33;    /*Selection color2*/
+	background-gradient-direction: horizontal;
+	background-gradient-start: #206e33;
+	background-gradient-end: #48dc6f;
     text-shadow: 1px 1px 2px 0px #000;    /*Black */
     font-weight: normal;
     font-style: normal;
@@ -1404,7 +1409,7 @@ StScrollBar StButton#vhandle:active {
 }
 
 .calendar-other-month-day {
-    background-color: rgba(77, 75, 70, 0.2);    /*Dark color1*/
+    background-color: rgba(56, 55, 51, 0.2);    /*Dark color1*/
 	font-size: .7em;
     font-style: italic;
 }
@@ -1474,7 +1479,7 @@ StScrollBar StButton#vhandle:active {
 
 /* Message Tray */
 #message-tray {
-    background: #292825 url(message-tray-background.png);    /*Dark color2*/
+    background: #22211e url(message-tray-background.png);    /*Dark color2*/
     background-repeat: repeat;
     height: 72px;
 }
@@ -1809,7 +1814,7 @@ StScrollBar StButton#vhandle:active {
 
 .switcher-list .item-box:outlined {
     padding: 6px;
-    border: 2px solid rgba(77, 75, 70, 1.0);    /*Dark color1*/
+    border: 2px solid rgba(56, 55, 51, 1.0);    /*Dark color1*/
 }
 
 .switcher-list .item-box:selected {
@@ -1885,7 +1890,7 @@ StScrollBar StButton#vhandle:active {
 
 .ws-switcher-box {
     height: 96px;
-    border: 2px solid rgba(77, 75, 70, 0.5);    /*Dark color1*/
+    border: 2px solid rgba(56, 55, 51, 0.5);    /*Dark color1*/
     background: transparent;    /*Transparent */
 }
 
@@ -1902,9 +1907,9 @@ StScrollBar StButton#vhandle:active {
 
 .modal-dialog {
 	background-gradient-direction: horizontal;
-	background-gradient-start: #292825;    /*Dark color2*/
-	background-gradient-end: #4D4B46;    /*Dark color1*/
-	border: 2px solid rgba(77, 75, 70, 0.8);    /*Dark color1*/
+	background-gradient-start: #22211e;    /*Dark color2*/
+	background-gradient-end: #484741;    /*Dark color1*/
+	border: 2px solid rgba(56, 55, 51, 0.8);    /*Dark color1*/
 
     padding-right: 42px;
     padding-left: 42px;
@@ -2253,7 +2258,7 @@ StScrollBar StButton#vhandle:active {
     color: #fff;    /*White */
     padding: 5px;
     -arrow-border-radius: 10px;
-    -arrow-background-color: #262523;    /*Panel color2*/
+    -arrow-background-color: #222226;    /*Panel color2*/
     -arrow-border-width: 2px;
     -arrow-border-color: #fff;    /*White */
     -arrow-base: 20px;
@@ -2337,7 +2342,7 @@ StScrollBar StButton#vhandle:active {
 }
 
 .login-dialog {
-	background-color: #292825;    /*Dark color2*/
+	background-color: #22211e;    /*Dark color2*/
 }
 
 .login-dialog-button-box {
@@ -2434,9 +2439,9 @@ StScrollBar StButton#vhandle:active {
 }
 
 .login-dialog-user-list:expanded .login-dialog-user-list-item:logged-in {
-	background-gradient-direction: vertical;
-	background-gradient-start: #35A854;    /*Selection color1*/
-	background-gradient-end: #206e33;    /*Selection color2*/
+	background-gradient-direction: horizontal;
+	background-gradient-start: #206e33;
+	background-gradient-end: #48dc6f;
     color: #fff;    /*White */
 }
 
