@@ -125,10 +125,11 @@ fg[INSENSITIVE] = shade (0.55, @fg_color_dark)
 
 1. **Aucun Fichier Fantôme :**
    - Tout fichier `.rc` présent dans `gtk-2.0/apps/` doit être formellement inclus dans `gtkrc`. Les reliques non appelées sont proscrites.
-2. **Pas d'Assets Inutilisés :**
+2. **Pas d'Assets Inutilisés & Vectorisation Intégrale GTK3/GTK4 :**
    - Les dossiers `assets/` ne doivent contenir que des fichiers SVG/PNG activement référencés par les feuilles de style CSS ou les fichiers `gtkrc`.
-   - GTK2 contient uniquement l'asset 9-slice horizontal `assets/menu_item_prelight.png`.
-   - GTK4 ne contient que les 6 SVG vectoriels de contrôles de fenêtre (`close`, `maximize`, `hide` et leurs états `:hover`).
+   - **GTK3 (100% Vectoriel) :** Éradication totale des 248 fichiers matriciels hérités. Les cases à cocher, boutons radio, interrupteurs et séparateurs de panneaux sont rendus en pur CSS combiné à 3 glyphes vectoriels SVG symboliques maîtres (`check-symbolic.svg` à trait fin 1.4px, `radio-symbolic.svg` à puce 2.8px, et `dash-symbolic.svg`).
+   - **GTK4 :** 100% vectoriel, contient uniquement les contrôles SVG de fenêtres CSD.
+   - **GTK2 :** Moteur Murrine + asset 9-slice horizontal `assets/menu_item_prelight.png`.
 
 ---
 
