@@ -44,6 +44,8 @@ Ce document constitue la référence officielle et la mémoire pérenne de l'arc
 | **Boutons** | `@button_bg` | Calculé (`bg_color`) | `#f0f0f4` |
 | **Boutons (Survol)** | `@button_hover_bg` | Calculé (`#ffffff`) | `#ffffff` |
 | **Interrupteurs (Switch)**| `@switch_bg` | Calculé | `#d8d8de` |
+| **Fil d'Ariane (Path-bar)**| `@pathbar_bg` / `@pathbar_border` | Calculé | `#383733` / `#202023` |
+| **Fil d'Ariane (Actif)**| `@pathbar_active_bg` | `selected_bg_color` | `#35A854` |
 
 ### Thème Crunchy-Dark
 
@@ -65,6 +67,8 @@ Ce document constitue la référence officielle et la mémoire pérenne de l'arc
 | **Boutons** | `@button_bg` | Calculé | `#38383e` |
 | **Boutons (Survol)** | `@button_hover_bg` | Calculé | `#484850` |
 | **Interrupteurs (Switch)**| `@switch_bg` | Calculé | `#33322E` |
+| **Fil d'Ariane (Path-bar)**| `@pathbar_bg` / `@pathbar_border` | Calculé | `#383733` / `#202023` |
+| **Fil d'Ariane (Actif)**| `@pathbar_active_bg` | `selected_bg_color` | `#35A854` |
 
 ---
 
@@ -179,7 +183,20 @@ Les scripts `install.sh` et `uninstall.sh` déterminent automatiquement le répe
 - **Crunchy-Light :**
   - Popups, menus déroulants, menu Kickoff, dialogues modaux et notifications basculent en fond clair document `#ffffff` / `#f8f8f9` avec bordures claires fines `#dcdce2` et texte sombre `#2e2e33`.
   - Champs de recherche (`#menu-search-entry`) sur fond blanc avec ombre interne subtile.
-  - Sélections actives conservant le vert Crunchy avec libellé contrasté en blanc.
+  - Sélections actives conservant le vert Crunchy avec libellé contrasté en blanc.---
 
+## 8. Contrôle Qualité Automatisé & Assurance d'Intégrité
 
+Afin de prévenir tout code orphelin, lien mort ou régression de portabilité, le dépôt intègre une suite de validation automatisée exécutable via :
+```bash
+./tests/lint_theme.py
+```
 
+### Piliers de l'Audit Qualité
+1. **Intégrité Totale des URL d'Assets (`url(...)`) :**
+   - 100 % des chemins référencés dans l'ensemble des fichiers CSS (GTK, GNOME Shell, Cinnamon) sont analysés et doivent exister physiquement sur le disque.
+   - Les textures fantômes obsolètes (`message-tray-background.png`, `thumbnail-frame.png`, reliques `TotemGrilo` et `SynapseGui`) ont été éradiquées.
+2. **Conformité Stricte FAT32 / exFAT (Zéro Lien Symbolique) :**
+   - Aucun symlink UNIX n'est toléré dans l'arborescence des sources. Les paquets `Crunchy-Dark` et `Crunchy-Light` sont totalement autonomes.
+3. **Validation Syntaxique Moteur GTK3 :**
+   - Chargement dynamique de chaque feuille de styles via `Gtk.CssProvider` pour intercepter les erreurs de syntaxe, sélecteurs invalides ou variables manquantes.

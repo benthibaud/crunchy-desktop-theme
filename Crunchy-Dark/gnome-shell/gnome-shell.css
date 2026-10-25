@@ -975,17 +975,17 @@ StScrollBar StButton#vhandle:active {
 .page-indicator .page-indicator-icon {
     width: 18px;
     height: 18px;
-    background-image: url(page-indicator-inactive.svg);
+    background-image: url(assets/page-indicator-inactive.svg);
 }
 
 .page-indicator:hover .page-indicator-icon {
-    background-image: url(page-indicator-hover.svg);
+    background-image: url(assets/page-indicator-hover.svg);
 }
 
 .page-indicator:active .page-indicator-icon,
 .page-indicator:checked .page-indicator-icon,
 .page-indicator:checked:active .page-indicator-icon {
-    background-image: url(page-indicator-active.svg);
+    background-image: url(assets/page-indicator-active.svg);
 }
 
 .no-frequent-applications-label {
@@ -1474,8 +1474,7 @@ StScrollBar StButton#vhandle:active {
 
 /* Message Tray */
 #message-tray {
-    background: #22211e url(message-tray-background.png);    /*Dark color2*/
-    background-repeat: repeat;
+    background: #22211e;
     height: 72px;
 }
 
@@ -2550,8 +2549,7 @@ StScrollBar StButton#vhandle:active {
 }
 
 #lockDialogGroup {
-/*    background: #2e3436 url(noise-texture.png);
-    background-repeat: repeat;*/
+    background-color: #2e3436;
 }
 
 .screen-shield-arrows {
