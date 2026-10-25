@@ -31,53 +31,38 @@ TARGET_ICEWM_SHARE="$HOME/.local/share/icewm/themes"
 TARGET_FLUXBOX="$HOME/.fluxbox/styles"
 TARGET_FLUXBOX_SHARE="$HOME/.local/share/fluxbox/styles"
 
-# [1/10] Suppression des thèmes GTK2, GTK3, GTK4 & WM
-echo "[1/10] Suppression des dossiers thèmes GTK / WM..."
+# [1/9] Suppression des thèmes GTK2, GTK3, GTK4 & WM
+echo "[1/9] Suppression des dossiers thèmes GTK / WM..."
 rm -rf "$TARGET_THEMES/Crunchy-Dark" "$TARGET_THEMES/Crunchy-Light"
 
-# [2/10] Suppression des schémas de couleurs KDE Plasma
-echo "[2/10] Suppression des schémas de couleurs KDE Plasma..."
+# [2/9] Suppression des schémas de couleurs KDE Plasma
+echo "[2/9] Suppression des schémas de couleurs KDE Plasma..."
 rm -f "$TARGET_SCHEMES"/Crunchy*.colors
 
-# [3/10] Suppression des décorations de fenêtres KWin Aurorae
-echo "[3/10] Suppression des décorations KWin Aurorae..."
+# [3/9] Suppression des décorations de fenêtres KWin Aurorae
+echo "[3/9] Suppression des décorations KWin Aurorae..."
 rm -rf "$TARGET_AURORAE"/__aurorae__svg__Crunchy* "$TARGET_AURORAE"/Crunchy*
 
-# [4/10] Suppression des thèmes Plasma Desktop & Look-and-Feel
-echo "[4/10] Suppression des composants Plasma (desktoptheme, look-and-feel, kstyle)..."
+# [4/9] Suppression des thèmes Plasma Desktop & Look-and-Feel
+echo "[4/9] Suppression des composants Plasma (desktoptheme, look-and-feel, kstyle)..."
 rm -rf "$TARGET_PLASMA_THEME"/Crunchy*
 rm -rf "$TARGET_LOOKANDFEEL"/Crunchy*
 rm -rf "$TARGET_KSTYLE"/Crunchy*
 
-# [5/10] Suppression des thèmes natifs LXQt
-echo "[5/10] Suppression des thèmes LXQt..."
+# [5/9] Suppression des thèmes natifs LXQt
+echo "[5/9] Suppression des thèmes LXQt..."
 rm -rf "$TARGET_LXQT"/Crunchy*
 
-# [6/10] Suppression des thèmes IceWM
-echo "[6/10] Suppression des thèmes IceWM..."
+# [6/9] Suppression des thèmes IceWM
+echo "[6/9] Suppression des thèmes IceWM..."
 rm -rf "$TARGET_ICEWM"/Crunchy* "$TARGET_ICEWM_SHARE"/Crunchy*
 
-# [7/10] Suppression des styles Fluxbox
-echo "[7/10] Suppression des styles Fluxbox..."
+# [7/9] Suppression des styles Fluxbox
+echo "[7/9] Suppression des styles Fluxbox..."
 rm -rf "$TARGET_FLUXBOX"/Crunchy* "$TARGET_FLUXBOX_SHARE"/Crunchy*
 
-# [8/10] Nettoyage intégration Firefox
-echo "[8/10] Nettoyage de l'intégration Firefox..."
-for FF_DIR in "$HOME/.config/mozilla/firefox" "$HOME/.mozilla/firefox" "$HOME/.var/app/org.mozilla.firefox/.mozilla/firefox"; do
-    if [ -d "$FF_DIR" ]; then
-        for profile in "$FF_DIR"/*.*; do
-            if [ -d "$profile" ]; then
-                # Suppression des fichiers custom injectés si présents
-                rm -f "$profile/chrome/userChrome.css" "$profile/chrome/userContent.css" 2>/dev/null || true
-                # Si le dossier chrome est vide, le supprimer
-                rmdir "$profile/chrome" 2>/dev/null || true
-            fi
-        done
-    fi
-done
-
-# [9/10] Restauration configuration GIMP 2.10
-echo "[9/10] Restauration de la configuration GIMP 2.10..."
+# [8/9] Restauration configuration GIMP 2.10
+echo "[8/9] Restauration de la configuration GIMP 2.10..."
 GIMP_DIR="$HOME/.config/GIMP/2.10"
 if [ -d "$GIMP_DIR" ]; then
     GIMPRC="$GIMP_DIR/gimprc"
@@ -98,8 +83,8 @@ if [ -d "$GIMP_DIR" ]; then
     fi
 fi
 
-# [10/10] Réinitialisation d'environnement & rafraîchissement
-echo "[10/10] Rafraîchissement des services d'affichage..."
+# [9/9] Réinitialisation d'environnement & rafraîchissement
+echo "[9/9] Rafraîchissement des services d'affichage..."
 if command -v kwriteconfig6 >/dev/null 2>&1; then
     kwriteconfig6 --file plasmarc --group Theme --key name "default" 2>/dev/null || true
     kwriteconfig6 --file kwinrc --group org.kde.kdecoration2 --key theme "Breeze" 2>/dev/null || true

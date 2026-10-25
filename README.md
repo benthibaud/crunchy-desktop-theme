@@ -39,8 +39,6 @@ Le script détecte automatiquement son emplacement (racine du projet ou sous-dos
 ./install.sh
 ```
 
-*(Ou depuis un sous-dossier : `cd Crunchy-Dark && ./install.sh`)*
-
 **Ce que fait l'installateur :**
 1. Installe `Crunchy-Dark` et `Crunchy-Light` dans `~/.themes/` (avec prise en charge native d'Openbox et Labwc).
 2. Installe les schémas de couleurs Plasma (`.colors`) dans `~/.local/share/color-schemes/`.
@@ -51,9 +49,8 @@ Le script détecte automatiquement son emplacement (racine du projet ou sous-dos
 7. Installe les thèmes LXQt dans `~/.local/share/lxqt/themes/`.
 8. Installe les thèmes IceWM (`Crunchy-Square` et `Crunchy-Round`) dans `~/.icewm/themes/` et `~/.local/share/icewm/themes/`.
 9. Installe les styles Fluxbox (`Crunchy-Square` et `Crunchy-Round`) dans `~/.fluxbox/styles/` et `~/.local/share/fluxbox/styles/`.
-10. Configure l'intégration Firefox (`userChrome.css`, `userContent.css`).
-11. Applique le patch de lisibilité KWin Aurorae si possible.
-12. **Intégration GIMP 2.10 non destructive :**
+10. Applique le patch de lisibilité KWin Aurorae si possible.
+11. **Intégration GIMP 2.10 non destructive :**
     - Configure GIMP sur le thème système `(theme "System")` dans `gimprc` et `themerc`.
     - Sauvegarde préventivement `gimprc` sous `gimprc.crunchy-backup`.
     - Préserve l'intégralité des configurations et raccourcis clavier utilisateur (stockés dans `menurc`).
@@ -77,9 +74,8 @@ Pour supprimer la suite et restaurer l'état antérieur :
 1. Supprime les dossiers thèmes `Crunchy-Dark` et `Crunchy-Light` de `~/.themes/`.
 2. Supprime les schémas de couleurs KDE Plasma, décorations Aurorae, thèmes Plasma et LXQt.
 3. Supprime les thèmes IceWM et styles Fluxbox déployés.
-4. Supprime les personnalisations injectées dans les profils Firefox.
-5. **Restaure GIMP 2.10 :** restaure le `gimprc` d'origine depuis `gimprc.crunchy-backup` (ou réactive `Dark` par défaut) et réinitialise `themerc`.
-6. Réinitialise les descripteurs Plasma vers les valeurs par défaut et rafraîchit l'affichage.
+4. **Restaure GIMP 2.10 :** restaure le `gimprc` d'origine depuis `gimprc.crunchy-backup` (ou réactive `Dark` par défaut) et réinitialise `themerc`.
+5. Réinitialise les descripteurs Plasma vers les valeurs par défaut et rafraîchit l'affichage.
 
 ---
 
