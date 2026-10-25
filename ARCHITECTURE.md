@@ -107,12 +107,17 @@ fg[INSENSITIVE] = shade (0.55, @fg_color_dark)
 - **Barre latérale (Places Sidebar) :** Rangée sélectionnée en vert `#35A854`, texte blanc et typographie en gras (`font-weight: bold`).
 
 ### E. Dégradé Horizontal des Menus & Parité GTK2 / GTK3
-- **Identité du Dégradé :** La sélection active des menus déroulants (`GtkMenuItem:hover` / `state = PRELIGHT`) utilise un dégradé strictement **horizontal** :
-  `linear-gradient(to right, #206e33 0%, #35ad54 55%, #48dc6f 100%)`
+- **Identité du Dégradé :**
+  - La sélection active des menus déroulants (`GtkMenuItem:hover` / `state = PRELIGHT`) utilise un dégradé vert strictement **horizontal** :
+    `linear-gradient(to right, #206e33 0%, #35ad54 55%, #48dc6f 100%)`
+  - Les éléments normaux non survolés (`GtkMenuItem` / `state = NORMAL` et `INSENSITIVE`) portent le dégradé sombre horizontal officiel :
+    `linear-gradient(to right, #22211e 0%, #363530 55%, #48dc6f 100%)` avec liseré lumineux supérieur et ombre inférieure.
 - **Contrainte Technique GTK2 (Murrine) :** Le moteur Murrine ne permet pas de générer de dégradés horizontaux natifs (la directive `gradient_shades` n'agit que sur l'axe vertical).
 - **Architecture de Rendu GTK2 :**
-  - Pour garantir une parité visuelle 100% avec GTK3 sans impacter la stabilité de GIMP 2.10, les styles `menu_item` et `menubar_item` dans `gtk-2.0/gtkrc` s'appuient sur le moteur `pixmap` (`engine "pixmap"`) pour l'état `state = PRELIGHT`.
-  - Un asset 9-slice étirable (`assets/menu_item_prelight.png`, 48x24 px avec liseré lumineux supérieur et coins arrondis 2px) est utilisé.
+  - Pour garantir une parité visuelle 100% avec GTK3 sans impacter la stabilité de GIMP 2.10, le style `menu_item` dans `gtk-2.0/gtkrc` s'appuie sur le moteur `pixmap` (`engine "pixmap"`).
+  - Deux assets 9-slice étirables (48x24 px avec liseré lumineux supérieur et coins arrondis 1px) sont utilisés :
+    - `assets/menu_item_normal.png` pour les états `NORMAL` et `INSENSITIVE`.
+    - `assets/menu_item_prelight.png` pour les états `PRELIGHT` et `ACTIVE`.
   - Toutes les autres composantes de l'interface GTK2 continuent d'être calculées et rendues dynamiquement par Murrine.
 
 ---
@@ -123,7 +128,7 @@ fg[INSENSITIVE] = shade (0.55, @fg_color_dark)
    - Tout fichier `.rc` présent dans `gtk-2.0/apps/` doit être formellement inclus dans `gtkrc`. Les reliques non appelées sont proscrites.
 2. **Pas d'Assets Inutilisés :**
    - Les dossiers `assets/` ne doivent contenir que des fichiers SVG/PNG activement référencés par les feuilles de style CSS ou les fichiers `gtkrc`.
-   - GTK2 contient uniquement l'asset 9-slice horizontal `assets/menu_item_prelight.png`.
+   - GTK2 contient uniquement les deux assets 9-slice horizontaux `assets/menu_item_normal.png` et `assets/menu_item_prelight.png`.
    - GTK4 ne contient que les 6 SVG vectoriels de contrôles de fenêtre (`close`, `maximize`, `hide` et leurs états `:hover`).
 
 ---
