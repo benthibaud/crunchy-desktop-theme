@@ -3536,7 +3536,7 @@ MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
     color: inherit; }
 
 /* =========================================================================
-   CONTEXTE : XFCE WHISKER MENU (INTÉGRATION SOMBRE AMBIANCE)
+   CONTEXTE : XFCE WHISKER MENU (STYLE HISTORIQUE CRUNCHY)
    ========================================================================= */
 
 #whiskermenu-button,
@@ -3560,19 +3560,21 @@ MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
   color: #ffffff;
 }
 
-#whiskermenu-window,
-window.whiskermenu {
-  background-color: @menu_bg_mid;
-  color: @menu_fg;
-  border: 1px solid @menu_border;
-  box-shadow: 0 4px 16px @menu_shadow;
+#whiskermenu-window * {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  margin: 1px;
 }
 
-/* Neutralisation de la bordure claire du GtkFrame interne */
-#whiskermenu-window frame,
-#whiskermenu-window frame > border,
-#whiskermenu-window .frame {
-  border: none;
+#whiskermenu-window,
+window.whiskermenu {
+  border: 1px solid @menu_border;
+  padding: 8px 10px;
+  background-image: linear-gradient(to right, @menu_bg_left 0%, @menu_bg_mid 55%, @menu_bg_right 100%);
+  background-color: @menu_bg_left;
+  color: @menu_fg;
+  box-shadow: 0 4px 16px @menu_shadow;
 }
 
 #whiskermenu-window label,
@@ -3580,139 +3582,57 @@ window.whiskermenu label {
   color: @menu_fg;
 }
 
-#whiskermenu-window .title-area {
-  padding: 6px 8px;
-}
-
-#whiskermenu-window .title-area .profile-username {
-  color: @menu_fg;
-  font-weight: bold;
-}
-
-#whiskermenu-window .command-button,
-#whiskermenu-window .commands-area button {
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: @menu_fg;
-  padding: 5px 7px;
-  box-shadow: none;
-}
-
-#whiskermenu-window .command-button:hover,
-#whiskermenu-window .commands-area button:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-}
-
-#whiskermenu-window .command-button:active,
-#whiskermenu-window .commands-area button:active {
-  background-color: @selected_bg_color;
-  color: #ffffff;
-}
-
 #whiskermenu-window entry {
-  background-color: @menu_bg_left;
-  color: @menu_fg;
+  background-color: rgba(0, 0, 0, 0.25);
+  background-image: none;
   border: 1px solid @menu_border;
-  border-radius: 4px;
-  padding: 6px 10px;
-  margin: 6px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 6px 8px;
+  margin: 6px 6px 1px 3px;
+  color: @menu_fg;
+  caret-color: @menu_fg;
 }
 
 #whiskermenu-window entry:focus {
   border-color: @accent_color;
-  background-color: @menu_bg_left;
   color: @menu_fg;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px @accent_color;
 }
 
-#whiskermenu-window entry image {
-  color: alpha(@menu_fg, 0.65);
-}
-
-/* Catégories : espacement naturel et respiration identiques à Mint-L */
-#whiskermenu-window .categories {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 2px;
-}
-
-#whiskermenu-window .category-button,
-#whiskermenu-window .categories button,
-#whiskermenu-window button.category-button,
-#whiskermenu-window button.radio {
+#whiskermenu-window button {
   background-color: transparent;
   background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: alpha(@menu_fg, 0.85);
-  padding: 6px 12px;
-  min-height: 24px;
-  margin: 1px 4px;
+  color: @menu_fg;
+  padding: 4px 8px;
+  -gtk-icon-source: none;
   box-shadow: none;
-  -gtk-icon-source: none;
 }
 
-#whiskermenu-window .category-button:hover,
-#whiskermenu-window .categories button:hover,
-#whiskermenu-window button.category-button:hover,
-#whiskermenu-window button.radio:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: transparent;
-  color: #ffffff;
-}
-
-#whiskermenu-window .category-button:checked,
-#whiskermenu-window .category-button:active,
-#whiskermenu-window .categories button:checked,
-#whiskermenu-window .categories button:active,
-#whiskermenu-window button.category-button:checked,
-#whiskermenu-window button.radio:checked {
-  background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
-  background-color: @selected_bg_color;
-  border-color: transparent;
-  border-radius: 4px;
-  color: #ffffff;
-  -gtk-icon-source: none;
-}
-
-#whiskermenu-window .category-button label,
-#whiskermenu-window button.category-button label,
-#whiskermenu-window button.radio label {
+#whiskermenu-window button label {
   color: inherit;
-}
-
-/* Lanceurs d'applications : fond continu unifié sans cadre interne */
-#whiskermenu-window .launchers,
-#whiskermenu-window scrolledwindow {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
 }
 
 #whiskermenu-window treeview,
 #whiskermenu-window iconview {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.25);
   color: @menu_fg;
-  border: none;
+  padding: 2px 4px;
 }
 
-#whiskermenu-window treeview:hover,
-#whiskermenu-window iconview:hover {
-  background-color: rgba(255, 255, 255, 0.04);
-}
-
+#whiskermenu-window button:focus,
+#whiskermenu-window button:hover,
+#whiskermenu-window button:checked:hover,
 #whiskermenu-window treeview:selected,
-#whiskermenu-window treeview:selected:focus,
-#whiskermenu-window iconview:selected {
-  background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
+#whiskermenu-window treeview:hover,
+#whiskermenu-window iconview:selected,
+#whiskermenu-window iconview:hover {
+  background-image: none;
   background-color: @selected_bg_color;
-  color: #ffffff;
+  color: @selected_fg_color;
+}
+
+#whiskermenu-window button:checked {
+  background-image: none;
+  background-color: alpha(@selected_bg_color, 0.6);
+  color: @selected_fg_color;
 }
 
 #whiskermenu-window scrollbar trough {
@@ -3722,7 +3642,7 @@ window.whiskermenu label {
 
 #whiskermenu-window scrollbar slider {
   background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 #whiskermenu-window scrollbar slider:hover {
