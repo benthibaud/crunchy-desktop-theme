@@ -16,13 +16,14 @@ Suite complète de thèmes de bureau Linux sobre, low-tech, contrastée et élé
 | Composant / Bureau | Technologie | Caractéristiques |
 | :--- | :--- | :--- |
 | **GTK 3.24 & GTK 4** | CSS | Variables centralisées en en-tête, contrôles vectoriels SVG Crunchy, support LibreOffice. |
-| **GTK 2.0** | Murrine engine | Nuances synchronisées, padding de menu calibré, configuration isolée GIMP. |
+| **GTK 2.0** | Murrine & Pixmap | Menus au dégradé horizontal signature vert Crunchy (parité stricte GTK3/4), padding calibré, GIMP isolé. |
 | **Qt / KDE Plasma** | QSS & Color scheme | Intégration Qt5/Qt6, schéma de couleurs `.colors`, KWin Aurorae, Look-and-Feel. |
 | **LXQt** | QSS / Palette | Thèmes natifs LXQt. |
 | **XFCE (XFWM4)** | SVG 100% vectoriel | Boutons Square (radius 5px) et Round, Whisker Menu intégré. |
 | **Cinnamon & GNOME** | Shell CSS | Panneaux sombres, menus et popups contextuels contrastés. |
 | **Openbox & Labwc** | themerc / SVG | Boutons carrés vectoriels en relief (Square Relief), dégradés horizontaux et masques XBM nets. |
 | **IceWM** | XPM / default.theme | Thèmes complets `Crunchy-Square` (boutons relief signature) et `Crunchy-Round` (Ambiance). |
+| **Fluxbox** | theme.cfg / XPM | Styles complets `Crunchy-Square` et `Crunchy-Round` avec dégradés de menus horizontaux coordonnés. |
 | **Metacity & XFWM4** | XML / themerc | Dégradés horizontaux et boutons vectoriels coordonnés. |
 | **GIMP 2.10** | GTK2 engine | Délégation propre au thème système avec préservation des raccourcis utilisateur. |
 
@@ -49,9 +50,10 @@ Le script détecte automatiquement son emplacement (racine du projet ou sous-dos
 6. Installe les styles d'applications KStyle dans `~/.local/share/kstyle/themes/`.
 7. Installe les thèmes LXQt dans `~/.local/share/lxqt/themes/`.
 8. Installe les thèmes IceWM (`Crunchy-Square` et `Crunchy-Round`) dans `~/.icewm/themes/` et `~/.local/share/icewm/themes/`.
-9. Configure l'intégration Firefox (`userChrome.css`, `userContent.css`).
-10. Applique le patch de lisibilité KWin Aurorae si possible.
-11. **Intégration GIMP 2.10 non destructive :**
+9. Installe les styles Fluxbox (`Crunchy-Square` et `Crunchy-Round`) dans `~/.fluxbox/styles/` et `~/.local/share/fluxbox/styles/`.
+10. Configure l'intégration Firefox (`userChrome.css`, `userContent.css`).
+11. Applique le patch de lisibilité KWin Aurorae si possible.
+12. **Intégration GIMP 2.10 non destructive :**
     - Configure GIMP sur le thème système `(theme "System")` dans `gimprc` et `themerc`.
     - Sauvegarde préventivement `gimprc` sous `gimprc.crunchy-backup`.
     - Préserve l'intégralité des configurations et raccourcis clavier utilisateur (stockés dans `menurc`).
@@ -74,9 +76,10 @@ Pour supprimer la suite et restaurer l'état antérieur :
 **Ce que fait le désinstallateur :**
 1. Supprime les dossiers thèmes `Crunchy-Dark` et `Crunchy-Light` de `~/.themes/`.
 2. Supprime les schémas de couleurs KDE Plasma, décorations Aurorae, thèmes Plasma et LXQt.
-3. Supprime les personnalisations injectées dans les profils Firefox.
-4. **Restaure GIMP 2.10 :** restaure le `gimprc` d'origine depuis `gimprc.crunchy-backup` (ou réactive `Dark` par défaut) et réinitialise `themerc`.
-5. Réinitialise les descripteurs Plasma vers les valeurs par défaut et rafraîchit l'affichage.
+3. Supprime les thèmes IceWM et styles Fluxbox déployés.
+4. Supprime les personnalisations injectées dans les profils Firefox.
+5. **Restaure GIMP 2.10 :** restaure le `gimprc` d'origine depuis `gimprc.crunchy-backup` (ou réactive `Dark` par défaut) et réinitialise `themerc`.
+6. Réinitialise les descripteurs Plasma vers les valeurs par défaut et rafraîchit l'affichage.
 
 ---
 

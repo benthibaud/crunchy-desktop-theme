@@ -106,6 +106,15 @@ fg[INSENSITIVE] = shade (0.55, @fg_color_dark)
 - **Barre de chemin (Path-bar) :** Boutons légèrement éclaircis `#42413c` (survol `#52514a`, actif vert `#35A854`), texte blanc.
 - **Barre latérale (Places Sidebar) :** Rangée sélectionnée en vert `#35A854`, texte blanc et typographie en gras (`font-weight: bold`).
 
+### E. Dégradé Horizontal des Menus & Parité GTK2 / GTK3
+- **Identité du Dégradé :** La sélection active des menus déroulants (`GtkMenuItem:hover` / `state = PRELIGHT`) utilise un dégradé strictement **horizontal** :
+  `linear-gradient(to right, #206e33 0%, #35ad54 55%, #48dc6f 100%)`
+- **Contrainte Technique GTK2 (Murrine) :** Le moteur Murrine ne permet pas de générer de dégradés horizontaux natifs (la directive `gradient_shades` n'agit que sur l'axe vertical).
+- **Architecture de Rendu GTK2 :**
+  - Pour garantir une parité visuelle 100% avec GTK3 sans impacter la stabilité de GIMP 2.10, les styles `menu_item` et `menubar_item` dans `gtk-2.0/gtkrc` s'appuient sur le moteur `pixmap` (`engine "pixmap"`) pour l'état `state = PRELIGHT`.
+  - Un asset 9-slice étirable (`assets/menu_item_prelight.png`, 48x24 px avec liseré lumineux supérieur et coins arrondis 2px) est utilisé.
+  - Toutes les autres composantes de l'interface GTK2 continuent d'être calculées et rendues dynamiquement par Murrine.
+
 ---
 
 ## 4. Politique de Gestion des Assets & Zéro Relique
@@ -113,7 +122,8 @@ fg[INSENSITIVE] = shade (0.55, @fg_color_dark)
 1. **Aucun Fichier Fantôme :**
    - Tout fichier `.rc` présent dans `gtk-2.0/apps/` doit être formellement inclus dans `gtkrc`. Les reliques non appelées sont proscrites.
 2. **Pas d'Assets Inutilisés :**
-   - Les dossiers `assets/` ne doivent contenir que des fichiers SVG/PNG activement référencés par les feuilles de style CSS.
+   - Les dossiers `assets/` ne doivent contenir que des fichiers SVG/PNG activement référencés par les feuilles de style CSS ou les fichiers `gtkrc`.
+   - GTK2 contient uniquement l'asset 9-slice horizontal `assets/menu_item_prelight.png`.
    - GTK4 ne contient que les 6 SVG vectoriels de contrôles de fenêtre (`close`, `maximize`, `hide` et leurs états `:hover`).
 
 ---
@@ -144,6 +154,7 @@ Les scripts `install.sh` et `uninstall.sh` déterminent automatiquement le répe
   - **Openbox (X11) :** Les boutons utilisent des masques XBM 1-bit nets (évitant le crénelage inévitable des cercles sans antialiasing) combinés aux capacités de relief natives de `themerc` (`raised` en état normal, `sunken` lors du clic).
   - **Labwc (Wayland) :** Prise en charge vectorielle SVG complète avec dégradés verticaux organiques, lueur verte Crunchy sur `close` (`#78ae74` -> `#599455`, survol `#a4d4a2`) et reflets argentés sur `max` et `iconify`.
   - **IceWM :** Deux thèmes autonomes complets intégrés : `Crunchy-Square` (boutons carrés en relief, design de prédilection) et `Crunchy-Round` (boutons ronds Ambiance).
+  - **Fluxbox :** Deux styles autonomes complets intégrés dans `fluxbox-styles/` : `Crunchy-Square` et `Crunchy-Round`. Fluxbox implémente nativement les dégradés horizontaux via `menu.frame: flat gradient horizontal` (`#22211e` -> `#484741`) et `menu.hilite: flat gradient horizontal` (`#206e33` -> `#48dc6f`), garantissant une harmonie visuelle totale avec les menus GTK3 et GTK2.
 
 ### B. Règle Impérative de Portabilité des Fichiers (Zéro Lien Symbolique)
 - **Constat d'Ingénierie :** Les systèmes de fichiers non-POSIX couramment utilisés sur supports amovibles (**FAT32**, **exFAT**) ne supportent pas les liens symboliques UNIX. La présence de symlinks dans un dépôt entraîne leur conversion en fichiers texte corrompus ou des échecs d'écriture lors de la copie sur clé USB.

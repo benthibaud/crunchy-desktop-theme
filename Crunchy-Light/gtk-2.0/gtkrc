@@ -400,17 +400,15 @@ style "menu_item" = "menu" {
 	fg[PRELIGHT]   = @selected_fg_color
 	text[PRELIGHT] = @selected_fg_color
 
-	engine "murrine" {
-		roundness         = 2
-		contrast          = 1.2
-		glowstyle         = 5
-		glow_shade        = 1.15
-		highlight_shade   = 1.18
-		lightborderstyle  = 3
-		lightborder_shade = 1.25
-		border_shades     = {1.15, 0.85}
-		gradient_shades   = {1.22, 1.05, 0.98, 0.86}
-		reliefstyle       = 3
+	engine "pixmap" {
+		image {
+			function    = BOX
+			recolorable = TRUE
+			state       = PRELIGHT
+			file        = "assets/menu_item_prelight.png"
+			border      = { 3, 3, 3, 3 }
+			stretch     = TRUE
+		}
 	}
 }
 
@@ -445,17 +443,15 @@ style "menubar_item" = "menubar" {
 	fg[PRELIGHT]   = @selected_fg_color
 	text[PRELIGHT] = @selected_fg_color
 
-	engine "murrine" {
-		roundness         = 2
-		contrast          = 1.2
-		glowstyle         = 5
-		glow_shade        = 1.15
-		highlight_shade   = 1.18
-		lightborderstyle  = 3
-		lightborder_shade = 1.25
-		border_shades     = {1.15, 0.85}
-		gradient_shades   = {1.22, 1.05, 0.98, 0.86}
-		reliefstyle       = 3
+	engine "pixmap" {
+		image {
+			function    = BOX
+			recolorable = TRUE
+			state       = PRELIGHT
+			file        = "assets/menu_item_prelight.png"
+			border      = { 3, 3, 3, 3 }
+			stretch     = TRUE
+		}
 	}
 }
 
