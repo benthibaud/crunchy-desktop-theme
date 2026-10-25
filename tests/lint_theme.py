@@ -84,6 +84,31 @@ def test_gtk3_css_parsing():
                 success = False
     return success
 
+def test_common_css_parity():
+    print("▶ Vérification de la parité stricte du cœur commun (common.css)...")
+    source_master = os.path.join(REPO_ROOT, "src", "gtk-3.0", "common.css")
+    if not os.path.exists(source_master):
+        print(f"  ❌ Fichier maître introuvable : {source_master}")
+        return False
+    with open(source_master, "rb") as fp:
+        master_data = fp.read()
+
+    success = True
+    for theme in ["Crunchy-Dark", "Crunchy-Light"]:
+        theme_common = os.path.join(REPO_ROOT, theme, "gtk-3.0", "common.css")
+        if not os.path.exists(theme_common):
+            print(f"  ❌ common.css introuvable dans {theme}")
+            success = False
+            continue
+        with open(theme_common, "rb") as fp:
+            theme_data = fp.read()
+        if theme_data != master_data:
+            print(f"  ❌ DÉSÉQUILIBRE: {theme}/gtk-3.0/common.css diffère de src/gtk-3.0/common.css ! Lancez ./tools/sync-theme.sh.")
+            success = False
+        else:
+            print(f"  ✅ {theme}/gtk-3.0/common.css est 100% conforme au maître.")
+    return success
+
 def main():
     print("======================================================================")
     print("  Audit Qualité & Intégrité — Crunchy Desktop Theme")
@@ -91,10 +116,11 @@ def main():
     
     r1 = test_css_asset_urls()
     r2 = test_zero_symlinks()
-    r3 = test_gtk3_css_parsing()
+    r3 = test_common_css_parity()
+    r4 = test_gtk3_css_parsing()
     
     print("======================================================================")
-    if r1 and r2 and r3:
+    if r1 and r2 and r3 and r4:
         print("  🎉 Tous les tests d'intégrité sont passés avec succès !")
         print("======================================================================")
         sys.exit(0)

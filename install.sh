@@ -35,6 +35,9 @@ mkdir -p "$TARGET_THEMES" "$TARGET_SCHEMES" "$TARGET_AURORAE" "$TARGET_PLASMA_TH
 
 # [1/11] GTK2, GTK3, GTK4 & Window Managers (Openbox, Labwc, Metacity, XFWM4)
 echo "[1/11] Installation des thèmes GTK2, GTK3, GTK4 & WM..."
+if [ -f "$ROOT_DIR/tools/sync-theme.sh" ]; then
+    sh "$ROOT_DIR/tools/sync-theme.sh" >/dev/null 2>&1 || true
+fi
 cp -rf "$ROOT_DIR/Crunchy-Dark" "$TARGET_THEMES/"
 cp -rf "$ROOT_DIR/Crunchy-Light" "$TARGET_THEMES/"
 # Compatibilité directe Labwc (copie physique évitant tout problème de lien symbolique FAT32/exFAT)

@@ -199,5 +199,8 @@ Afin de prévenir tout code orphelin, lien mort ou régression de portabilité, 
    - Les textures fantômes obsolètes (`message-tray-background.png`, `thumbnail-frame.png`, reliques `TotemGrilo` et `SynapseGui`) ont été éradiquées.
 2. **Conformité Stricte FAT32 / exFAT (Zéro Lien Symbolique) :**
    - Aucun symlink UNIX n'est toléré dans l'arborescence des sources. Les paquets `Crunchy-Dark` et `Crunchy-Light` sont totalement autonomes.
-3. **Validation Syntaxique Moteur GTK3 :**
+3. **Parité Stricte du Cœur Commun GTK3 (`common.css`) :**
+   - Vérification automatique que `Crunchy-Dark/gtk-3.0/common.css` et `Crunchy-Light/gtk-3.0/common.css` sont rigoureusement identiques au bit près à la source maîtresse `src/gtk-3.0/common.css`.
+   - Script de synchronisation automatique : `./tools/sync-theme.sh` (également invoqué à l'étape 1 d'`install.sh`).
+4. **Validation Syntaxique Moteur GTK3 :**
    - Chargement dynamique de chaque feuille de styles via `Gtk.CssProvider` pour intercepter les erreurs de syntaxe, sélecteurs invalides ou variables manquantes.

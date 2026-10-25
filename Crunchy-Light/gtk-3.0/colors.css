@@ -1,0 +1,177 @@
+/* =============================================================================
+   CRUNCHY-LIGHT - CONFIGURATION ET PALETTE DE VARIABLES SÉMANTIQUES
+   ============================================================================= */
+
+/* 1. Variables système officielles */
+@define-color accent_color            #35A854;
+@define-color accent_bg_color         #35A854;
+@define-color accent_fg_color         #ffffff;
+
+@define-color theme_base_color        #FFFFFF;
+@define-color base_color              #FFFFFF;
+@define-color theme_bg_color          #f8f8f9;
+@define-color bg_color                #f8f8f9;
+@define-color theme_fg_color          #2e2e33;
+@define-color fg_color                #2e2e33;
+@define-color theme_text_color        #303030;
+@define-color text_color              #303030;
+
+@define-color theme_selected_bg_color #35A854;
+@define-color selected_bg_color       #35A854;
+@define-color theme_selected_fg_color #ffffff;
+@define-color selected_fg_color       #ffffff;
+@define-color theme_unfocused_selected_bg_color #6ec485;
+@define-color theme_unfocused_selected_fg_color #ffffff;
+
+@define-color insensitive_bg_color    #fcfcfd;
+@define-color insensitive_fg_color    alpha(@theme_fg_color, 0.55);
+@define-color insensitive_base_color  #FFFFFF;
+
+@define-color theme_unfocused_fg_color   alpha(@theme_fg_color, 0.87);
+@define-color theme_unfocused_text_color #303030;
+@define-color theme_unfocused_bg_color   #f8f8f9;
+@define-color theme_unfocused_base_color #FFFFFF;
+
+@define-color borders                 #c8c8ce;
+@define-color unfocused_borders       #dcdce0;
+@define-color headerbar_bg_color      #e0dedb;
+@define-color headerbar_fg_color      #2e2e33;
+@define-color headerbar_border_color  #c8c8ce;
+@define-color link_color              #35A854;
+@define-color link_visited_color      alpha(@link_color, 0.75);
+
+@define-color warning_color           #F27835;
+@define-color error_color             #FC4138;
+@define-color success_color           #73D216;
+@define-color placeholder_text_color  #8a8a8a;
+@define-color content_view_bg         @theme_base_color;
+
+/* 2. Rectangle de sélection (Rubberband) & Vues */
+@define-color rubberband_border       #298141;
+@define-color rubberband_bg           alpha(@selected_bg_color, 0.20);
+@define-color view_bg                 @theme_base_color;
+@define-color view_fg                 @theme_text_color;
+@define-color view_selected_bg        @selected_bg_color;
+@define-color view_selected_fg        @selected_fg_color;
+@define-color view_selected_backdrop  @theme_unfocused_selected_bg_color;
+@define-color view_hover_bg           alpha(@theme_fg_color, 0.08);
+
+/* 3. Menus & Barres d'outils (Sombre Ambiance) */
+@define-color menubar_bg_left         #242320;
+@define-color menubar_bg_mid          #393833;
+@define-color menubar_bg_right        #4d4c46;
+@define-color menubar_fg              #ffffff;
+@define-color menubar_border          #1e1d1a;
+@define-color menubar_disabled_fg     alpha(#ffffff, 0.55);
+
+@define-color menu_bg_left            #22211e;
+@define-color menu_bg_mid             #363530;
+@define-color menu_bg_right           #484741;
+@define-color menu_fg                 #ffffff;
+@define-color menu_disabled_fg        alpha(#ffffff, 0.55);
+@define-color menu_border             #1a1916;
+@define-color menu_separator          #3c3b38;
+@define-color menu_shadow             alpha(#000000, 0.55);
+
+@define-color menu_hover_left         #206e33;
+@define-color menu_hover_mid          #35ad54;
+@define-color menu_hover_right        #48dc6f;
+@define-color menu_hover_fg           #ffffff;
+
+@define-color toolbar_dark_bg         #222226;
+@define-color toolbar_dark_fg         #ffffff;
+@define-color toolbar_dark_border     #18181b;
+@define-color toolbar_dark_disabled_fg alpha(#ffffff, 0.38);
+@define-color toolbar_dark_hover_bg   #383733;
+
+@define-color pathbar_bg              #383733;
+@define-color pathbar_fg              #dadada;
+@define-color pathbar_border          #202023;
+@define-color pathbar_hover_bg        #4a4943;
+@define-color pathbar_hover_border    @accent_color;
+@define-color pathbar_active_bg       @accent_color;
+@define-color pathbar_active_fg       @accent_fg_color;
+@define-color pathbar_active_border   #206e33;
+
+/* 4. Barres latérales */
+@define-color sidebar_bg              #FFFFFF;
+@define-color sidebar_fg              #303030;
+@define-color sidebar_border          #c8c8ce;
+@define-color sidebar_selected_bg     @selected_bg_color;
+@define-color sidebar_selected_fg     @selected_fg_color;
+@define-color sidebar_hover_bg        alpha(@theme_fg_color, 0.08);
+
+/* 5. Contrôles de formulaire */
+@define-color switch_bg               #d8d8de;
+@define-color switch_active_bg        @accent_color;
+@define-color scale_highlight         @accent_color;
+@define-color entry_bg                #FFFFFF;
+@define-color entry_border            #c8c8ce;
+@define-color entry_focus_border      @accent_color;
+@define-color control_border          rgba(0, 0, 0, 0.32);
+@define-color control_hover_bg        rgba(0, 0, 0, 0.04);
+
+/* 6. Window Manager & CSD */
+@define-color wm_bg                   #222226;
+@define-color wm_bg_unfocused         #26262a;
+@define-color wm_title                #ffffff;
+@define-color wm_title_unfocused      #A7A7AB;
+@define-color wm_highlight            #373737;
+@define-color wm_border               #18181b;
+@define-color wm_border_unfocused     #242429;
+@define-color wm_shadow               alpha(#000000, 0.35);
+@define-color wm_button_close_bg      @accent_color;
+@define-color wm_button_close_hover_bg #29d0df;
+@define-color wm_button_close_active_bg #0c4a4f;
+@define-color wm_button_close_hover   #29d0df;
+@define-color wm_button_close_active  #0c4a4f;
+@define-color wm_icon_close_bg        #F8F8F8;
+@define-color wm_button_hover_bg      #4C4C50;
+@define-color wm_button_active_bg     #949498;
+@define-color wm_icon_bg              #909090;
+
+/* 7. Infobulles, OSD, Popovers */
+@define-color tooltip_bg              #242321;
+@define-color tooltip_fg              #ffffff;
+@define-color tooltip_border          #202023;
+@define-color tooltip_shadow          alpha(#000000, 0.55);
+
+@define-color osd_bg                  #242321;
+@define-color osd_fg                  #ffffff;
+@define-color osd_border              #202023;
+@define-color osd_shadow              alpha(#000000, 0.55);
+
+@define-color popover_bg              #ffffff;
+@define-color popover_fg              #2e2e33;
+@define-color popover_border          #c8c8ce;
+@define-color popover_shadow          alpha(#000000, 0.15);
+
+/* 8. Onglets (Notebook) */
+@define-color notebook_header_bg      #f0f0f4;
+@define-color notebook_header_border  #d0d0d6;
+@define-color tab_bg_inactive         #e4e4ea;
+@define-color tab_fg_inactive         #383842;
+@define-color tab_border_inactive     @borders;
+@define-color tab_bg_active           #FFFFFF;
+@define-color tab_fg_active           #1a1a1d;
+@define-color tab_border_active       @borders;
+
+/* 9. Boutons généraux & Fallbacks */
+@define-color btn_bg                  #fefefe;
+@define-color btn_border              #c8c8ce;
+@define-color btn_hover_bg            #ffffff;
+@define-color btn_active_bg           #dedee1;
+@define-color btn_disabled_bg         #f6f6f7;
+@define-color fallback_hover_bg       white;
+@define-color fallback_active_bg      #dedee1;
+@define-color fallback_disabled_bg    #fcfcfd;
+
+@define-color tab_bg_hover           #f2f2f7;
+@define-color tab_fg_hover           #1a1a1d;
+@define-color entry_warning_bg       #f7ae86;
+@define-color entry_error_bg         #fd8d88;
+@define-color osd_entry_bg           rgba(120, 120, 120, 0.4);
+@define-color osd_entry_border       rgba(33, 33, 33, 0.4);
+@define-color osd_entry_fg           #DBDBDB;
+@define-color colorswatch_border     alpha(@theme_fg_color, 0.3);
+@define-color view_border            #298141;
