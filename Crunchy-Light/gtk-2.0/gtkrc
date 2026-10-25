@@ -404,32 +404,8 @@ style "menu_item" = "menu" {
 		image {
 			function    = BOX
 			recolorable = TRUE
-			state       = NORMAL
-			file        = "assets/menu_item_normal.png"
-			border      = { 3, 3, 3, 3 }
-			stretch     = TRUE
-		}
-		image {
-			function    = BOX
-			recolorable = TRUE
 			state       = PRELIGHT
 			file        = "assets/menu_item_prelight.png"
-			border      = { 3, 3, 3, 3 }
-			stretch     = TRUE
-		}
-		image {
-			function    = BOX
-			recolorable = TRUE
-			state       = ACTIVE
-			file        = "assets/menu_item_prelight.png"
-			border      = { 3, 3, 3, 3 }
-			stretch     = TRUE
-		}
-		image {
-			function    = BOX
-			recolorable = TRUE
-			state       = INSENSITIVE
-			file        = "assets/menu_item_normal.png"
 			border      = { 3, 3, 3, 3 }
 			stretch     = TRUE
 		}
