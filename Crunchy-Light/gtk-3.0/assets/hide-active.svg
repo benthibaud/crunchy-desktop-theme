@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="18.500002"
-   height="20.000002"
-   viewBox="0 0 4.8947921 5.2916673"
+   width="20"
+   height="20"
+   viewBox="0 0.396875 4.8947921 4.8947921"
    version="1.1"
    id="svg855"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -87,7 +87,7 @@
      id="layer1"
      transform="translate(40.622991,-145.98906)">
     <ellipse
-       style="display:inline;fill:url(#linearGradient4849);fill-opacity:1;fill-rule:nonzero;stroke:#3c3b37;stroke-width:0.22379677;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:url(#linearGradient4849);fill-opacity:1;fill-rule:nonzero;stroke:#22211e;stroke-width:0.22379677;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path3290"
        transform="matrix(-0.40274542,0.91531204,0.91531207,0.40274534,0,0)"
        cx="151.60399"
@@ -95,7 +95,7 @@
        rx="2.3352911"
        ry="2.3352909" />
     <rect
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#3c3b37;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.28222221;marker:none;enable-background:accumulate"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#22211e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.28222221;marker:none;enable-background:accumulate"
        id="rect2985"
        width="1.9755554"
        height="0.28222221"

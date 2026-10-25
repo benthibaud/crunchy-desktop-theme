@@ -85,46 +85,106 @@ headerbar {
   padding: 0 6px;
 }
 
-headerbar windowcontrols button {
+headerbar windowcontrols button,
+windowcontrols button {
   min-width: 20px;
   min-height: 20px;
-  padding: 4px 5px;
-  margin: 2px;
+  padding: 0;
+  margin: 0 2px;
   border: none;
   background-color: transparent;
-}
-
-headerbar windowcontrols button.close {
-  background-image: url("assets/close-active.svg");
-  background-size: 17px 17px;
+  background-image: none;
+  background-size: 20px 20px;
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: none;
+  color: transparent;
 }
 
-headerbar windowcontrols button.close:hover {
+/* Close */
+headerbar windowcontrols button.close,
+windowcontrols button.close {
+  background-image: url("assets/close-active.svg");
+}
+headerbar windowcontrols button.close:hover,
+windowcontrols button.close:hover {
   background-image: url("assets/close-hover.svg");
 }
-
-headerbar windowcontrols button.maximize {
-  background-image: url("assets/maximize-active.svg");
-  background-size: 17px 17px;
-  background-repeat: no-repeat;
-  background-position: center;
+headerbar windowcontrols button.close:active,
+windowcontrols button.close:active {
+  background-image: url("assets/close-pressed.svg");
+}
+headerbar windowcontrols button.close:backdrop,
+windowcontrols button.close:backdrop {
+  background-image: url("assets/close-backdrop.svg");
 }
 
-headerbar windowcontrols button.maximize:hover {
+/* Maximize */
+headerbar windowcontrols button.maximize,
+windowcontrols button.maximize {
+  background-image: url("assets/maximize-active.svg");
+}
+headerbar windowcontrols button.maximize:hover,
+windowcontrols button.maximize:hover {
   background-image: url("assets/maximize-hover.svg");
 }
-
-headerbar windowcontrols button.minimize {
-  background-image: url("assets/hide-active.svg");
-  background-size: 17px 17px;
-  background-repeat: no-repeat;
-  background-position: center;
+headerbar windowcontrols button.maximize:active,
+windowcontrols button.maximize:active {
+  background-image: url("assets/maximize-pressed.svg");
+}
+headerbar windowcontrols button.maximize:backdrop,
+windowcontrols button.maximize:backdrop {
+  background-image: url("assets/maximize-backdrop.svg");
 }
 
-headerbar windowcontrols button.minimize:hover {
+/* Minimize */
+headerbar windowcontrols button.minimize,
+windowcontrols button.minimize {
+  background-image: url("assets/hide-active.svg");
+}
+headerbar windowcontrols button.minimize:hover,
+windowcontrols button.minimize:hover {
   background-image: url("assets/hide-hover.svg");
+}
+headerbar windowcontrols button.minimize:active,
+windowcontrols button.minimize:active {
+  background-image: url("assets/hide-pressed.svg");
+}
+headerbar windowcontrols button.minimize:backdrop,
+windowcontrols button.minimize:backdrop {
+  background-image: url("assets/hide-backdrop.svg");
+}
+
+headerbar windowcontrols button label,
+windowcontrols button label {
+  opacity: 0;
+  color: transparent;
+}
+
+/* Fil d'Ariane et barres de chemin GTK4 */
+.path-bar button,
+pathbar button {
+  background-color: #383733;
+  color: #dadada;
+  border: 1px solid #202023;
+  border-radius: 2px;
+  padding: 3px 10px;
+  margin: 1px 2px;
+}
+
+.path-bar button:hover,
+pathbar button:hover {
+  background-color: #4a4943;
+  color: #ffffff;
+  border: 1px solid #35A854;
+}
+
+.path-bar button:checked,
+pathbar button:checked {
+  background-color: #35A854;
+  color: #ffffff;
+  border: 1px solid #206e33;
+  font-weight: bold;
 }
 
 listview, columnview, treeview, .view {

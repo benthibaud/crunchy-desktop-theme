@@ -39,6 +39,9 @@
 
 @define-color borders                 #202023; /* Bordures système */
 @define-color unfocused_borders       #202023;
+@define-color headerbar_bg_color      #222226; /* Fond des barres d'en-tête */
+@define-color headerbar_fg_color      #ffffff;
+@define-color headerbar_border_color  #18181b; /* Bordure sombre des barres d'en-tête */
 @define-color link_color              #35A854; /* Liens */
 @define-color link_visited_color      alpha(@link_color, 0.75);
 
@@ -3111,46 +3114,6 @@ headerbar button.titlebutton,
     outline-color: alpha(@theme_fg_color, 0.17);
     border-color: rgba(5, 5, 6, 0.4);
     background-color: rgba(0, 0, 0, 0.15); }
-  headerbar button.titlebutton.close, headerbar button.titlebutton.maximize, headerbar button.titlebutton.minimize,
-  .titlebar button.titlebutton.close,
-  .titlebar button.titlebutton.maximize,
-  .titlebar button.titlebutton.minimize {
-    -gtk-icon-theme: "Mint-Y";
-    background-color: transparent;
-    background-size: 18px 18px;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-width: 0; }
-  headerbar button.titlebutton.close,
-  .titlebar button.titlebutton.close {
-    color: #FFFFFF;
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@selected_bg_color), to(transparent)); }
-    headerbar button.titlebutton.close:backdrop,
-    .titlebar button.titlebutton.close:backdrop {
-      background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#616166), to(transparent)); }
-    headerbar button.titlebutton.close:hover,
-    .titlebar button.titlebutton.close:hover {
-      background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#1cb1be), to(transparent)); }
-    headerbar button.titlebutton.close:active,
-    .titlebar button.titlebutton.close:active {
-      background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#168792), to(transparent)); }
-  headerbar button.titlebutton.maximize:backdrop, headerbar button.titlebutton.minimize:backdrop,
-  .titlebar button.titlebutton.maximize:backdrop,
-  .titlebar button.titlebutton.minimize:backdrop {
-    color: #616166; }
-  headerbar button.titlebutton.maximize:hover, headerbar button.titlebutton.maximize:hover:backdrop, headerbar button.titlebutton.minimize:hover, headerbar button.titlebutton.minimize:hover:backdrop,
-  .titlebar button.titlebutton.maximize:hover,
-  .titlebar button.titlebutton.maximize:hover:backdrop,
-  .titlebar button.titlebutton.minimize:hover,
-  .titlebar button.titlebutton.minimize:hover:backdrop {
-    color: alpha(@theme_fg_color, 0.87);
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#4C4C50), to(transparent)); }
-  headerbar button.titlebutton.maximize:active, headerbar button.titlebutton.maximize:active:backdrop, headerbar button.titlebutton.minimize:active, headerbar button.titlebutton.minimize:active:backdrop,
-  .titlebar button.titlebutton.maximize:active,
-  .titlebar button.titlebutton.maximize:active:backdrop,
-  .titlebar button.titlebutton.minimize:active,
-  .titlebar button.titlebutton.minimize:active:backdrop {
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(#949498), to(transparent)); }
 
 .caja-navigation-window .view .cell:selected, .caja-navigation-window iconview .cell:selected, .caja-navigation-window .view .cell:selected:focus, .nemo-window .nemo-inactive-pane .view:selected:focus, .nemo-window .nemo-inactive-pane iconview:selected:focus, .nemo-window .nemo-inactive-pane .view:selected, .nemo-window .nemo-inactive-pane iconview:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row.has-open-popup:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row:selected, .nautilus-window placessidebar.sidebar list row.sidebar-row:selected:hover, .nautilus-window placessidebar.sidebar list row.sidebar-row:active:hover,
 filechooser placessidebar.sidebar list row.sidebar-row.has-open-popup:selected,
@@ -4303,47 +4266,94 @@ hdyleaflet:first-child headerbar {
   border-top-left-radius: 8px; }
 
 
-/* Boutons de fenêtre CSD vectoriels Crunchy (Ronds) */
+/* Boutons de fenêtre CSD vectoriels Crunchy (20x20) */
 headerbar button.titlebutton,
 .titlebar button.titlebutton,
 windowcontrols button {
   min-width: 20px;
   min-height: 20px;
-  padding: 4px 5px;
-  margin: 2px;
+  padding: 0;
+  margin: 0 2px;
   border: none;
   background-color: transparent;
   background-image: none;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: none;
   color: transparent;
   opacity: 1;
 }
 
-headerbar button.titlebutton.close, windowcontrols button.close {
+/* Close */
+headerbar button.titlebutton.close,
+.titlebar button.titlebutton.close,
+windowcontrols button.close {
   background-image: url("assets/close-active.svg");
-  background-size: 17px 17px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
-
-headerbar button.titlebutton.close:hover, windowcontrols button.close:hover {
+headerbar button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover,
+windowcontrols button.close:hover {
   background-image: url("assets/close-hover.svg");
 }
+headerbar button.titlebutton.close:active,
+.titlebar button.titlebutton.close:active,
+windowcontrols button.close:active {
+  background-image: url("assets/close-pressed.svg");
+}
+headerbar button.titlebutton.close:backdrop,
+.titlebar button.titlebutton.close:backdrop,
+windowcontrols button.close:backdrop {
+  background-image: url("assets/close-backdrop.svg");
+}
 
-headerbar button.titlebutton.maximize, windowcontrols button.maximize {
+/* Maximize */
+headerbar button.titlebutton.maximize,
+.titlebar button.titlebutton.maximize,
+windowcontrols button.maximize {
   background-image: url("assets/maximize-active.svg");
-  background-size: 17px 17px;
-  background-repeat: no-repeat;
-  background-position: center;
+}
+headerbar button.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:hover,
+windowcontrols button.maximize:hover {
+  background-image: url("assets/maximize-hover.svg");
+}
+headerbar button.titlebutton.maximize:active,
+.titlebar button.titlebutton.maximize:active,
+windowcontrols button.maximize:active {
+  background-image: url("assets/maximize-pressed.svg");
+}
+headerbar button.titlebutton.maximize:backdrop,
+.titlebar button.titlebutton.maximize:backdrop,
+windowcontrols button.maximize:backdrop {
+  background-image: url("assets/maximize-backdrop.svg");
 }
 
-headerbar button.titlebutton.minimize, windowcontrols button.minimize {
+/* Minimize */
+headerbar button.titlebutton.minimize,
+.titlebar button.titlebutton.minimize,
+windowcontrols button.minimize {
   background-image: url("assets/hide-active.svg");
-  background-size: 17px 17px;
-  background-repeat: no-repeat;
-  background-position: center;
+}
+headerbar button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:hover,
+windowcontrols button.minimize:hover {
+  background-image: url("assets/hide-hover.svg");
+}
+headerbar button.titlebutton.minimize:active,
+.titlebar button.titlebutton.minimize:active,
+windowcontrols button.minimize:active {
+  background-image: url("assets/hide-pressed.svg");
+}
+headerbar button.titlebutton.minimize:backdrop,
+.titlebar button.titlebutton.minimize:backdrop,
+windowcontrols button.minimize:backdrop {
+  background-image: url("assets/hide-backdrop.svg");
 }
 
-headerbar button.titlebutton label, windowcontrols button label {
+headerbar button.titlebutton label,
+.titlebar button.titlebutton label,
+windowcontrols button label {
   opacity: 0;
   color: transparent;
 }
@@ -4609,12 +4619,12 @@ headerbar stackswitcher > button:active:hover label {
    GESTIONNAIRES DE FICHIERS UNIFIÉS (THUNAR, NEMO, CAJA, NAUTILUS, PCMANFM)
    ========================================================================= */
 
-/* 3. Fil d Ariane / Barres de chemin (Path-bars - boutons légèrement éclaircis) */
+/* 3. Fil d Ariane / Barres de chemin (Path-bars - style sobre sans liseré blanc) */
 .path-bar button,
 .nemo-pathbar button {
-  background-color: #42413c;
-  color: #ffffff;
-  border: 1px solid @headerbar_border_color;
+  background-color: #383733;
+  color: #dadada;
+  border: 1px solid #202023;
   border-radius: 2px;
   padding: 3px 10px;
   margin: 1px 2px;
@@ -4622,9 +4632,9 @@ headerbar stackswitcher > button:active:hover label {
 
 .path-bar button:hover,
 .nemo-pathbar button:hover {
-  background-color: #52514a;
+  background-color: #4a4943;
   color: #ffffff;
-  border-color: @borders;
+  border: 1px solid #35A854;
 }
 
 .path-bar button:checked,
@@ -4639,7 +4649,7 @@ headerbar stackswitcher > button:active:hover label {
 
 .path-bar button label,
 .nemo-pathbar button label {
-  color: #ffffff;
+  color: inherit;
 }
 
 /* 4. Barre latérale des raccourcis / Lieux (Places Sidebar) */
