@@ -4004,10 +4004,6 @@ EvWindow .content-view .view:focus:selected {
 .thunar toolbar.horizontal button image, .thunar .horizontal.inline-toolbar button image {
   -gtk-icon-transform: scale(0.9); }
 
-.thunar toolbar, .thunar .inline-toolbar {
-  color: alpha(@theme_fg_color, 0.87);
-  background-color: @headerbar_bg_color; }
-
 #panel_window {
   background-color: @headerbar_bg_color;
   color: #e1e1e1;
@@ -4198,10 +4194,6 @@ window.background.lightdm entry {
 window.background.lightdm .lightdm-combo {
   border-radius: 0;
   background-color: transparent; }
-
-.ubiquity-menubar {
-  background-color: #3f3f43;
-  color: #eeeeee; }
 
 /* Based on _Adwaita-base.scss from libhandy */
 popover.combo {

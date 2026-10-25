@@ -942,7 +942,9 @@ actionbar {
   background-color: #27272b; }
 
 headerbar,
-.titlebar:not(headerbar) {
+.titlebar:not(headerbar),
+.csd headerbar,
+.csd .titlebar:not(headerbar) {
   min-height: 46px;
   padding: 0 6px;
   border-width: 0 0 1px;
@@ -952,17 +954,21 @@ headerbar,
   color: alpha(@theme_fg_color, 0.87);
   background-color: @headerbar_bg_color;
   box-shadow: inset 0 1px #373737; }
-  .csd headerbar, .csd .titlebar:not(headerbar) {
-    background-color: @headerbar_bg_color;
-    border-color: @headerbar_border_color; }
   headerbar:backdrop,
-  .titlebar:backdrop:not(headerbar) {
+  .titlebar:backdrop:not(headerbar),
+  .csd headerbar:backdrop,
+  .csd .titlebar:backdrop:not(headerbar) {
+    background-color: @headerbar_bg_color;
+    border-color: @headerbar_border_color;
     color: alpha(@theme_fg_color, 0.47); }
   headerbar .title,
   .titlebar:not(headerbar) .title {
     font-weight: bold;
     padding-left: 12px;
     padding-right: 12px; }
+  headerbar:backdrop .title,
+  .titlebar:backdrop:not(headerbar) .title {
+    color: alpha(@theme_fg_color, 0.47); }
   headerbar .subtitle,
   .titlebar:not(headerbar) .subtitle {
     font-size: smaller;
@@ -3295,6 +3301,11 @@ vte-terminal {
 
 .nautilus-window paned > separator {
   background-image: linear-gradient(to bottom, @borders, @borders); }
+  .nautilus-window paned > separator:dir(ltr) {
+    margin-left: -1px; }
+  .nautilus-window paned > separator:dir(rtl) {
+    margin-right: -1px; }
+
 
 .nautilus-window .csd.background, .nautilus-window placessidebar list,
 filechooser .csd.background,
