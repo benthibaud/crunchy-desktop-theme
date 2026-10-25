@@ -3161,57 +3161,26 @@ textview text selection, iconview:selected, iconview:selected:focus, iconview te
       color: #8fd4a2; }
 
 GeditNotebook.notebook tab.reorderable-page.top:active, GeditNotebook.notebook tab.reorderable-page.top.active-page, GeditNotebook.notebook tab.reorderable-page.top.active-page:hover, GeditNotebook.notebook tab.top:active, GeditNotebook.notebook tab.top.active-page, GeditNotebook.notebook tab.top.active-page:hover,
-ScratchMainWindow .notebook tab.reorderable-page.top:active,
-ScratchMainWindow .notebook tab.reorderable-page.top.active-page,
-ScratchMainWindow .notebook tab.reorderable-page.top.active-page:hover,
-ScratchMainWindow .notebook tab.top:active,
-ScratchMainWindow .notebook tab.top.active-page,
-ScratchMainWindow .notebook tab.top.active-page:hover,
 EphyNotebook.notebook tab.reorderable-page.top:active,
 EphyNotebook.notebook tab.reorderable-page.top.active-page,
 EphyNotebook.notebook tab.reorderable-page.top.active-page:hover,
 EphyNotebook.notebook tab.top:active,
 EphyNotebook.notebook tab.top.active-page,
 EphyNotebook.notebook tab.top.active-page:hover,
-MidoriNotebook .notebook tab.reorderable-page.top:active,
-MidoriNotebook .notebook tab.reorderable-page.top.active-page,
-MidoriNotebook .notebook tab.reorderable-page.top.active-page:hover,
-MidoriNotebook .notebook tab.top:active,
-MidoriNotebook .notebook tab.top.active-page,
-MidoriNotebook .notebook tab.top.active-page:hover,
 TerminalWindow .notebook tab.reorderable-page.top:active,
 TerminalWindow .notebook tab.reorderable-page.top.active-page,
 TerminalWindow .notebook tab.reorderable-page.top.active-page:hover,
 TerminalWindow .notebook tab.top:active,
 TerminalWindow .notebook tab.top.active-page,
-TerminalWindow .notebook tab.top.active-page:hover,
-PantheonTerminalPantheonTerminalWindow .notebook tab.reorderable-page.top:active,
-PantheonTerminalPantheonTerminalWindow .notebook tab.reorderable-page.top.active-page,
-PantheonTerminalPantheonTerminalWindow .notebook tab.reorderable-page.top.active-page:hover,
-PantheonTerminalPantheonTerminalWindow .notebook tab.top:active,
-PantheonTerminalPantheonTerminalWindow .notebook tab.top.active-page,
-PantheonTerminalPantheonTerminalWindow .notebook tab.top.active-page:hover {
+TerminalWindow .notebook tab.top.active-page:hover {
   box-shadow: inset 0 1px @borders, inset 0 -1px @borders, inset 1px 0 @borders, inset -1px 0 @borders; }
 
-TerminalWindow .notebook tab.reorderable-page.top, TerminalWindow .notebook tab.top,
-PantheonTerminalPantheonTerminalWindow .notebook tab.reorderable-page.top,
-PantheonTerminalPantheonTerminalWindow .notebook tab.top {
+TerminalWindow .notebook tab.reorderable-page.top, TerminalWindow .notebook tab.top {
   padding-top: 7px;
   border-top-width: 3px; }
 
-TerminalWindow .notebook.header.top,
-PantheonTerminalPantheonTerminalWindow .notebook.header.top {
+TerminalWindow .notebook.header.top {
   box-shadow: inset 0 1px @headerbar_border_color, inset 0 -1px @borders; }
-
-GtkHTML {
-  background-color: @theme_bg_color;
-  color: @theme_text_color; }
-  GtkHTML:active {
-    color: #FFFFFF;
-    background-color: @selected_bg_color; }
-
-SushiFontWidget {
-  padding: 6px 12px; }
 
 #gnome-system-monitor headerbar {
   box-shadow: none; }
@@ -3721,7 +3690,7 @@ button.documents-load-more {
 
 .documents-favorite.button:active,
 .documents-favorite.button:active:hover {
-  color: #44d6e3; }
+  color: #71d28b; }
 
 .documents-entry-tag, .photos-entry-tag {
   background-color: @selected_bg_color;
@@ -3732,7 +3701,7 @@ button.documents-load-more {
   padding: 4px; }
   .documents-entry-tag:hover, .photos-entry-tag:hover {
     color: #FFFFFF;
-    background-color: #1cacba; }
+    background-color: #3ab85c; }
   .documents-entry-tag:active, .photos-entry-tag:active {
     color: #FFFFFF;
     background-color: #2e9148; }
