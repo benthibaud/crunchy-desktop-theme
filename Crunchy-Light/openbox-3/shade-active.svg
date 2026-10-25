@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <linearGradient id="btn_bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8c8c86" />
+      <stop offset="15%" stop-color="#818079" />
+      <stop offset="85%" stop-color="#6b6a64" />
+      <stop offset="100%" stop-color="#575651" />
+    </linearGradient>
+    <linearGradient id="btn_border" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a2a19b" />
+      <stop offset="100%" stop-color="#202023" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ombre portée basse -->
+  <rect x="2" y="3" width="16" height="16" rx="2.5" ry="2.5" fill="#18181b" opacity="0.55" />
+
+  <!-- Corps biseauté en relief -->
+  <rect x="2" y="2" width="16" height="16" rx="2.5" ry="2.5" fill="url(#btn_bg)" stroke="url(#btn_border)" stroke-width="1" />
+
+  <!-- Ligne de brillance supérieure (biseau haut) -->
+  <line x1="4.5" y1="3.5" x2="15.5" y2="3.5" stroke="#b2b1aa" stroke-width="1" stroke-linecap="round" opacity="0.8" />
+  <polygon points="10,6.5 6.5,12 13.5,12" fill="#96958e" transform="translate(0, 0.7)" opacity="0.65" />
+  <polygon points="10,6.5 6.5,12 13.5,12" fill="#1c1c1b" />
+</svg>

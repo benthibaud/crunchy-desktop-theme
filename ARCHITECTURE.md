@@ -134,3 +134,20 @@ Les scripts `install.sh` et `uninstall.sh` déterminent automatiquement le répe
   - La désinstallation réintègre le fichier `gimprc.crunchy-backup` d'origine s'il existe, ou rétablit proprement la valeur `(theme "Dark")`.
   - Aucune trace orpheline n'est conservée.
 
+---
+
+## 6. Gestionnaires de Fenêtres Autonomes (SSD) & Portabilité Frugale
+
+### A. Découplage SSD / CSD & Boutons « Square Relief »
+- Contrairement aux applications CSD (GTK3 / GTK4) qui dessinent leur en-tête directement en interne via `gtk.css`, les gestionnaires de fenêtres légers (IceWM, Openbox, Labwc, Fluxbox, Metacity, XFWM4) gèrent la décoration de façon indépendante (*Server-Side Decorations*).
+- **Identité Square en Relief :** L'ADN visuel historique de Crunchy repose sur des boutons carrés adoucis (radius 2.5px) avec effet de biseau supérieur lumineux, ombre inférieure et glyphe estampé en creux.
+  - **Openbox (X11) :** Les boutons utilisent des masques XBM 1-bit nets (évitant le crénelage inévitable des cercles sans antialiasing) combinés aux capacités de relief natives de `themerc` (`raised` en état normal, `sunken` lors du clic).
+  - **Labwc (Wayland) :** Prise en charge vectorielle SVG complète avec dégradés verticaux organiques, lueur verte Crunchy sur `close` (`#78ae74` -> `#599455`, survol `#a4d4a2`) et reflets argentés sur `max` et `iconify`.
+  - **IceWM :** Deux thèmes autonomes complets intégrés : `Crunchy-Square` (boutons carrés en relief, design de prédilection) et `Crunchy-Round` (boutons ronds Ambiance).
+
+### B. Règle Impérative de Portabilité des Fichiers (Zéro Lien Symbolique)
+- **Constat d'Ingénierie :** Les systèmes de fichiers non-POSIX couramment utilisés sur supports amovibles (**FAT32**, **exFAT**) ne supportent pas les liens symboliques UNIX. La présence de symlinks dans un dépôt entraîne leur conversion en fichiers texte corrompus ou des échecs d'écriture lors de la copie sur clé USB.
+- **Standard Crunchy :** L'arborescence des sources du projet est strictement exempte de tout lien symbolique. Chaque composant est autonome dans son propre dossier physique.
+- **Stratégie Labwc :** Labwc recherche nativement le dossier `openbox-3/` en l'absence de dossier `labwc/`. Pour une compatibilité absolue avec les outils tiers exigeant un répertoire nommé `labwc`, le script `install.sh` réalise une copie physique directe (`openbox-3/` vers `labwc/`) au moment de l'installation sur la machine cible.
+
+

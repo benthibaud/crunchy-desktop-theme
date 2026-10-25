@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Exemple de configuration pour Labwc (Wayland) et Openbox -->
+<!-- Exemple de configuration pour Labwc (Wayland) et Openbox (~/.config/labwc/rc.xml) -->
 <labwc_config>
   <theme>
     <name>Crunchy-Dark</name>
-    <!-- Rayon de courbure des coins supérieurs (8px) -->
-    <cornerRadius>8</cornerRadius>
+    <titlebar>
+      <layout>icon:shade,desk:iconify,max,close</layout>
+    </titlebar>
+    <!-- Rayon de courbure des coins supérieurs pour Labwc -->
+    <cornerRadius>6</cornerRadius>
     <font place="ActiveWindow" name="Ubuntu,Sans" size="10" weight="Bold" />
     <font place="InactiveWindow" name="Ubuntu,Sans" size="10" weight="Normal" />
     <font place="MenuItem" name="Ubuntu,Sans" size="10" weight="Normal" />

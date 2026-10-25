@@ -1,0 +1,137 @@
+# =============================================================================
+# CRUNCHY-ROUND - THÈME OFFICIEL ICEWM
+# =============================================================================
+# Harmonisé avec la palette centrale GTK Révision 2/3 :
+#   - Fond sombre ardoise : #242320 (bas) / #2E2E33 (haut)
+#   - Vert d'accentuation Crunchy : #35A854
+#   - Textes clairs / contrastés : #FFFFFF (actif) / #DADADA (normal)
+#   - Bordures nettes : #202023
+# =============================================================================
+
+ThemeDescription="Crunchy-Round for IceWM"
+ThemeAuthor="Benoit THIBAUD / Antigravity"
+
+# Look
+Look=pixmap
+TrayDrawBevel=1
+Gradients="menubg.xpm menusel.xpm menusep.xpm taskbarbg.xpm workspacebuttonactive.xpm"
+RolloverButtonsSupported=1
+
+# Window Buttons
+TitleButtonsSupported="sxmihrd"
+TitleButtonsLeft="xmi"
+TitleButtonsRight=""
+
+# Window Borders (0px pour un rendu moderne sans liseré parasite)
+BorderSizeX=0
+BorderSizeY=0
+CornerSizeX=0
+CornerSizeY=0
+DlgBorderSizeX=0
+DlgBorderSizeY=0
+
+# Icon Sizes
+MenuIconSize=16
+SmallIconSize=16
+LargeIconSize=32
+HugeIconSize=48
+
+# Titlebar
+TitleBarHeight=29
+TitleBarJustify=51
+TitleBarHorzOffset=5
+TitleBarVertOffset=1
+DesktopBackgroundColor="#242320"
+
+# Fonts
+TitleFontNameXft="sans-serif:size=10:bold"
+MenuFontNameXft="sans-serif:size=10"
+ActiveButtonFontNameXft="sans-serif:size=10"
+NormalButtonFontNameXft="sans-serif:size=10"
+ToolButtonFontNameXft="sans-serif:size=10"
+NormalWorkspaceFontNameXft="sans-serif:size=10"
+ActiveWorkspaceFontNameXft="sans-serif:size=10:bold"
+QuickSwitchFontNameXft="sans-serif:size=10"
+ListBoxFontNameXft="sans-serif:size=10"
+StatusFontNameXft="sans-serif:size=10"
+ToolTipFontNameXft="sans-serif:size=10"
+ActiveTaskBarFontNameXft="sans-serif:size=10:bold"
+NormalTaskBarFontNameXft="sans-serif:size=10"
+ClockFontNameXft="sans-serif:size=10"
+InputFontNameXft="sans-serif:size=10"
+LabelFontNameXft="sans-serif:size=10"
+ApmFontNameXft="sans-serif:size=10"
+
+# --- PALETTE CHROMATIQUE ---
+
+# Bordures
+ColorActiveBorder="#202023"
+ColorNormalBorder="#202023"
+ColorDialogBorder="#202023"
+ColorMoveSizeStatusBorder="#202023"
+ColorQuickSwitchBorder="#202023"
+
+# Barres de titre
+ColorNormalTitleBar="#242320"
+ColorNormalTitleBarText="#dadada"
+ColorActiveTitleBar="#2e2e33"
+ColorActiveTitleBarText="#ffffff"
+
+# Menus
+ColorNormalMenu="#242320"
+ColorActiveMenuItem="#35A854"
+ColorNormalMenuItemText="#dadada"
+ColorActiveMenuItemText="#ffffff"
+ColorDisabledMenuItemText="#707070"
+ColorDisabledMenuItemShadow="#202023"
+
+# Champs de saisie
+ColorInput="#242321"
+ColorInputText="#ffffff"
+ColorInputSelection="#35A854"
+ColorInputSelectionText="#ffffff"
+
+# Boutons standard
+ColorNormalButton="#393833"
+ColorNormalButtonText="#dadada"
+
+# Barre des tâches
+ColorDefaultTaskBar="#242320"
+ColorNormalTaskBarApp="#2e2e33"
+ColorNormalTaskBarAppText="#dadada"
+ColorActiveTaskBarApp="#35A854"
+ColorActiveTaskBarAppText="#ffffff"
+ColorMinimizedTaskBarApp="#242320"
+ColorMinimizedTaskBarAppText="#707070"
+ColorActiveWorkspaceButton="#35A854"
+ColorActiveWorkspaceButtonText="#ffffff"
+PagerShowBorders=0
+
+# Horloge
+ColorClock="#242320"
+ColorClockText="#dadada"
+
+# Infobulles
+ColorToolTip="#202023"
+ColorToolTipText="#ffffff"
+
+# Listes et sélecteurs
+ColorListBox="#242321"
+ColorListBoxText="#ffffff"
+ColorListBoxSelection="#35A854"
+ColorListBoxSelectionText="#ffffff"
+
+# Indicateur de déplacement / redimensionnement
+ColorMoveSizeStatus="#202023"
+ColorMoveSizeStatusText="#ffffff"
+
+# Basculeur d'applications (Alt-Tab / QuickSwitch)
+ColorQuickSwitch="#242320"
+ColorQuickSwitchActive="#35A854"
+ColorQuickSwitchText="#dadada"
+ColorQuickSwitchSelectionText="#ffffff"
+
+# Boîtes de dialogue
+ColorDialog="#2e2e33"
+ColorLabel="#2e2e33"
+ColorLabelText="#dadada"
