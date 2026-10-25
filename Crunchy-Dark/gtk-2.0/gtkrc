@@ -280,13 +280,6 @@ style "hscrollbar" {
 style "vscrollbar" {
 }
 
-style "overlay_scrollbar"
-{
-	bg[SELECTED] = @selected_bg_color
-	bg[INSENSITIVE] = shade (0.85, @bg_color)
-	bg[ACTIVE] = shade (0.6, @bg_color)
-}
-
 style "scale" = "button" {
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (1.06, @bg_color)
@@ -612,43 +605,6 @@ style "iconview" {
 	}
 }
 
-style "soundfix" {
-}
-
-# Workaround style for places where the text color is used instead of the fg color.
-style "text_is_fg_color_workaround" {
-	text[NORMAL]      = @fg_color
-	text[PRELIGHT]    = @fg_color
-	text[SELECTED]    = @selected_fg_color
-	text[ACTIVE]      = @fg_color
-	text[INSENSITIVE] = darker (@bg_color)
-}
-
-# Workaround style for menus where the text color is used instead of the fg color.
-style "menuitem_text_is_fg_color_workaround" {
-	text[NORMAL]        = @base_color
-	text[PRELIGHT]      = @selected_fg_color
-	text[SELECTED]      = @selected_fg_color
-	text[ACTIVE]        = @fg_color
-	text[INSENSITIVE]   = darker (@bg_color_dark)
-}
-
-# Workaround style for places where the fg color is used instead of the text color.
-style "fg_is_text_color_workaround" {
-	fg[NORMAL]        = @text_color
-	fg[PRELIGHT]      = @text_color
-	fg[SELECTED]      = @selected_fg_color
-	fg[ACTIVE]        = @selected_fg_color
-	fg[INSENSITIVE]   = darker (@bg_color)
-}
-
-# Style to set the toolbar to use a flat style. This is because the "New" button in
-# Evolution is not drawn transparent. So if there is a gradient in the background it will
-# look really wrong.
-# See http://bugzilla.gnome.org/show_bug.cgi?id=446953.
-style "evo_new_button_workaround" {
-}
-
 ###############################################################################
 # The following part of the gtkrc applies the different styles to the widgets.
 ###############################################################################
@@ -710,6 +666,10 @@ widget_class "*.<GtkFrame>.<GtkLabel>" style "frame_title"
 widget_class "*<GtkProgress>" style "progressbar"
 widget_class "*<GtkMenuItem>.*.<GtkProgressBar>" style "progressbar_menu_item"
 widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale_menu_item"
+
+# Treeview headers
+widget_class "*.<GtkTreeView>.<GtkButton>" style "treeview_header"
+widget_class "*.<GtkScrolledWindow>*<GtkTreeView>*" style "treeview_header_scrolled"
 
 style "xfdesktop-icon-view" {
 }

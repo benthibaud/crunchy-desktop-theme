@@ -280,13 +280,6 @@ style "hscrollbar" {
 style "vscrollbar" {
 }
 
-style "overlay_scrollbar"
-{
-	bg[SELECTED] = @selected_bg_color
-	bg[INSENSITIVE] = shade (0.85, @bg_color)
-	bg[ACTIVE] = shade (0.6, @bg_color)
-}
-
 style "scale" = "button" {
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (1.06, @bg_color)
@@ -425,18 +418,22 @@ style "menubar" = "default" {
 	xthickness = 2
 	ythickness = 4
 
-	bg[NORMAL]   = @menubar_bg_mid
+	bg[NORMAL]   = @bg_color_dark
+	bg[PRELIGHT] = @bg_color_dark
+	bg[ACTIVE]   = @bg_color_dark
+	bg[INSENSITIVE] = @bg_color_dark
 	fg[NORMAL]   = @menubar_fg
 	text[NORMAL] = @menubar_fg
 
 	engine "murrine" {
+		menubarstyle      = 0
 		roundness         = 0
-		contrast          = 1.0
-		highlight_shade   = 1.10
-		lightborderstyle  = 1
-		lightborder_shade = 1.20
-		border_shades     = {1.15, 0.85}
-		gradient_shades   = {1.05, 1.00, 0.98, 0.94}
+		contrast          = 0.0
+		highlight_shade   = 1.0
+		lightborderstyle  = 0
+		lightborder_shade = 1.0
+		border_shades     = {1.0, 1.0}
+		gradient_shades   = {1.0, 1.0, 1.0, 1.0}
 	}
 }
 
@@ -608,43 +605,6 @@ style "iconview" {
 	}
 }
 
-style "soundfix" {
-}
-
-# Workaround style for places where the text color is used instead of the fg color.
-style "text_is_fg_color_workaround" {
-	text[NORMAL]      = @fg_color
-	text[PRELIGHT]    = @fg_color
-	text[SELECTED]    = @selected_fg_color
-	text[ACTIVE]      = @fg_color
-	text[INSENSITIVE] = darker (@bg_color)
-}
-
-# Workaround style for menus where the text color is used instead of the fg color.
-style "menuitem_text_is_fg_color_workaround" {
-	text[NORMAL]        = @base_color
-	text[PRELIGHT]      = @selected_fg_color
-	text[SELECTED]      = @selected_fg_color
-	text[ACTIVE]        = @fg_color
-	text[INSENSITIVE]   = darker (@borders)
-}
-
-# Workaround style for places where the fg color is used instead of the text color.
-style "fg_is_text_color_workaround" {
-	fg[NORMAL]        = @text_color
-	fg[PRELIGHT]      = @text_color
-	fg[SELECTED]      = @selected_fg_color
-	fg[ACTIVE]        = @selected_fg_color
-	fg[INSENSITIVE]   = darker (@bg_color)
-}
-
-# Style to set the toolbar to use a flat style. This is because the "New" button in
-# Evolution is not drawn transparent. So if there is a gradient in the background it will
-# look really wrong.
-# See http://bugzilla.gnome.org/show_bug.cgi?id=446953.
-style "evo_new_button_workaround" {
-}
-
 ###############################################################################
 # The following part of the gtkrc applies the different styles to the widgets.
 ###############################################################################
@@ -707,75 +667,11 @@ widget_class "*<GtkProgress>" style "progressbar"
 widget_class "*<GtkMenuItem>.*.<GtkProgressBar>" style "progressbar_menu_item"
 widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale_menu_item"
 
-# Treeview headers (and similar stock GTK+ widgets)
+# Treeview headers
+widget_class "*.<GtkTreeView>.<GtkButton>" style "treeview_header"
 widget_class "*.<GtkScrolledWindow>*<GtkTreeView>*" style "treeview_header_scrolled"
-widget_class "*.<GtkTreeView>.<GtkButton>"	style "treeview_header"
-widget_class "*.<GtkCTree>.<GtkButton>"		style "treeview_header"
-widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header"
-widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header"
-widget_class "*.<ETable>.<ECanvas>"		style "treeview_header"
-widget_class "*.<ETree>.<ECanvas>"		style "treeview_header"
 
-# Overlay scrollbar
-widget_class "*<OsScrollbar>" style "overlay_scrollbar"
-widget_class "*<OsThumb>" style "overlay_scrollbar"
-
-# The window of the tooltip is called "gtk-tooltip"
-##################################################################
-# FIXME:
-# This will not work if one embeds eg. a button into the tooltip.
-# As far as I can tell right now we will need to rework the theme
-# quite a bit to get this working correctly.
-# (It will involve setting different priorities, etc.)
-##################################################################
-widget "gtk-tooltip*" style "tooltips"
-
-##########################################################################
-# Following are special cases and workarounds for issues in applications.
-##########################################################################
-
-# Workaround for the evolution ETable (bug #527532)
-# Workaround for the evolution ETree
-
-# Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
-# Note that this work around assumes that the combobox is _not_ in appears-as-list mode.
-widget_class "*.<GtkComboBox>.<GtkCellView>" style "text_is_fg_color_workaround"
-# This is the part of the workaround that fixes the menus
-widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
-
-# Work around the usage of GtkLabel inside GtkListItems to display text.
-# This breaks because the label is shown on a background that is based on the base color.
-widget_class "*<GtkListItem>*" style "fg_is_text_color_workaround"
-# GtkCList also uses the fg color to draw text on top of the base colors.
-widget_class "*<GtkCList>" style "fg_is_text_color_workaround"
-# Nautilus when renaming files, and maybe other places.
-widget_class "*<EelEditableLabel>" style "fg_is_text_color_workaround"
-# Work around for ubuntu's lucid sound indicator
-widget "ido-offscreen-scale" style "soundfix"
-# Thickness for indicator menu items
-widget "*IdoEntryMenuItem*" style "wide"
-
-# See the documentation of the style.
-widget_class "EShellWindow.GtkVBox.BonoboDock.BonoboDockBand.BonoboDockItem*" style "evo_new_button_workaround"
-
-# Makes XFCE desktop icon and text background tweaks work.
 style "xfdesktop-icon-view" {
-	XfdesktopIconView::label-alpha = 50
-	XfdesktopIconView::selected-label-alpha = 100
-	XfdesktopIconVIew::ellipsize-icon-labels = 1
-	
-	base[NORMAL]    = shade (1.1, @bg_color_dark)
-	base[SELECTED]  = shade (0.96, @selected_bg_color)
-	base[ACTIVE]    = shade (1.1, @selected_bg_color)
-	base[PRELIGHT]  = shade (0.8, @bg_color_dark)
-	
-	fg[NORMAL]		= @selected_fg_color
-	fg[SELECTED]	= @selected_fg_color
-	fg[ACTIVE]		= @selected_fg_color
-	
-	engine "murrine" {
-		textstyle = 5
-	}
 }
 widget_class "*XfdesktopIconView*"	style "xfdesktop-icon-view"
 
