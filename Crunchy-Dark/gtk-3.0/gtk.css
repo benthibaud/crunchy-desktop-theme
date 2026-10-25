@@ -85,6 +85,15 @@
 @define-color toolbar_dark_border     #18181b;
 @define-color toolbar_dark_disabled_fg alpha(#ffffff, 0.38);
 @define-color toolbar_dark_hover_bg   #383733; /* Texte menu déroulant */
+
+@define-color pathbar_bg              #383733; /* Fond segment fil d'Ariane */
+@define-color pathbar_fg              #dadada; /* Texte fil d'Ariane */
+@define-color pathbar_border          #202023; /* Bordure discrète fil d'Ariane */
+@define-color pathbar_hover_bg        #4a4943; /* Survol fil d'Ariane */
+@define-color pathbar_hover_border    @accent_color; /* Liseré vert survol */
+@define-color pathbar_active_bg       @accent_color; /* Dossier actif sélectionné */
+@define-color pathbar_active_fg       @accent_fg_color;
+@define-color pathbar_active_border   #206e33;
 @define-color menu_border             #1a1916; /* Bordure menu déroulant */
 @define-color menu_separator          #3c3b38; /* Séparateur de menu */
 @define-color menu_shadow             alpha(#000000, 0.55); /* Ombre portée menu */
@@ -1708,9 +1717,9 @@ treeview.view {
 
 menubar, .menubar {
   background-image: none;
-  background-color: #242320;
-  color: #ffffff;
-  border-bottom: 1px solid @headerbar_border_color;
+  background-color: @menubar_bg_left;
+  color: @menubar_fg;
+  border-bottom: 1px solid @menubar_border;
   padding: 0;
 }
   menubar:backdrop,
@@ -4622,9 +4631,9 @@ headerbar stackswitcher > button:active:hover label {
 /* 3. Fil d Ariane / Barres de chemin (Path-bars - style sobre sans liseré blanc) */
 .path-bar button,
 .nemo-pathbar button {
-  background-color: #383733;
-  color: #dadada;
-  border: 1px solid #202023;
+  background-color: @pathbar_bg;
+  color: @pathbar_fg;
+  border: 1px solid @pathbar_border;
   border-radius: 2px;
   padding: 3px 10px;
   margin: 1px 2px;
@@ -4632,18 +4641,18 @@ headerbar stackswitcher > button:active:hover label {
 
 .path-bar button:hover,
 .nemo-pathbar button:hover {
-  background-color: #4a4943;
+  background-color: @pathbar_hover_bg;
   color: #ffffff;
-  border: 1px solid #35A854;
+  border: 1px solid @pathbar_hover_border;
 }
 
 .path-bar button:checked,
 .path-bar button:active,
 .nemo-pathbar button:checked,
 .nemo-pathbar button:active {
-  background-color: #35A854;
-  color: #ffffff;
-  border: 1px solid #206e33;
+  background-color: @pathbar_active_bg;
+  color: @pathbar_active_fg;
+  border: 1px solid @pathbar_active_border;
   font-weight: bold;
 }
 

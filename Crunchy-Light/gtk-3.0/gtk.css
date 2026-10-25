@@ -85,6 +85,15 @@
 @define-color toolbar_dark_border     #18181b;
 @define-color toolbar_dark_disabled_fg alpha(#ffffff, 0.38);
 @define-color toolbar_dark_hover_bg   #383733; /* Texte menu déroulant */
+
+@define-color pathbar_bg              #383733; /* Fond segment fil d'Ariane */
+@define-color pathbar_fg              #dadada; /* Texte fil d'Ariane */
+@define-color pathbar_border          #202023; /* Bordure discrète fil d'Ariane */
+@define-color pathbar_hover_bg        #4a4943; /* Survol fil d'Ariane */
+@define-color pathbar_hover_border    @accent_color; /* Liseré vert survol */
+@define-color pathbar_active_bg       @accent_color; /* Dossier actif sélectionné */
+@define-color pathbar_active_fg       @accent_fg_color;
+@define-color pathbar_active_border   #206e33;
 @define-color menu_border             #1a1916; /* Bordure menu déroulant */
 @define-color menu_separator          #3c3b38; /* Séparateur de menu */
 @define-color menu_shadow             alpha(#000000, 0.55); /* Ombre portée menu */
@@ -1145,27 +1154,51 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     opacity: 0.6; }
 
 
-.primary-toolbar entry, headerbar entry {
+.primary-toolbar entry {
+  color: @toolbar_dark_fg;
+  border-color: rgba(5, 5, 6, 0.4);
+  background-color: rgba(87, 87, 97, 0.4); }
+  
+  .primary-toolbar entry image {
+    color: inherit; }
+  
+  .primary-toolbar entry:backdrop {
+    opacity: 0.85; }
+  
+  .primary-toolbar entry:focus {
+    color: @toolbar_dark_fg;
+    border-color: @selected_bg_color;
+    background-color: rgba(87, 87, 97, 0.4);
+    background-clip: padding-box; }
+    
+    .primary-toolbar entry:focus image {
+      color: alpha(@toolbar_dark_fg, 0.72); }
+  
+  .primary-toolbar entry:disabled {
+    color: @toolbar_dark_disabled_fg;
+    background-color: rgba(87, 87, 97, 0.25); }
+
+headerbar entry {
   color: alpha(@theme_fg_color, 0.87);
   border-color: alpha(@theme_fg_color, 0.17);
   background-color: rgba(255, 255, 255, 0.9); }
   
-  .primary-toolbar entry image, headerbar entry image {
+  headerbar entry image {
     color: inherit; }
   
-  .primary-toolbar entry:backdrop, headerbar entry:backdrop {
+  headerbar entry:backdrop {
     opacity: 0.85; }
   
-  .primary-toolbar entry:focus, headerbar entry:focus {
+  headerbar entry:focus {
     color: alpha(@theme_fg_color, 0.87);
     border-color: @selected_bg_color;
     background-color: rgba(255, 255, 255, 0.9);
     background-clip: border-box; }
     
-    .primary-toolbar entry:focus image, headerbar entry:focus image {
+    headerbar entry:focus image {
       color: alpha(@theme_fg_color, 0.72); }
   
-  .primary-toolbar entry:disabled, headerbar entry:disabled {
+  headerbar entry:disabled {
     color: alpha(@theme_fg_color, 0.42);
     background-color: rgba(255, 255, 255, 0.75); }
   
@@ -1325,15 +1358,15 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:acti
 headerbar .linked:not(.vertical).path-bar > button {
   color: alpha(@theme_fg_color, 0.87);
   outline-color: alpha(@theme_fg_color, 0.17);
-  border-color: alpha(@theme_fg_color, 0.17);
-  background-color: rgba(254, 254, 254, 0.9); }
+  border-color: rgba(5, 5, 6, 0.4);
+  background-color: rgba(87, 87, 97, 0.4); }
   .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
   .primary-toolbar toolbar .linked:not(.vertical).path-bar > button:hover,
   .primary-toolbar .linked:not(.vertical).path-bar > button:hover,
   .primary-toolbar .inline-toolbar .linked:not(.vertical).path-bar > button:hover,
   headerbar .linked:not(.vertical).path-bar > button:hover {
-    background-color: rgba(255, 255, 255, 0.9); }
+    background-color: rgba(123, 123, 137, 0.4); }
   .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked,
@@ -1347,8 +1380,8 @@ headerbar .linked:not(.vertical).path-bar > button {
   headerbar .linked:not(.vertical).path-bar > button:checked {
     color: alpha(@theme_fg_color, 0.87);
     outline-color: alpha(@theme_fg_color, 0.17);
-    border-color: alpha(@theme_fg_color, 0.17);
-    background-color: alpha(@theme_fg_color, 0.15); }
+    border-color: rgba(5, 5, 6, 0.4);
+    background-color: rgba(0, 0, 0, 0.15); }
   .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled,
   .primary-toolbar toolbar .linked:not(.vertical).path-bar > button:disabled,
@@ -1714,9 +1747,9 @@ treeview.view {
 
 menubar, .menubar {
   background-image: none;
-  background-color: #242320;
-  color: #ffffff;
-  border-bottom: 1px solid @headerbar_border_color;
+  background-color: @menubar_bg_left;
+  color: @menubar_fg;
+  border-bottom: 1px solid @menubar_border;
   padding: 0;
 }
   menubar:backdrop,
@@ -4620,9 +4653,9 @@ headerbar stackswitcher > button:active:hover label {
 /* 3. Fil d Ariane / Barres de chemin (Path-bars - style sobre sans liseré blanc) */
 .path-bar button,
 .nemo-pathbar button {
-  background-color: #e8e8ea;
-  color: #2e2e33;
-  border: 1px solid #dcdce2;
+  background-color: @pathbar_bg;
+  color: @pathbar_fg;
+  border: 1px solid @pathbar_border;
   border-radius: 2px;
   padding: 3px 10px;
   margin: 1px 2px;
@@ -4630,18 +4663,18 @@ headerbar stackswitcher > button:active:hover label {
 
 .path-bar button:hover,
 .nemo-pathbar button:hover {
-  background-color: #f0f0f2;
-  color: #18181b;
-  border: 1px solid #35A854;
+  background-color: @pathbar_hover_bg;
+  color: #ffffff;
+  border: 1px solid @pathbar_hover_border;
 }
 
 .path-bar button:checked,
 .path-bar button:active,
 .nemo-pathbar button:checked,
 .nemo-pathbar button:active {
-  background-color: #35A854;
-  color: #ffffff;
-  border: 1px solid #206e33;
+  background-color: @pathbar_active_bg;
+  color: @pathbar_active_fg;
+  border: 1px solid @pathbar_active_border;
   font-weight: bold;
 }
 

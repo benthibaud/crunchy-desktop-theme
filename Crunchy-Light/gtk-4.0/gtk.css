@@ -68,6 +68,16 @@
 @define-color switch_bg               #d8d8de;
 @define-color switch_active_bg        @accent_color;
 
+/* Fil d'Ariane & Gestionnaires de fichiers */
+@define-color pathbar_bg              #383733;
+@define-color pathbar_fg              #dadada;
+@define-color pathbar_border          #202023;
+@define-color pathbar_hover_bg        #4a4943;
+@define-color pathbar_hover_border    @accent_color;
+@define-color pathbar_active_bg       @accent_color;
+@define-color pathbar_active_fg       @accent_fg_color;
+@define-color pathbar_active_border   #206e33;
+
 
 /* -----------------------------------------------------------------------------
    2. RÈGLES DE RENDU GTK4
@@ -164,9 +174,9 @@ windowcontrols button label {
 /* Fil d'Ariane et barres de chemin GTK4 */
 .path-bar button,
 pathbar button {
-  background-color: #e8e8ea;
-  color: #2e2e33;
-  border: 1px solid #dcdce2;
+  background-color: @pathbar_bg;
+  color: @pathbar_fg;
+  border: 1px solid @pathbar_border;
   border-radius: 2px;
   padding: 3px 10px;
   margin: 1px 2px;
@@ -174,16 +184,16 @@ pathbar button {
 
 .path-bar button:hover,
 pathbar button:hover {
-  background-color: #f0f0f2;
-  color: #18181b;
-  border: 1px solid #35A854;
+  background-color: @pathbar_hover_bg;
+  color: #ffffff;
+  border: 1px solid @pathbar_hover_border;
 }
 
 .path-bar button:checked,
 pathbar button:checked {
-  background-color: #35A854;
-  color: #ffffff;
-  border: 1px solid #206e33;
+  background-color: @pathbar_active_bg;
+  color: @pathbar_active_fg;
+  border: 1px solid @pathbar_active_border;
   font-weight: bold;
 }
 
