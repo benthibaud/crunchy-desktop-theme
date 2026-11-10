@@ -807,7 +807,7 @@ headerbar,
   border-style: solid;
   border-radius: 0;
   border-color: @headerbar_border_color;
-  color: alpha(@theme_fg_color, 0.87);
+  color: @headerbar_fg_color;
   background-color: @headerbar_bg_color;
   box-shadow: inset 0 1px #373737; }
   headerbar:backdrop,
@@ -816,7 +816,7 @@ headerbar,
   .csd .titlebar:backdrop:not(headerbar) {
     background-color: @headerbar_bg_color;
     border-color: @headerbar_border_color;
-    color: alpha(@theme_fg_color, 0.47); }
+    color: alpha(@headerbar_fg_color, 0.55); }
   headerbar .title,
   .titlebar:not(headerbar) .title {
     font-weight: bold;
@@ -824,7 +824,7 @@ headerbar,
     padding-right: 12px; }
   headerbar:backdrop .title,
   .titlebar:backdrop:not(headerbar) .title {
-    color: alpha(@theme_fg_color, 0.47); }
+    color: alpha(@headerbar_fg_color, 0.55); }
   headerbar .subtitle,
   .titlebar:not(headerbar) .subtitle {
     font-size: smaller;
@@ -999,7 +999,7 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
 
 
 .primary-toolbar entry, headerbar entry {
-  color: alpha(@theme_fg_color, 0.87);
+  color: @toolbar_dark_fg;
   border-color: rgba(5, 5, 6, 0.4);
   background-color: rgba(87, 87, 97, 0.4); }
   
@@ -1010,16 +1010,16 @@ window > .titlebar:not(headerbar), window > .titlebar:not(headerbar):backdrop, w
     opacity: 0.85; }
   
   .primary-toolbar entry:focus, headerbar entry:focus {
-    color: alpha(@theme_fg_color, 0.87);
+    color: @toolbar_dark_fg;
     border-color: @selected_bg_color;
     background-color: rgba(87, 87, 97, 0.4);
     background-clip: padding-box; }
     
     .primary-toolbar entry:focus image, headerbar entry:focus image {
-      color: alpha(@theme_fg_color, 0.72); }
+      color: alpha(@toolbar_dark_fg, 0.72); }
   
   .primary-toolbar entry:disabled, headerbar entry:disabled {
-    color: alpha(@theme_fg_color, 0.42);
+    color: alpha(@toolbar_dark_fg, 0.42);
     background-color: rgba(87, 87, 97, 0.25); }
   
   .primary-toolbar entry selection:focus, headerbar entry selection:focus {
@@ -1172,24 +1172,47 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:not(:checked):not(:acti
 
 .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button,
 .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button,
+toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button,
+toolbar stackswitcher > button,
+headerbar stackswitcher > button,
 .primary-toolbar toolbar .linked:not(.vertical).path-bar > button,
 .primary-toolbar .linked:not(.vertical).path-bar > button,
 .primary-toolbar .inline-toolbar .linked:not(.vertical).path-bar > button,
 headerbar .linked:not(.vertical).path-bar > button {
-  color: alpha(@theme_fg_color, 0.87);
-  outline-color: alpha(@theme_fg_color, 0.17);
+  color: @pathbar_fg;
+  outline-color: alpha(@toolbar_dark_fg, 0.2);
   border-color: rgba(5, 5, 6, 0.4);
   background-color: rgba(87, 87, 97, 0.4); }
+  .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button label,
+  .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button label,
+  headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button label,
+  toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button label,
+  toolbar stackswitcher > button label,
+  headerbar stackswitcher > button label,
+  .primary-toolbar toolbar .linked:not(.vertical).path-bar > button label,
+  .primary-toolbar .linked:not(.vertical).path-bar > button label,
+  headerbar .linked:not(.vertical).path-bar > button label {
+    color: inherit; }
   .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
+  toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:hover,
+  toolbar stackswitcher > button:hover,
+  headerbar stackswitcher > button:hover,
   .primary-toolbar toolbar .linked:not(.vertical).path-bar > button:hover,
   .primary-toolbar .linked:not(.vertical).path-bar > button:hover,
   .primary-toolbar .inline-toolbar .linked:not(.vertical).path-bar > button:hover,
   headerbar .linked:not(.vertical).path-bar > button:hover {
-    background-color: rgba(123, 123, 137, 0.4); }
+    background-color: rgba(123, 123, 137, 0.4);
+    color: #ffffff; }
   .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active, .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked,
+  toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active,
+  toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked,
+  toolbar stackswitcher > button:active,
+  toolbar stackswitcher > button:checked,
+  headerbar stackswitcher > button:active,
+  headerbar stackswitcher > button:checked,
   .primary-toolbar toolbar .linked:not(.vertical).path-bar > button:active,
   .primary-toolbar .linked:not(.vertical).path-bar > button:active,
   .primary-toolbar .inline-toolbar .linked:not(.vertical).path-bar > button:active,
@@ -1198,24 +1221,27 @@ headerbar .linked:not(.vertical).path-bar > button {
   .primary-toolbar .linked:not(.vertical).path-bar > button:checked,
   .primary-toolbar .inline-toolbar .linked:not(.vertical).path-bar > button:checked,
   headerbar .linked:not(.vertical).path-bar > button:checked {
-    color: alpha(@theme_fg_color, 0.87);
-    outline-color: alpha(@theme_fg_color, 0.17);
+    color: #ffffff;
+    outline-color: alpha(#ffffff, 0.2);
     border-color: rgba(5, 5, 6, 0.4);
-    background-color: rgba(0, 0, 0, 0.15); }
+    background-color: @selected_bg_color; }
   .primary-toolbar toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled,
   .primary-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled, .primary-toolbar .inline-toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled, headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled,
+  toolbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:disabled,
+  toolbar stackswitcher > button:disabled,
+  headerbar stackswitcher > button:disabled,
   .primary-toolbar toolbar .linked:not(.vertical).path-bar > button:disabled,
   .primary-toolbar .linked:not(.vertical).path-bar > button:disabled,
   .primary-toolbar .inline-toolbar .linked:not(.vertical).path-bar > button:disabled,
   headerbar .linked:not(.vertical).path-bar > button:disabled {
-    color: alpha(@theme_fg_color, 0.47); }
+    color: alpha(@toolbar_dark_fg, 0.45); }
 
 
 .primary-toolbar .linked:not(.vertical) entry, headerbar .linked:not(.vertical) entry {
   box-shadow: none; }
   
   .primary-toolbar .linked:not(.vertical) entry:focus, headerbar .linked:not(.vertical) entry:focus {
-    color: alpha(@theme_fg_color, 0.87);
+    color: @toolbar_dark_fg;
     border-color: rgba(5, 5, 6, 0.4);
     background-color: rgba(87, 87, 97, 0.4);
     background-clip: padding-box; }
@@ -1224,8 +1250,8 @@ headerbar .linked:not(.vertical).path-bar > button {
       color: inherit; }
   
   .primary-toolbar .linked:not(.vertical) entry + button:last-child, headerbar .linked:not(.vertical) entry + button:last-child {
-    color: alpha(@theme_fg_color, 0.87);
-    outline-color: alpha(@theme_fg_color, 0.17);
+    color: @toolbar_dark_fg;
+    outline-color: alpha(@toolbar_dark_fg, 0.17);
     border-color: rgba(5, 5, 6, 0.4);
     background-color: rgba(87, 87, 97, 0.4); }
     
@@ -1234,13 +1260,13 @@ headerbar .linked:not(.vertical).path-bar > button {
     
     .primary-toolbar .linked:not(.vertical) entry + button:last-child:active, headerbar .linked:not(.vertical) entry + button:last-child:active,
     .primary-toolbar .linked:not(.vertical) entry + button:last-child:checked, headerbar .linked:not(.vertical) entry + button:last-child:checked {
-      color: alpha(@theme_fg_color, 0.87);
-      outline-color: alpha(@theme_fg_color, 0.17);
+      color: #ffffff;
+      outline-color: alpha(#ffffff, 0.17);
       border-color: rgba(5, 5, 6, 0.4);
       background-color: rgba(0, 0, 0, 0.15); }
     
     .primary-toolbar .linked:not(.vertical) entry + button:last-child:disabled, headerbar .linked:not(.vertical) entry + button:last-child:disabled {
-      color: alpha(@theme_fg_color, 0.47);
+      color: alpha(@toolbar_dark_fg, 0.45);
       background-color: rgba(87, 87, 97, 0.2);
       border-color: rgba(5, 5, 6, 0.4); }
       
@@ -1649,6 +1675,40 @@ menu, .menu {
     background-image: linear-gradient(to right, @menu_hover_left 0%, @menu_hover_mid 55%, @menu_hover_right 100%);
     color: @menu_hover_fg;
   }
+  menuitem:hover label,
+  menuitem:selected label,
+  .menuitem:hover label,
+  .menuitem:selected label,
+  menu menuitem:hover label,
+  menu menuitem:selected label,
+  .menu menuitem:hover label,
+  .menu menuitem:selected label,
+  popover menuitem:hover label,
+  popover menuitem:selected label,
+  popover modelbutton:hover label,
+  popover modelbutton:selected label,
+  popover.menu modelbutton:hover label,
+  popover.menu modelbutton:selected label,
+  popover button:hover label,
+  modelbutton:hover label,
+  modelbutton:selected label,
+  menuitem:hover image,
+  menuitem:selected image,
+  menu menuitem:hover image,
+  menu menuitem:selected image,
+  .menu menuitem:hover image,
+  .menu menuitem:selected image,
+  popover menuitem:hover image,
+  popover modelbutton:hover image,
+  modelbutton:hover image,
+  menuitem:hover accelerator,
+  menuitem:selected accelerator,
+  menu menuitem:hover accelerator,
+  menu menuitem:selected accelerator,
+  .menu menuitem:hover accelerator,
+  .menu menuitem:selected accelerator {
+    color: @menu_hover_fg;
+  }
     menu menuitem:disabled,
     .menu menuitem:disabled,
     menu menuitem:disabled label,
@@ -1726,8 +1786,17 @@ popover.background {
   padding: 2px;
   border-radius: 3px;
   background-clip: border-box;
-  background-color: @theme_bg_color;
+  background-color: @popover_bg;
   box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.35); }
+  popover.menu,
+  popover.background.menu {
+    padding: 4px 0;
+    border-radius: 2px;
+    background-image: linear-gradient(to right, @menu_bg_left 0%, @menu_bg_mid 55%, @menu_bg_right 100%);
+    background-color: @menu_bg_left;
+    color: @menu_fg;
+    border: 1px solid @menu_border;
+    box-shadow: 0 4px 14px @menu_shadow; }
   .csd popover, popover, .csd popover.background,
   popover.background {
     border: 1px solid #141416; }
@@ -1924,30 +1993,30 @@ treeview.radio:hover {
 check:checked,
 treeview.check:checked {
   background-color: @accent_color;
-  border-color: #36753e;
+  border-color: #267a3c;
   color: #ffffff;
-  -gtk-icon-source: -gtk-recolor(url("assets/check-symbolic.svg")); }
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic"); }
 
 check:indeterminate,
 treeview.check:indeterminate {
   background-color: @accent_color;
-  border-color: #36753e;
+  border-color: #267a3c;
   color: #ffffff;
-  -gtk-icon-source: -gtk-recolor(url("assets/dash-symbolic.svg")); }
+  -gtk-icon-source: -gtk-icontheme("dash-symbolic"); }
 
 radio:checked,
 treeview.radio:checked {
   background-color: @accent_color;
-  border-color: #36753e;
+  border-color: #267a3c;
   color: #ffffff;
-  -gtk-icon-source: -gtk-recolor(url("assets/radio-symbolic.svg")); }
+  -gtk-icon-source: -gtk-icontheme("radio-symbolic"); }
 
 radio:indeterminate,
 treeview.radio:indeterminate {
   background-color: @accent_color;
-  border-color: #36753e;
+  border-color: #267a3c;
   color: #ffffff;
-  -gtk-icon-source: -gtk-recolor(url("assets/dash-symbolic.svg")); }
+  -gtk-icon-source: -gtk-icontheme("dash-symbolic"); }
 
 check:disabled,
 treeview.check:disabled,
@@ -1967,9 +2036,9 @@ iconview.content-view.check:not(.list) {
 .view.content-view.check:checked:not(.list),
 iconview.content-view.check:checked:not(.list) {
   background-color: @accent_color;
-  border-color: #36753e;
+  border-color: #267a3c;
   color: #ffffff;
-  -gtk-icon-source: -gtk-recolor(url("assets/check-symbolic.svg")); }
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic"); }
 
 checkbutton.text-button, radiobutton.text-button {
   padding: 2px 0;
@@ -2617,19 +2686,23 @@ row:selected button:disabled, infobar.info button:disabled, infobar.question but
     border-color: alpha(@theme_fg_color, 0.4); }
 
 tooltip {
-  color: #FFFFFF;
-  border-radius: 5px;
-  border: none; }
+  color: @tooltip_fg;
+  background-color: @tooltip_bg;
+  border-radius: 3px;
+  border: 1px solid @tooltip_border;
+  box-shadow: none; }
   tooltip.background {
-    background-color: rgba(45, 145, 72, 0.95);
+    background-color: @tooltip_bg;
     background-clip: padding-box; }
     tooltip.background label {
-      padding: 6px 10px; }
-  tooltip decoration {
-    background-color: transparent; }
+      padding: 4px 8px; }
+  tooltip decoration,
+  tooltip.csd decoration {
+    background-color: transparent;
+    box-shadow: none; }
   tooltip * {
     background-color: transparent;
-    color: #FFFFFF; }
+    color: @tooltip_fg; }
 
 colorswatch, colorswatch:drop(active) {
   border-style: none; }
@@ -2817,15 +2890,15 @@ headerbar button.titlebutton,
   background-color: rgba(34, 34, 38, 0); }
   headerbar button.titlebutton:hover,
   .titlebar button.titlebutton:hover {
-    color: alpha(@theme_fg_color, 0.87);
-    outline-color: alpha(@theme_fg_color, 0.17);
+    color: @headerbar_fg_color;
+    outline-color: alpha(@headerbar_fg_color, 0.2);
     border-color: rgba(5, 5, 6, 0.4);
     background-color: rgba(87, 87, 97, 0.4); }
   headerbar button.titlebutton:active, headerbar button.titlebutton:checked,
   .titlebar button.titlebutton:active,
   .titlebar button.titlebutton:checked {
-    color: alpha(@theme_fg_color, 0.87);
-    outline-color: alpha(@theme_fg_color, 0.17);
+    color: @headerbar_fg_color;
+    outline-color: alpha(@headerbar_fg_color, 0.2);
     border-color: rgba(5, 5, 6, 0.4);
     background-color: rgba(0, 0, 0, 0.15); }
 
@@ -4205,16 +4278,24 @@ list row:selected label {
 
 
 
-/* Infobulles au survol (Tooltips) */
+/* Infobulles au survol (Tooltips) — Épurées, nettes, sans ombre */
 tooltip,
 tooltip.background,
 tooltip.background.csd,
+tooltip.csd,
 .tooltip {
   background-color: @tooltip_bg;
   color: @tooltip_fg;
   border: 1px solid @tooltip_border;
-  border-radius: 4px;
-  box-shadow: 0 3px 10px @tooltip_shadow;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+tooltip decoration,
+tooltip.csd decoration,
+.tooltip decoration {
+  border-radius: 3px;
+  box-shadow: none;
 }
 
 tooltip label,
@@ -4380,7 +4461,11 @@ headerbar stackswitcher > button:active:hover label {
 
 /* 3. Fil d Ariane / Barres de chemin (Path-bars - style sobre sans liseré blanc) */
 .path-bar button,
-.nemo-pathbar button {
+.nemo-pathbar button,
+.nemo-window .path-bar button,
+.nemo-window .nemo-pathbar button,
+toolbar .path-bar button,
+.primary-toolbar .path-bar button {
   background-color: @pathbar_bg;
   color: @pathbar_fg;
   border: 1px solid @pathbar_border;
@@ -4390,7 +4475,11 @@ headerbar stackswitcher > button:active:hover label {
 }
 
 .path-bar button:hover,
-.nemo-pathbar button:hover {
+.nemo-pathbar button:hover,
+.nemo-window .path-bar button:hover,
+.nemo-window .nemo-pathbar button:hover,
+toolbar .path-bar button:hover,
+.primary-toolbar .path-bar button:hover {
   background-color: @pathbar_hover_bg;
   color: #ffffff;
   border: 1px solid @pathbar_hover_border;
@@ -4399,7 +4488,15 @@ headerbar stackswitcher > button:active:hover label {
 .path-bar button:checked,
 .path-bar button:active,
 .nemo-pathbar button:checked,
-.nemo-pathbar button:active {
+.nemo-pathbar button:active,
+.nemo-window .path-bar button:checked,
+.nemo-window .path-bar button:active,
+.nemo-window .nemo-pathbar button:checked,
+.nemo-window .nemo-pathbar button:active,
+toolbar .path-bar button:checked,
+toolbar .path-bar button:active,
+.primary-toolbar .path-bar button:checked,
+.primary-toolbar .path-bar button:active {
   background-color: @pathbar_active_bg;
   color: @pathbar_active_fg;
   border: 1px solid @pathbar_active_border;
@@ -4407,7 +4504,11 @@ headerbar stackswitcher > button:active:hover label {
 }
 
 .path-bar button label,
-.nemo-pathbar button label {
+.nemo-pathbar button label,
+.nemo-window .path-bar button label,
+.nemo-window .nemo-pathbar button label,
+toolbar .path-bar button label,
+.primary-toolbar .path-bar button label {
   color: inherit;
 }
 

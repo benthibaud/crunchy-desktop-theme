@@ -41,7 +41,7 @@ menu.items.bg: flat gradient horizontal
 menu.items.bg.color: #22211e
 menu.items.bg.colorTo: #484741
 menu.items.text.color: #ffffff
-menu.items.disabled.text.color: #707070
+menu.items.disabled.text.color: #9e9e9d
 
 menu.items.active.bg: flat gradient horizontal
 menu.items.active.bg.color: #206e33

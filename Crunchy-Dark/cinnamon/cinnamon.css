@@ -68,15 +68,14 @@ StScrollBar StButton#vhandle:hover {
     -slider-handle-radius: 0.5em;
 }
 #Tooltip {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(56, 55, 51, 0.7);    /*Dark color1*/
-	background-gradient-end: rgba(53, 168, 84, 0.8);    /*Selection color1*/
-	border: 1px solid rgba(24, 24, 27, 0.7);    /*Dark color2*/
-	border-radius: 4px;
-	padding: 2px 12px;
-	color: #fff;    /*White */
+	background-color: #242321;
+	border: 1px solid #202023;
+	border-radius: 3px;
+	padding: 4px 10px;
+	color: #ffffff;
 	font-weight: normal;
 	text-align: center;
+	box-shadow: none;
 }
 /* ===================================================================
  * Shared button properties 

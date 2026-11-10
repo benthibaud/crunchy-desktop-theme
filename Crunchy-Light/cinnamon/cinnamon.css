@@ -68,15 +68,14 @@ StScrollBar StButton#vhandle:hover {
     -slider-handle-radius: 0.5em;
 }
 #Tooltip {
-	background-gradient-direction: vertical;
-	background-gradient-start: rgba(56, 55, 51, 0.7);    /*Dark color1*/
-	background-gradient-end: rgba(53, 168, 84, 0.8);    /*Selection color1*/
-	border: 1px solid rgba(24, 24, 27, 0.7);    /*Dark color2*/
-	border-radius: 4px;
-	padding: 2px 12px;
-	color: #fff;    /*White */
+	background-color: #242321;
+	border: 1px solid #202023;
+	border-radius: 3px;
+	padding: 4px 10px;
+	color: #ffffff;
 	font-weight: normal;
 	text-align: center;
+	box-shadow: none;
 }
 /* ===================================================================
  * Shared button properties 
@@ -142,13 +141,14 @@ StScrollBar StButton#vhandle:hover {
 }
 */
 .popup-menu {
-	background-color: #ffffff;
-	border: 1px solid #dcdce2;
+	background-gradient-direction: horizontal;
+	background-gradient-start: #22211e;    /*Dark color2*/
+	background-gradient-end: #484741;    /*Dark color1*/
+	border: 1px solid rgba(56, 55, 51, 0.8);    /*Dark color1*/
 	border-radius: 5px;
-	color: #2e2e33;
+	color: #fff;    /*White */
 	font-size: 9.5pt;
 	min-width: 100px;
-	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
 .popup-menu-arrow {
     icon-size: 1.14em;
@@ -180,13 +180,14 @@ StScrollBar StButton#vhandle:hover {
 	border-width: 0px;
 }
 .popup-combo-menu {
-	background-color: #ffffff;
-	border: 1px solid #dcdce2;
+	background-gradient-direction: horizontal;
+	background-gradient-start: #22211e;    /*Dark color2*/
+	background-gradient-end: #484741;    /*Dark color1*/
+	border: 1px solid rgba(56, 55, 51, 0.8);    /*Dark color1*/
 	padding: 1em 0em;
-	color: #2e2e33;
+	color: #fff;    /*White */
 	font-size: 10.5pt;
-	border-radius: 6px;
-	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+	border-radius: 9px;
 }
 /* The remaining popup-menu sizing is all done in ems, so that if you
  * override .popup-menu.font-size, everything else will scale with it.
@@ -197,7 +198,6 @@ StScrollBar StButton#vhandle:hover {
 .popup-menu-item {
 	padding: .4em 1.75em;
 	spacing: 1em;
-	color: #2e2e33;
 }
 .popup-menu-item:active {
 	background-gradient-direction: horizontal;
@@ -645,7 +645,7 @@ StScrollBar StButton#vhandle:hover {
 	spacing-columns: 1px;
 }
 .calendar-month-label {
-	color: #2e2e33;
+	color: #eee;    /*Grey 7% */
 	font-size: 1.0em;
 	padding-top: 9px;
 	padding-bottom: 9px;
@@ -677,7 +677,7 @@ StScrollBar StButton#vhandle:hover {
 	background-color: rgba(53, 168, 84, 0.5);    /*Selection color1*/
 }
 .datemenu-date-label {
-	color: #2e2e33;
+	color: #eee;    /*Grey 7% */
 	padding-top: 9px;
 	padding-bottom: 9px;
 	font-size: 1.2em;
@@ -702,8 +702,8 @@ StScrollBar StButton#vhandle:hover {
 	background-gradient-end: #48dc6f;
 }
 .calendar-day-heading {
-	background-color: transparent;
-	color: #888888;
+	background-color: transparent;    /*Transparent */
+	color: #eee;    /*Grey 7% */
 	padding-top: 9px;
 	padding-bottom: 0;
 }
@@ -713,8 +713,8 @@ StScrollBar StButton#vhandle:hover {
 }
 /* Hack used in lieu of border-collapse - see calendar.js */
 .calendar-day:ltr {
-	border: 1px solid #e0e0e6;
-	color: #2e2e33;
+	border: 1px solid #333;    /*Grey 80% */
+	color: #eee;    /*Grey 7% */
 	border-top-width: 0;
 	border-left-width: 0;
 }
@@ -725,8 +725,8 @@ StScrollBar StButton#vhandle:hover {
 	border-left-width: 1px;
 }
 .calendar-day:rtl {
-	border: 1px solid #e0e0e6;
-	color: #2e2e33;
+	border: 1px solid #333;    /*Grey 80% */
+	color: #eee;    /*Grey 7% */
 	border-top-width: 0;
 	border-right-width: 0;
 }
@@ -737,13 +737,15 @@ StScrollBar StButton#vhandle:hover {
 	border-right-width: 1px;
 }
 .calendar-work-day {
-	background-color: #f4f4f8;
-	color: #2e2e33;
+	background-gradient-direction: vertical; 
+	background-gradient-start: rgba(136, 136, 136, 0.45);    /*Grey 47% */
+	background-gradient-end: rgba(56, 55, 51,0.4);    /*Dark color1*/
 	font-size: 8.5pt;
 }
 .calendar-nonwork-day {
-	background-color: #eaeaf0;
-	color: #666666;
+	background-gradient-direction: vertical; 
+	background-gradient-start: rgba(136, 136, 136, 0.15);    /*Grey 47% */
+	background-gradient-end: rgba(24, 24, 27, 0.2);    /*Dark color2*/
 	font-size: .75em;
 	font-style: normal;
 	font-weight: normal;
@@ -1242,16 +1244,16 @@ StScrollBar StButton#vhandle:hover {
 .appmenu-main-box,
 .appmenu-categories-applications-box,
 .appmenu-applications-box {
-    color: #2e2e33;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #22211e;
 }
 
 .menu {
-    color: #2e2e33;
-    background-color: #ffffff;
-    border: 1px solid #dcdce2;
+    color: #ffffff;
+    background-color: #22211e;
+    border: 1px solid #18181b;
     border-radius: 6px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75);
     padding: 6px;
 }
 
@@ -1259,9 +1261,11 @@ StScrollBar StButton#vhandle:hover {
 .menu-favorites-box {
 	margin: auto;
 	padding: 10px;
-	border: 1px solid #dcdce2;
+	border: 1px solid rgba(24, 24, 27, 0.6);    /*Dark color2*/
 	border-radius: 8px;
-	background-color: #f0f0f4;
+	background-gradient-direction: vertical;
+	background-gradient-start: rgba(56, 55, 51,  0.8);    /*Dark color1*/
+	background-gradient-end: rgba(56, 55, 51,  0.2);    /*Dark color1*/
 	transition-duration: 300;
 }
 .menu-favorites-button {
@@ -1312,7 +1316,6 @@ StScrollBar StButton#vhandle:hover {
 	padding-left: 7px;
 	padding-right: 7px;
 	padding-bottom: 7px;
-	color: #2e2e33;
 }
 .menu-application-button:highlighted {
 	/* This style is used in menu application buttons for applications which were newly installed */
@@ -1346,7 +1349,6 @@ StScrollBar StButton#vhandle:hover {
 	padding-left: 7px;
 	padding-right: 7px;
 	padding-bottom: 7px;
-	color: #2e2e33;
 }
 .menu-category-button-greyed {
 	padding-top: 7px;

@@ -242,6 +242,25 @@ listview row:selected {
   color: @menu_hover_fg;
 }
 
+popover modelbutton:hover label,
+popover modelbutton:selected label,
+popover.menu modelbutton:hover label,
+popover.menu modelbutton:selected label,
+popover menuitem:hover label,
+popover menuitem:selected label,
+menu menuitem:hover label,
+menu menuitem:selected label,
+menuitem:hover label,
+menuitem:selected label,
+modelbutton:hover label,
+modelbutton:selected label,
+popover modelbutton:hover image,
+popover.menu modelbutton:hover image,
+modelbutton:hover image,
+menuitem:hover image {
+  color: @menu_hover_fg;
+}
+
 entry {
   background-color: @theme_base_color;
   color: @theme_text_color;
@@ -286,4 +305,59 @@ scale highlight {
   border-radius: 2px;
 }
 
+/* Contrôles de sélection : Cases à cocher & Boutons Radio (Pur CSS GTK4) */
+check,
+radio {
+  min-height: 14px;
+  min-width: 14px;
+  margin: 0 4px;
+  border: 1px solid @borders;
+  background-color: transparent;
+  box-shadow: none;
+}
 
+check {
+  border-radius: 2px;
+}
+
+radio {
+  border-radius: 100%;
+}
+
+check:hover,
+radio:hover {
+  border-color: @accent_color;
+}
+
+check:checked {
+  background-color: @accent_color;
+  border-color: #267a3c;
+  color: #ffffff;
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+}
+
+check:indeterminate {
+  background-color: @accent_color;
+  border-color: #267a3c;
+  color: #ffffff;
+  -gtk-icon-source: -gtk-icontheme("dash-symbolic");
+}
+
+radio:checked {
+  background-color: @accent_color;
+  border-color: #267a3c;
+  color: #ffffff;
+  -gtk-icon-source: -gtk-icontheme("radio-symbolic");
+}
+
+radio:indeterminate {
+  background-color: @accent_color;
+  border-color: #267a3c;
+  color: #ffffff;
+  -gtk-icon-source: -gtk-icontheme("dash-symbolic");
+}
+
+check:disabled,
+radio:disabled {
+  opacity: 0.55;
+}

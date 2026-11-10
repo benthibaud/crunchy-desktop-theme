@@ -1,5 +1,4 @@
-
-/* VLC Qt Stylesheet - Crunchy Light */
+/* VLC & Qt Applications Stylesheet - Crunchy Light (Dark Menus Invariant) */
 QMenuBar {
     background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #242320, stop:0.55 #393833, stop:1 #4d4c46);
     color: #ffffff;
@@ -13,6 +12,9 @@ QMenuBar::item {
 QMenuBar::item:selected {
     background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #206e33, stop:0.55 #35ad54, stop:1 #48dc6f);
     color: #ffffff;
+}
+QMenuBar::item:disabled {
+    color: rgba(255, 255, 255, 140);
 }
 QMenu {
     background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #22211e, stop:0.55 #363530, stop:1 #484741);
@@ -30,18 +32,11 @@ QMenu::item:selected {
     color: #ffffff;
     border-radius: 2px;
 }
+QMenu::item:disabled {
+    color: rgba(255, 255, 255, 140);
+}
 QMenu::separator {
     height: 1px;
     background: #3c3b38;
     margin: 4px 0;
-}
-
-/* Dégradé horizontal vert Crunchy sur les menus Qt */
-QMenu::item:selected {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #206e33, stop:0.55 #35ad54, stop:1 #48dc6f);
-    color: #ffffff;
-}
-QMenuBar::item:selected {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #206e33, stop:0.55 #35ad54, stop:1 #48dc6f);
-    color: #ffffff;
 }
