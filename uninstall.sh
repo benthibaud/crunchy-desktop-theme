@@ -22,47 +22,35 @@ echo "======================================================================"
 TARGET_THEMES="$HOME/.themes"
 TARGET_SCHEMES="$HOME/.local/share/color-schemes"
 TARGET_AURORAE="$HOME/.local/share/aurorae/themes"
-TARGET_PLASMA_THEME="$HOME/.local/share/plasma/desktoptheme"
 TARGET_LOOKANDFEEL="$HOME/.local/share/plasma/look-and-feel"
-TARGET_KSTYLE="$HOME/.local/share/kstyle/themes"
-TARGET_LXQT="$HOME/.local/share/lxqt/themes"
 TARGET_ICEWM="$HOME/.icewm/themes"
 TARGET_ICEWM_SHARE="$HOME/.local/share/icewm/themes"
 TARGET_FLUXBOX="$HOME/.fluxbox/styles"
 TARGET_FLUXBOX_SHARE="$HOME/.local/share/fluxbox/styles"
 
-# [1/9] Suppression des thèmes GTK2, GTK3, GTK4 & WM
-echo "[1/9] Suppression des dossiers thèmes GTK / WM..."
+# [1/6] Suppression des thèmes GTK2, GTK3, GTK4 & WM
+echo "[1/6] Suppression des dossiers thèmes GTK / WM..."
 rm -rf "$TARGET_THEMES/Crunchy-Dark" "$TARGET_THEMES/Crunchy-Light"
 
-# [2/9] Suppression des schémas de couleurs KDE Plasma
-echo "[2/9] Suppression des schémas de couleurs KDE Plasma..."
-rm -f "$TARGET_SCHEMES"/Crunchy*.colors
+# [2/6] Suppression des schémas de couleurs KDE Plasma
+echo "[2/6] Suppression des schémas de couleurs KDE Plasma..."
+rm -f "$TARGET_SCHEMES"/Crunchy*.colors "$TARGET_SCHEMES"/Revision2*.colors
 
-# [3/9] Suppression des décorations de fenêtres KWin Aurorae
-echo "[3/9] Suppression des décorations KWin Aurorae..."
-rm -rf "$TARGET_AURORAE"/__aurorae__svg__Crunchy* "$TARGET_AURORAE"/Crunchy*
+# [3/6] Suppression des décorations de fenêtres KWin Aurorae
+echo "[3/6] Suppression des décorations KWin Aurorae..."
+rm -rf "$TARGET_AURORAE"/__aurorae__svg__Crunchy* "$TARGET_AURORAE"/Crunchy* "$TARGET_AURORAE"/Revision2*
 
-# [4/9] Suppression des thèmes Plasma Desktop & Look-and-Feel
-echo "[4/9] Suppression des composants Plasma (desktoptheme, look-and-feel, kstyle)..."
-rm -rf "$TARGET_PLASMA_THEME"/Crunchy*
-rm -rf "$TARGET_LOOKANDFEEL"/Crunchy*
-rm -rf "$TARGET_KSTYLE"/Crunchy*
+# [4/6] Suppression des thèmes Look-and-Feel Plasma
+echo "[4/6] Suppression des thèmes Look-and-Feel Plasma..."
+rm -rf "$TARGET_LOOKANDFEEL"/org.crunchy.revision2.* "$TARGET_LOOKANDFEEL"/Crunchy*
 
-# [5/9] Suppression des thèmes natifs LXQt
-echo "[5/9] Suppression des thèmes LXQt..."
-rm -rf "$TARGET_LXQT"/Crunchy*
-
-# [6/9] Suppression des thèmes IceWM
-echo "[6/9] Suppression des thèmes IceWM..."
+# [5/6] Suppression des thèmes IceWM & Fluxbox
+echo "[5/6] Suppression des thèmes IceWM & Fluxbox..."
 rm -rf "$TARGET_ICEWM"/Crunchy* "$TARGET_ICEWM_SHARE"/Crunchy*
-
-# [7/9] Suppression des styles Fluxbox
-echo "[7/9] Suppression des styles Fluxbox..."
 rm -rf "$TARGET_FLUXBOX"/Crunchy* "$TARGET_FLUXBOX_SHARE"/Crunchy*
 
-# [8/9] Restauration configuration GIMP 2.10
-echo "[8/9] Restauration de la configuration GIMP 2.10..."
+# [6/6] Restauration configuration GIMP 2.10
+echo "[6/6] Restauration de la configuration GIMP 2.10..."
 GIMP_DIR="$HOME/.config/GIMP/2.10"
 if [ -d "$GIMP_DIR" ]; then
     GIMPRC="$GIMP_DIR/gimprc"

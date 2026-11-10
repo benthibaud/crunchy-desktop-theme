@@ -18,7 +18,11 @@ echo "▶ Propagation de src/gtk-3.0/common.css vers Crunchy-Dark et Crunchy-Lig
 
 cp -f "$SOURCE_COMMON" "$ROOT_DIR/Crunchy-Dark/gtk-3.0/common.css"
 cp -f "$SOURCE_COMMON" "$ROOT_DIR/Crunchy-Light/gtk-3.0/common.css"
-
 chmod 644 "$ROOT_DIR/Crunchy-Dark/gtk-3.0/common.css" "$ROOT_DIR/Crunchy-Light/gtk-3.0/common.css"
+
+echo "▶ Vérification de cohérence GTK4..."
+if [ -f "$ROOT_DIR/Crunchy-Dark/gtk-4.0/gtk.css" ] && [ -f "$ROOT_DIR/Crunchy-Light/gtk-4.0/gtk.css" ]; then
+    chmod 644 "$ROOT_DIR/Crunchy-Dark/gtk-4.0/gtk.css" "$ROOT_DIR/Crunchy-Light/gtk-4.0/gtk.css"
+fi
 
 echo "✅ Synchronisation terminée avec succès !"

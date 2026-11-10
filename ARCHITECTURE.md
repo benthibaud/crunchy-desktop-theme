@@ -177,14 +177,16 @@ Les scripts `install.sh` et `uninstall.sh` déterminent automatiquement le répe
 - Dans la tradition ergonomique Ambiance / Radiance, le panneau de bureau (`#panel`, `.panel-top`, `.panel-bottom`) reste **strictement sombre** (`#222226` avec bordure `#18181b`), que le thème soit en mode Dark ou Light.
 - **Rationnel ergonomique :** Garantit le contraste maximal et la lisibilité immédiate des icônes du systray, de l'horloge, des indicateurs de statut et des applets sans nécessiter d'icônes spécifiques claires/sombres.
 
-### B. Déclinaisons Crunchy-Dark vs Crunchy-Light
-- **Crunchy-Dark :**
-  - Popups, menus déroulants, menu d'applications Kickoff (`.menu`, `.popup-menu`) et dialogues en fond sombre dégradé horizontal `#22211e` $\rightarrow$ `#484741`, bordure `#18181b` et texte blanc `#ffffff`.
-  - Sélections et survols en dégradé vert horizontal Crunchy : `background-gradient-direction: horizontal;` (`#206e33` $\rightarrow$ `#48dc6f`).
-- **Crunchy-Light :**
-  - Popups, menus déroulants, menu Kickoff, dialogues modaux et notifications basculent en fond clair document `#ffffff` / `#f8f8f9` avec bordures claires fines `#dcdce2` et texte sombre `#2e2e33`.
-  - Champs de recherche (`#menu-search-entry`) sur fond blanc avec ombre interne subtile.
-  - Sélections actives conservant le vert Crunchy avec libellé contrasté en blanc.---
+### B. Déclinaisons Crunchy-Dark vs Crunchy-Light (La Règle des Menus Sombres Unifiés)
+- **Le Cadre Commun Invariant (Dark & Light) :**
+  - **Menus déroulants, popups contextuels, menu d'applications (`.menu`, `.popup-menu`, `popover.menu`) et barres de menus :** restent impérativement sur fond sombre dégradé horizontal `#22211e` $\rightarrow$ `#484741`, bordure sombre `#18181b` et texte blanc `#ffffff`.
+  - Sélections et survols en dégradé vert horizontal signature Crunchy : `background-gradient-direction: horizontal;` (`#206e33` $\rightarrow$ `#35ad54` $\rightarrow$ `#48dc6f`) avec texte blanc.
+  - Éléments inactifs calibrés à 55 % d'opacité (`alpha(#ffffff, 0.55)` ou `#9e9e9d`).
+- **Différence entre les Variantes :**
+  - **`Crunchy-Dark` :** L'intégralité de l'interface (cadre et zone de contenu `#2e2e33` / `#242321`) s'accorde dans une obscurité profonde et contrastée.
+  - **`Crunchy-Light` :** Seule la zone documentaire, les listes, arbres, vues de fichiers et champs de saisie basculent sur fond clair reposant (`#f8f8f9` pour les fenêtres, `#ffffff` pour les vues et cartes documentaires, texte `#2e2e33` / `#303030`). Le cadre extérieur, les en-têtes et les menus restent sombres.
+
+---
 
 ## 8. Contrôle Qualité Automatisé & Assurance d'Intégrité
 
