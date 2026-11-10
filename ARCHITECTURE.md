@@ -119,6 +119,15 @@ fg[INSENSITIVE] = shade (0.55, @fg_color_dark)
   - Un asset 9-slice étirable (`assets/menu_item_prelight.png`, 48x24 px avec liseré lumineux supérieur et coins arrondis 2px) est utilisé.
   - Toutes les autres composantes de l'interface GTK2 continuent d'être calculées et rendues dynamiquement par Murrine.
 
+### F. Règle d'Or d'Asservissement aux Variables (Zéro Couleur en Dur)
+- **Principe Fondateur :** L'intégralité des couleurs du thème doit pouvoir être reconfigurée en modifiant **exclusivement** le fichier annexe `colors.css` (ou la section de définition des variables au début du thème).
+- **Interdiction Formelle des Codes en Dur dans la Structure :** Aucun code hexadécimal en dur (`#...`) ni couleur statique `rgb()` ne doit figurer dans le fichier structurel `common.css`.
+- **Interdiction des `rgba(...)` Statiques :** Les nuances semi-transparentes ou ombrages doivent impérativement être construits dynamiquement à partir des variables mères via les fonctions natives du moteur GTK :
+  - `alpha(@variable, opacité)` au lieu d'un `rgba(r, g, b, a)` codé en dur (ex: `alpha(@theme_fg_color, 0.15)` au lieu de `rgba(0, 0, 0, 0.15)`).
+  - `shade(@variable, facteur)` pour assombrir ou éclaircir dynamiquement un contrôle dérivé (ex: `shade(@accent_color, 0.72)` pour les bordures actives de cases à cocher/interrupteurs).
+  - `mix(@variable1, @variable2, proportion)` pour les teintes intermédiaires.
+- **Bénéfice :** Permet la déclinaison instantanée du thème vers de nouvelles palettes (Bleu, Ambre, Rouge, etc.) par simple remplacement de `colors.css` sans jamais altérer les milliers de lignes de structure de `common.css`.
+
 ---
 
 ## 4. Politique de Gestion des Assets & Zéro Relique
