@@ -16,19 +16,23 @@ Look=pixmap
 TrayDrawBevel=1
 Gradients="menubg.xpm menusel.xpm menusep.xpm taskbarbg.xpm workspacebuttonactive.xpm"
 RolloverButtonsSupported=1
+ShapesTitleBar=1
+ShapesProtectClientWindow=1
 
 # Window Buttons
 TitleButtonsSupported="sxmihrd"
 TitleButtonsLeft="xmi"
 TitleButtonsRight=""
 
-# Window Borders (0px pour un rendu moderne sans liseré parasite)
-BorderSizeX=0
-BorderSizeY=0
-CornerSizeX=0
-CornerSizeY=0
-DlgBorderSizeX=0
-DlgBorderSizeY=0
+# Window Borders (Découpe de cadre XShape harmonisée)
+BorderSizeX=1
+BorderSizeY=1
+CornerSizeX=14
+CornerSizeY=29
+DlgBorderSizeX=1
+DlgBorderSizeY=1
+ColorActiveBorder="#202023"
+ColorNormalBorder="#202023"
 
 # Icon Sizes
 MenuIconSize=16
@@ -82,7 +86,7 @@ ColorNormalMenu="#242320"
 ColorActiveMenuItem="#35A854"
 ColorNormalMenuItemText="#dadada"
 ColorActiveMenuItemText="#ffffff"
-ColorDisabledMenuItemText="#707070"
+ColorDisabledMenuItemText="#9e9e9d"
 ColorDisabledMenuItemShadow="#202023"
 
 # Champs de saisie
